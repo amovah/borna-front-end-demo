@@ -284,6 +284,8 @@
   margin-bottom: 20px;
   width: 100%;
   position: relative;
+  direction: rtl;
+  text-align: right;
 }
 
 .form__form-group--address {
@@ -505,4 +507,3 @@
     }
   }
 }
-

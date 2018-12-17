@@ -43,7 +43,7 @@ class LogInForm extends PureComponent {
               name="name"
               component="input"
               type="text"
-              placeholder="Name"
+              placeholder="نام کاربری"
             />
           </div>
         </div>
@@ -59,7 +59,7 @@ class LogInForm extends PureComponent {
               name="password"
               component="input"
               type={this.state.showPassword ? 'text' : 'password'}
-              placeholder="Password"
+              placeholder="رمز ورود"
             />
             <button
               className={`form__form-group-button${this.state.showPassword ? ' active' : ''}`}
@@ -67,21 +67,17 @@ class LogInForm extends PureComponent {
             ><EyeIcon />
             </button>
           </div>
-          <div className="account__forgot-password">
-            <a href="/">Forgot a password?</a>
-          </div>
         </div>
         <div className="form__form-group">
           <div className="form__form-group-field">
             <Field
               name="remember_me"
               component={renderCheckBoxField}
-              label="Remember me"
+              label="من را به خاطر بسپار"
             />
           </div>
         </div>
-        <Link className="btn btn-primary account__btn account__btn--small" to="/pages/one">Sign In</Link>
-        <Link className="btn btn-outline-primary account__btn account__btn--small" to="/log_in">Create Account</Link>
+        <Link className="btn btn-primary account__btn account__btn--small" to="/pages/one">ورود</Link>
       </form>
     );
   }
