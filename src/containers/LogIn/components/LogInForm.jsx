@@ -32,7 +32,9 @@ class LogInForm extends PureComponent {
     return (
       <form className="form" onSubmit={handleSubmit}>
         <div className="form__form-group">
-          <span className="form__form-group-label">Username</span>
+          <span className="form__form-group-label">
+          نام کاربری
+          </span>
           <div className="form__form-group-field">
             <div className="form__form-group-icon">
               <AccountOutlineIcon />
@@ -46,7 +48,9 @@ class LogInForm extends PureComponent {
           </div>
         </div>
         <div className="form__form-group">
-          <span className="form__form-group-label">Password</span>
+          <span className="form__form-group-label">
+          رمز عبور
+          </span>
           <div className="form__form-group-field">
             <div className="form__form-group-icon">
               <KeyVariantIcon />
