@@ -69,7 +69,7 @@ class LogInForm extends PureComponent {
           </div>
         </div>
         <div className="form__form-group">
-          <div className="form__form-group-field">
+          <div className="form__form-group-field exception-for-form">
             <Field
               name="remember_me"
               component={renderCheckBoxField}
