@@ -6,7 +6,6 @@ import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // import titleLogo from 'shared/img/logo.png';
-import renderCheckBoxField from '../../../shared/components/form/CheckBox';
 
 class LogInForm extends PureComponent {
   static propTypes = {
@@ -76,15 +75,6 @@ class LogInForm extends PureComponent {
               onClick={e => this.showPassword(e)}
             ><EyeIcon />
             </button>
-          </div>
-        </div>
-        <div className="form__form-group">
-          <div className="form__form-group-field exception-for-formn">
-            <Field
-              name="remember_me"
-              component={renderCheckBoxField}
-              label="من را به خاطر بسپار"
-            />
           </div>
         </div>
         <Link className="btn btn-primary account__btn account__btn--small" to="/pages/one">ورود</Link>

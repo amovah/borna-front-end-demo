@@ -3,7 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import Layout from '../Layout/index';
 import MainWrapper from './MainWrapper';
 
-import LogIn from '../LogIn/index';
+import LoginOrgA from '../LogInOrgA';
+import LoginOrgB from '../LogInOrgB';
+import LoginOrgC from '../LogInOrgC';
+import LoginOrgD from '../LogInOrgD';
 import ExamplePageOne from '../Example/index';
 import ExamplePageTwo from '../ExampleTwo/index';
 
@@ -27,8 +30,10 @@ const Router = () => (
   <MainWrapper>
     <main>
       <Switch>
-        <Route exact path="/" component={LogIn} />
-        <Route exact path="/log_in" component={LogIn} />
+        <Route exact path="/login/orgA" component={LoginOrgA} />
+        <Route exact path="/login/orgB" component={LoginOrgB} />
+        <Route exact path="/login/orgC" component={LoginOrgC} />
+        <Route exact path="/login/orgD" component={LoginOrgD} />
         <Route path="/" component={wrappedRoutes} />
       </Switch>
     </main>
