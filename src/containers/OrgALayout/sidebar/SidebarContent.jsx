@@ -5,8 +5,6 @@ import SidebarCategory from './SidebarCategory';
 
 class SidebarContent extends Component {
   static propTypes = {
-    changeToDark: PropTypes.func.isRequired,
-    changeToLight: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
   };
 
@@ -17,17 +15,6 @@ class SidebarContent extends Component {
   render() {
     return (
       <div className="sidebar__content">
-        <ul className="sidebar__block">
-          <SidebarLink title="Log In" icon="exit" route="/log_in" onClick={this.hideSidebar} />
-          <SidebarCategory title="Layout" icon="layers">
-            <button className="sidebar__link" onClick={this.props.changeToLight}>
-              <p className="sidebar__link-title">Light Theme</p>
-            </button>
-            <button className="sidebar__link" onClick={this.props.changeToDark}>
-              <p className="sidebar__link-title">Dark Theme</p>
-            </button>
-          </SidebarCategory>
-        </ul>
         <ul className="sidebar__block">
           <SidebarCategory title="Example Pages" icon="diamond">
             <SidebarLink title="Page one" route="/pages/one" onClick={this.hideSidebar} />

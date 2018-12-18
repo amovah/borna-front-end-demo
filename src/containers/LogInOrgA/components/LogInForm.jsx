@@ -3,7 +3,6 @@ import { Field, reduxForm } from 'redux-form';
 import EyeIcon from 'mdi-react/EyeIcon';
 import KeyVariantIcon from 'mdi-react/KeyVariantIcon';
 import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import titleLogo from 'Root/shared/img/logo/logo.png';
 
@@ -42,7 +41,7 @@ class LogInForm extends PureComponent {
         </div>
         <div className="form__form-group">
           <span className="form__form-group-label">
-          نام کاربری
+            نام کاربری
           </span>
           <div className="form__form-group-field">
             <div className="form__form-group-icon">
@@ -58,7 +57,7 @@ class LogInForm extends PureComponent {
         </div>
         <div className="form__form-group">
           <span className="form__form-group-label">
-          رمز عبور
+            رمز عبور
           </span>
           <div className="form__form-group-field">
             <div className="form__form-group-icon">
@@ -77,12 +76,12 @@ class LogInForm extends PureComponent {
             </button>
           </div>
         </div>
-        <Link className="btn btn-primary account__btn account__btn--small" to="/pages/one">ورود</Link>
+        <button className="btn btn-primary account__btn account__btn--small">ورود</button>
       </form>
     );
   }
 }
 
 export default reduxForm({
-  form: 'log_in_form',
+  form: 'loginOrgA',
 })(LogInForm);
