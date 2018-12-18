@@ -5,6 +5,7 @@ import KeyVariantIcon from 'mdi-react/KeyVariantIcon';
 import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+// import titleLogo from 'shared/img/logo.png';
 import renderCheckBoxField from '../../../shared/components/form/CheckBox';
 
 class LogInForm extends PureComponent {
@@ -31,6 +32,15 @@ class LogInForm extends PureComponent {
 
     return (
       <form className="form" onSubmit={handleSubmit}>
+        <div className="login-page-title">
+          {/* <img
+            src={titleLogo}
+            alt="khafes"
+          /> */}
+          <h1>
+            اولیش
+          </h1>
+        </div>
         <div className="form__form-group">
           <span className="form__form-group-label">
           نام کاربری
@@ -69,7 +79,7 @@ class LogInForm extends PureComponent {
           </div>
         </div>
         <div className="form__form-group">
-          <div className="form__form-group-field exception-for-form">
+          <div className="form__form-group-field exception-for-formn">
             <Field
               name="remember_me"
               component={renderCheckBoxField}
