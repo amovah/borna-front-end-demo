@@ -11,7 +11,7 @@ const ProtectedRoute = (props) => {
     return <Redirect to="/login/orgA" />;
   }
 
-  return this.props.children;
+  return props.children;
 };
 
 export default connect(state => ({

@@ -1,7 +1,4 @@
-// import {
-//   CHANGE_SIDEBAR_VISIBILITY,
-//   CHANGE_MOBILE_SIDEBAR_VISIBILITY,
-// } from '../actions/sidebarActions';
+import types from 'Root/redux/actions';
 
 const initialState = {
   logged: false,
@@ -9,6 +6,13 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
+    case types.user.LOGIN: {
+      return {
+        ...state,
+        logged: true,
+      };
+    }
+
     default: {
       return state;
     }
