@@ -22,7 +22,9 @@ export default class TopbarProfile extends PureComponent {
       <div className="topbar__profile">
         <button className="topbar__avatar" onClick={this.toggle}>
           <img className="topbar__avatar-img" src={Ava} alt="avatar" />
-          <p className="topbar__avatar-name">Roman Johanson</p>
+          <p className="topbar__avatar-name">
+            علی موحدی
+          </p>
           <DownIcon className="topbar__icon" />
         </button>
         {this.state.collapse && <button className="topbar__back" onClick={this.toggle} />}

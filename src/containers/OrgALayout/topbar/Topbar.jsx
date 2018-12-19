@@ -17,14 +17,14 @@ class Topbar extends PureComponent {
       <div className="topbar">
         <div className="topbar__wrapper">
           <div className="topbar__left">
+            <TopbarProfile />
+          </div>
+          <div className="topbar__right">
             <TopbarSidebarButton
               changeMobileSidebarVisibility={changeMobileSidebarVisibility}
               changeSidebarVisibility={changeSidebarVisibility}
             />
-            <Link className="topbar__logo" to="/dashboard_default" />
-          </div>
-          <div className="topbar__right">
-            <TopbarProfile />
+            <Link className="topbar__logo" to="/orgA" />
           </div>
         </div>
       </div>

@@ -6,17 +6,13 @@ const icon = `${process.env.PUBLIC_URL}/img/burger.svg`;
 class TopbarSidebarButton extends PureComponent {
   static propTypes = {
     changeMobileSidebarVisibility: PropTypes.func.isRequired,
-    changeSidebarVisibility: PropTypes.func.isRequired,
   };
 
   render() {
-    const { changeMobileSidebarVisibility, changeSidebarVisibility } = this.props;
+    const { changeMobileSidebarVisibility } = this.props;
 
     return (
       <div>
-        <button className="topbar__button topbar__button--desktop" onClick={changeSidebarVisibility}>
-          <img src={icon} alt="" className="topbar__button-icon" />
-        </button>
         <button className="topbar__button topbar__button--mobile" onClick={changeMobileSidebarVisibility}>
           <img src={icon} alt="" className="topbar__button-icon" />
         </button>
