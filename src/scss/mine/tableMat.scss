@@ -1,0 +1,23 @@
+.material-table__wrap {
+  direction: rtl;
+}
+
+.material-table__cell {
+  text-align: right !important;
+}
+
+.mattabfarsi {
+  font-family: 'iran';
+
+  span {
+    font-family: 'iran';
+  }
+}
+
+.mattabpage {
+  > div {
+    > span {
+      direction: rtl;
+    }
+  }
+}

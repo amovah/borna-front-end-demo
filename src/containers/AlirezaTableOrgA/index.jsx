@@ -1,15 +1,18 @@
 import React from 'react';
-import { Col, Container, Row } from 'reactstrap';
+import { Col, Container, Row, Card, CardBody } from 'reactstrap';
 import MatTable from './components/MatTable';
 
 const MaterialTable = () => (
   <Container>
     <Row>
       <Col md={12}>
-        <h3 className="page-title">Material Table</h3>
-        <h3 className="page-subhead subhead">Use this elements, if you want to show some hints or additional
-              information
-        </h3>
+        <div>
+          <Card>
+            <CardBody>
+              <p>Hi THere</p>
+            </CardBody>
+          </Card>
+        </div>
       </Col>
     </Row>
     <Row>

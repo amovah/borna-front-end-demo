@@ -22,13 +22,21 @@ function getSorting(order, orderBy) {
   return order === 'desc' ? (a, b) => b[orderBy] - a[orderBy] : (a, b) => a[orderBy] - b[orderBy];
 }
 
+const labelOfFuck = ({ from, to, count }) => {
+  const fromA = from.toLocaleString('fa');
+  const toA = to.toLocaleString('fa');
+  const countA = count.toLocaleString('fa');
+
+  return `${fromA}-${toA} از ${countA}`;
+};
+
 export default class MatTable extends PureComponent {
   state = {
     order: 'asc',
     orderBy: 'calories',
     selected: [],
     data: [
-      createData('Cupcake', 305, 3.7, 67, 4.3),
+      createData('کاپ کیک', 305, 3.7, 67, 4.3),
       createData('Donut', 452, 25.0, 51, 4.9),
       createData('Eclair', 262, 16.0, 24, 6.0),
       createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
@@ -89,7 +97,7 @@ export default class MatTable extends PureComponent {
   };
 
   handleChangeRowsPerPage = (event) => {
-    this.setState({ rowsPerPage: event.target.value });
+    this.setState({ rowsPerPage: parseInt(event.target.value, 10) });
   };
 
   handleDeleteSelected = () => {
@@ -116,7 +124,7 @@ export default class MatTable extends PureComponent {
         <Card>
           <CardBody>
             <div className="card__title">
-              <h5 className="bold-text">Material table</h5>
+              <h3 className="bold-text textright">بخش نظارت</h3>
             </div>
             <MatTableToolbar
               numSelected={selected.length}
@@ -153,17 +161,37 @@ export default class MatTable extends PureComponent {
                             <Checkbox checked={isSelected} className="material-table__checkbox" />
                           </TableCell>
                           <TableCell
-                            className="material-table__cell"
+                            className="material-table__cell material-table__cell mattabfarsi"
                             component="th"
                             scope="row"
                             padding="none"
                           >
                             {d.name}
                           </TableCell>
-                          <TableCell className="material-table__cell" numeric>{d.calories}</TableCell>
-                          <TableCell className="material-table__cell" numeric>{d.fat}</TableCell>
-                          <TableCell className="material-table__cell" numeric>{d.carbs}</TableCell>
-                          <TableCell className="material-table__cell" numeric>{d.protein}</TableCell>
+                          <TableCell
+                            className="material-table__cell material-table__cell mattabfarsi"
+                            numeric
+                          >
+                            {d.calories}
+                          </TableCell>
+                          <TableCell
+                            className="material-table__cell material-table__cell mattabfarsi"
+                            numeric
+                          >
+                            {d.fat}
+                          </TableCell>
+                          <TableCell
+                            className="material-table__cell material-table__cell mattabfarsi"
+                            numeric
+                          >
+                            {d.carbs}
+                          </TableCell>
+                          <TableCell
+                            className="material-table__cell material-table__cell mattabfarsi"
+                            numeric
+                          >
+                            {d.protein}
+                          </TableCell>
                         </TableRow>
                       );
                     })}
@@ -176,8 +204,10 @@ export default class MatTable extends PureComponent {
               </Table>
             </div>
             <TablePagination
+              labelRowsPerPage="ردیف بر صفحه"
               component="div"
-              className="material-table__pagination"
+              className="material-table__pagination mattabfarsi mattabpage"
+              labelDisplayedRows={labelOfFuck}
               count={data.length}
               rowsPerPage={rowsPerPage}
               page={page}

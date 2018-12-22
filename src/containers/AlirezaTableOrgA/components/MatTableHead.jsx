@@ -8,19 +8,25 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 
 const rows = [
   {
-    id: 'name', numeric: false, disablePadding: true, label: 'Dessert (100g serving)',
+    id: 'name', numeric: false, disablePadding: true, label: 'ردیف',
   },
   {
-    id: 'calories', numeric: true, disablePadding: false, label: 'Calories',
+    id: 'calories', numeric: true, disablePadding: false, label: 'اسم و فامیل کاربر',
   },
   {
-    id: 'fat', numeric: true, disablePadding: false, label: 'Fat (g)',
+    id: 'fat', numeric: true, disablePadding: false, label: 'متن کاربر',
   },
   {
-    id: 'carbs', numeric: true, disablePadding: false, label: 'Carbs (g)',
+    id: 'carbs', numeric: true, disablePadding: false, label: 'تاریخ',
   },
   {
-    id: 'protein', numeric: true, disablePadding: false, label: 'Protein (g)',
+    id: 'protein', numeric: true, disablePadding: false, label: 'تعداد لایک',
+  },
+  {
+    id: 'protein', numeric: true, disablePadding: false, label: 'عملیات',
+  },
+  {
+    id: 'protein', numeric: true, disablePadding: false, label: 'وضعیت',
   },
 ];
 
@@ -46,7 +52,7 @@ export default class MatTableHead extends PureComponent {
     return (
       <TableHead>
         <TableRow>
-          <TableCell padding="checkbox">
+          <TableCell padding="checkbox" className="material-table__cell">
             <Checkbox
               className={`material-table__checkbox ${numSelected === rowCount && 'material-table__checkbox--checked'}`}
               indeterminate={numSelected > 0 && numSelected < rowCount}
@@ -56,7 +62,7 @@ export default class MatTableHead extends PureComponent {
           </TableCell>
           {rows.map(row => (
             <TableCell
-              className="material-table__cell material-table__cell--sort"
+              className="material-table__cell material-table__cell--sort mattabfarsi"
               key={row.id}
               numeric={row.numeric}
               padding={row.disablePadding ? 'none' : 'default'}
