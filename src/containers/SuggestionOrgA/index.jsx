@@ -1,17 +1,18 @@
 import React from 'react';
-import { Col, Container, Row, Card, CardBody } from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
 import MatTable from './components/MatTable';
+import HeadFilter from './components/HeadFilter';
+
+const showres = (values) => {
+  console.log(values);
+};
 
 const MaterialTable = () => (
   <Container>
     <Row>
       <Col md={12}>
         <div>
-          <Card>
-            <CardBody>
-              <p>Hi THere</p>
-            </CardBody>
-          </Card>
+          <HeadFilter onSubmit={showres} />
         </div>
       </Col>
     </Row>
