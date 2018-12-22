@@ -47,13 +47,12 @@ class MatTableFilterButton extends React.Component {
           onClose={this.handleClose}
           className="material-table__filter-menu"
         >
-          <MenuItem onClick={this.handleSort('name')} className="material-table__filter-menu-item">Name</MenuItem>
-          <MenuItem onClick={this.handleSort('calories')} className="material-table__filter-menu-item">
-            Calories
+          <MenuItem className="material-table__filter-menu-item">
+            پاک کردن فیلتر ها
           </MenuItem>
-          <MenuItem onClick={this.handleSort('fat')} className="material-table__filter-menu-item">Fat</MenuItem>
-          <MenuItem onClick={this.handleSort('carbs')} className="material-table__filter-menu-item">Carbs</MenuItem>
-          <MenuItem onClick={this.handleSort('protein')} className="material-table__filter-menu-item">Protein</MenuItem>
+          <MenuItem className="material-table__filter-menu-item">
+            بارگزاری مجدد از سرور
+          </MenuItem>
         </Menu>
       </div>
     );
