@@ -4,7 +4,7 @@ import MainWrapper from './MainWrapper';
 // orgA
 import LoginOrgA from '../LogInOrgA';
 import OrgALayout from '../OrgALayout/index';
-import AlirezaTableOrgA from '../AlirezaTableOrgA';
+import SuggestionOrgA from '../SuggestionOrgA';
 // orgA
 import LoginOrgB from '../LogInOrgB';
 import Protected from 'Root/shared/components/Protected';
@@ -15,7 +15,7 @@ import LoginOrgD from '../LogInOrgD';
 
 const Pages = () => (
   <Switch>
-    <Route path="/orgA/yechizi" component={AlirezaTableOrgA} />
+    <Route path="/orgA/suggestion" component={SuggestionOrgA} />
   </Switch>
 );
 
