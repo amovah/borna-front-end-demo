@@ -4,6 +4,7 @@ import MainWrapper from './MainWrapper';
 // orgA
 import LoginOrgA from '../LogInOrgA';
 import OrgALayout from '../OrgALayout/index';
+import AlirezaTableOrgA from '../AlirezaTableOrgA';
 // orgA
 import LoginOrgB from '../LogInOrgB';
 import Protected from 'Root/shared/components/Protected';
@@ -11,13 +12,10 @@ import Protected from 'Root/shared/components/Protected';
 import LoginOrgC from '../LogInOrgC';
 // orgA
 import LoginOrgD from '../LogInOrgD';
-import ExamplePageOne from '../Example/index';
-import ExamplePageTwo from '../ExampleTwo/index';
 
 const Pages = () => (
   <Switch>
-    <Route path="/pages/one" component={ExamplePageOne} />
-    <Route path="/pages/two" component={ExamplePageTwo} />
+    <Route path="/orgA/yechizi" component={AlirezaTableOrgA} />
   </Switch>
 );
 
