@@ -7,5 +7,5 @@ export default () => {
     type: types.user.LOGIN,
   });
 
-  history.push('/orgA');
+  history.push('/orgA/yechizi');
 };

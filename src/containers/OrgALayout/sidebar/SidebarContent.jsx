@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SidebarLink from './SidebarLink';
-import SidebarCategory from './SidebarCategory';
+// import SidebarCategory from './SidebarCategory';
 
 class SidebarContent extends Component {
   static propTypes = {
@@ -16,10 +16,11 @@ class SidebarContent extends Component {
     return (
       <div className="sidebar__content">
         <ul className="sidebar__block">
-          <SidebarCategory title="صفحه ها" icon="diamond">
+          <SidebarLink title="علیرضا" route="/orgA/yechizi" onClick={this.hideSidebar} />
+          {/* <SidebarCategory title="صفحه ها" icon="diamond">
             <SidebarLink title="صفح" route="/pages/one" onClick={this.hideSidebar} />
             <SidebarLink title="صفح" route="/pages/one" onClick={this.hideSidebar} />
-          </SidebarCategory>
+          </SidebarCategory> */}
         </ul>
       </div>
     );
