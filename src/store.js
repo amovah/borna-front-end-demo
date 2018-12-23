@@ -4,7 +4,7 @@ import {
   sidebarReducer,
   themeReducer,
   userReducer,
-  orgASuggestion,
+  suggestionOrgA,
 } from 'Root/redux/reducers/index';
 
 const reducer = combineReducers({
@@ -12,7 +12,7 @@ const reducer = combineReducers({
   theme: themeReducer,
   sidebar: sidebarReducer,
   user: userReducer,
-  orgASuggestion,
+  suggestionOrgA,
 });
 
 const store = createStore(reducer);

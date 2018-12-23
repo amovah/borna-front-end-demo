@@ -8,25 +8,25 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 
 const rows = [
   {
-    id: 'name', numeric: false, disablePadding: true, label: 'ردیف',
+    id: 'radif', disablePadding: true, label: 'ردیف',
   },
   {
-    id: 'calories', numeric: true, disablePadding: false, label: 'اسم و فامیل کاربر',
+    id: 'name', disablePadding: false, label: 'اسم و فامیل کاربر',
   },
   {
-    id: 'fat', numeric: true, disablePadding: false, label: 'متن کاربر',
+    id: 'text', disablePadding: false, label: 'متن کاربر',
   },
   {
-    id: 'carbs', numeric: true, disablePadding: false, label: 'تاریخ',
+    id: 'status', disablePadding: false, label: 'وضعیت',
   },
   {
-    id: 'protein', numeric: true, disablePadding: false, label: 'تعداد لایک',
+    id: 'date', disablePadding: false, label: 'تاریخ',
   },
   {
-    id: 'protein', numeric: true, disablePadding: false, label: 'عملیات',
+    id: 'likes', disablePadding: false, label: 'تعداد لایک',
   },
   {
-    id: 'protein', numeric: true, disablePadding: false, label: 'وضعیت',
+    id: 'actions', disablePadding: false, label: 'عملیات',
   },
 ];
 

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Card, CardBody, Col } from 'reactstrap';
+import { Card, CardBody, Col, Button } from 'reactstrap';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -8,16 +8,11 @@ import TableRow from '@material-ui/core/TableRow';
 import Checkbox from '@material-ui/core/Checkbox';
 import MatTableHead from './MatTableHead';
 import MatTableToolbar from './MatTableToolbar';
+import { connect } from 'react-redux';
+import moment from 'Root/moment';
+import { enToFa } from 'Root/mapper';
 
 let counter = 0;
-
-function createData(name, calories, fat, carbs, protein) {
-  counter += 1;
-  return {
-    id: counter, name, calories, fat, carbs, protein,
-  };
-}
-
 function getSorting(order, orderBy) {
   return order === 'desc' ? (a, b) => b[orderBy] - a[orderBy] : (a, b) => a[orderBy] - b[orderBy];
 }
@@ -30,26 +25,11 @@ const labelOfFuck = ({ from, to, count }) => {
   return `${fromA}-${toA} از ${countA}`;
 };
 
-export default class MatTable extends PureComponent {
+class MatTable extends PureComponent {
   state = {
     order: 'asc',
     orderBy: 'calories',
     selected: [],
-    data: [
-      createData('کاپ کیک', 305, 3.7, 67, 4.3),
-      createData('Donut', 452, 25.0, 51, 4.9),
-      createData('Eclair', 262, 16.0, 24, 6.0),
-      createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-      createData('Gingerbread', 356, 16.0, 49, 3.9),
-      createData('Honeycomb', 408, 3.2, 87, 6.5),
-      createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-      createData('Jelly Bean', 375, 0.0, 94, 0.0),
-      createData('KitKat', 518, 26.0, 65, 7.0),
-      createData('Lollipop', 392, 0.2, 98, 0.0),
-      createData('Marshmallow', 318, 0, 81, 2.0),
-      createData('Nougat', 360, 19.0, 9, 37.0),
-      createData('Oreo', 437, 18.0, 63, 4.0),
-    ],
     page: 0,
     rowsPerPage: 5,
   };
@@ -64,8 +44,9 @@ export default class MatTable extends PureComponent {
   };
 
   handleSelectAllClick = (event, checked) => {
+    const { data } = this.props;
     if (checked) {
-      this.setState(state => ({ selected: state.data.map(n => n.id) }));
+      this.setState(() => ({ selected: data.map(n => n.id) }));
       return;
     }
     this.setState({ selected: [] });
@@ -101,22 +82,15 @@ export default class MatTable extends PureComponent {
   };
 
   handleDeleteSelected = () => {
-    let copyData = [...this.state.data];
-    const { selected } = this.state;
-
-    for (let i = 0; i < selected.length; i += 1) {
-      copyData = copyData.filter(obj => obj.id !== selected[i]);
-    }
-
-    this.setState({ data: copyData, selected: [] });
   };
 
   isSelected = id => this.state.selected.indexOf(id) !== -1;
 
   render() {
     const {
-      data, order, orderBy, selected, rowsPerPage, page,
+      order, orderBy, selected, rowsPerPage, page,
     } = this.state;
+    const data = this.props.suggestions;
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - (page * rowsPerPage));
 
     return (
@@ -147,6 +121,7 @@ export default class MatTable extends PureComponent {
                     .slice(page * rowsPerPage, (page * rowsPerPage) + rowsPerPage)
                     .map((d) => {
                       const isSelected = this.isSelected(d.id);
+                      counter += 1;
                       return (
                         <TableRow
                           className="material-table__row"
@@ -166,31 +141,53 @@ export default class MatTable extends PureComponent {
                             scope="row"
                             padding="none"
                           >
-                            {d.name}
+                            {counter.toLocaleString('fa')}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
-                            numeric
                           >
-                            {d.calories}
+                            {`${d.firstname} ${d.lastname}`}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
-                            numeric
                           >
-                            {d.fat}
+                            {d.suggestion.text}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
-                            numeric
                           >
-                            {d.carbs}
+                            {
+                              d.suggestion.status === 'در حال نمایش' ?
+                                <span className="mattabbadge-green">
+                                  {d.suggestion.status}
+                                </span> :
+                                <span className="mattabbadge-red">
+                                  {d.suggestion.status}
+                                </span>
+                            }
+                          </TableCell>
+                          <TableCell
+                            className="material-table__cell material-table__cell mattabfarsi mattabltr"
+                          >
+                            {enToFa(moment(d.suggestion.date).format('jYYYY/jM/dddd'))}
+                          </TableCell>
+                          <TableCell
+                            className="material-table__cell material-table__cell mattabfarsi mattabcenter"
+                          >
+                            {enToFa(d.suggestion.likes.toString())}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
-                            numeric
                           >
-                            {d.protein}
+                            {
+                              d.suggestion.status === 'در حال نمایش' ?
+                                <Button color="danger" className="mattabbtn">
+                                  گزارش
+                                </Button> :
+                                <Button color="success" className="mattabbtn">
+                                  نمایش
+                                </Button>
+                            }
                           </TableCell>
                         </TableRow>
                       );
@@ -223,3 +220,7 @@ export default class MatTable extends PureComponent {
     );
   }
 }
+
+export default connect(state => ({
+  suggestions: state.suggestionOrgA,
+}))(MatTable);
