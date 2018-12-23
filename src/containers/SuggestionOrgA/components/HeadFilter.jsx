@@ -19,6 +19,9 @@ class Form extends PureComponent {
     return (
       <Card className="headfilterRTL">
         <CardBody>
+          <h3 className="filterTitle">
+            فیلتر:
+          </h3>
           <form className="form form--vertical widthsad" onSubmit={this.props.handleSubmit}>
             <Row>
               <Col xs="4">
@@ -74,8 +77,8 @@ class Form extends PureComponent {
                     <Field
                       name="endDate"
                       component={renderField}
-                      type="text"
                       mask={[/[0-3]/, /\d/, '-', /[0-1]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                      type="text"
                     />
                   </div>
                 </div>
