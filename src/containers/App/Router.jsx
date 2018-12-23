@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import MainWrapper from './MainWrapper';
 // orgA
 import LoginOrgA from '../LogInOrgA';
-import OrgALayout from '../OrgALayout/index';
+import LayoutOrgA from '../LayoutOrgA/index';
 import SuggestionOrgA from '../SuggestionOrgA';
 // orgA
 import LoginOrgB from '../LogInOrgB';
@@ -22,7 +22,7 @@ const Pages = () => (
 const orgA = () => (
   <Protected>
     <div>
-      <OrgALayout />
+      <LayoutOrgA />
       <div className="container__wrap">
         <Route path="/orgA" component={Pages} />
       </div>
