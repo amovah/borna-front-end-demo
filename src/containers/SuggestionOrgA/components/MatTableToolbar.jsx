@@ -10,8 +10,8 @@ const MatTableToolbar = ({ numSelected, handleDeleteSelected, onRequestSort }) =
     <Toolbar className="material-table__toolbar">
       <div>
         {numSelected > 0 && (
-        <h5 className="material-table__toolbar-selected">{numSelected} <span>selected</span></h5>
-            )}
+          <h5 className="material-table__toolbar-selected">{numSelected} <span>انتخاب شده</span></h5>
+        )}
       </div>
       <div>
         {numSelected > 0 ? (

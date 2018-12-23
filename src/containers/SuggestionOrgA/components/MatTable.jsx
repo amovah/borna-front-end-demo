@@ -43,9 +43,9 @@ class MatTable extends PureComponent {
   };
 
   handleSelectAllClick = (event, checked) => {
-    const { data } = this.props;
+    const { suggestions } = this.props;
     if (checked) {
-      this.setState(() => ({ selected: data.map(n => n.id) }));
+      this.setState(() => ({ selected: suggestions.map(n => n.id) }));
       return;
     }
     this.setState({ selected: [] });
