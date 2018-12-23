@@ -4,15 +4,10 @@ import {
   Field,
   reduxForm,
 } from 'redux-form';
-import MaskedInput from 'react-text-mask';
 import renderMultiSelectField from 'Root/shared/components/form/MultiSelect';
-// import renderCheckBoxField from 'Root/shared/components/form/CheckBox';
-
-const renderField = ({
-  input, placeholder, type, mask,
-}) => (
-  <MaskedInput {...input} placeholder={placeholder} type={type} mask={mask} />
-);
+import InputNumber from 'Root/shared/components/mine/InputNumber';
+import DateMask from 'Root/shared/components/mine/DateMask';
+import { enToFa } from 'Root/mapper';
 
 class Form extends PureComponent {
   render() {
@@ -62,9 +57,9 @@ class Form extends PureComponent {
                   <div className="form__form-group-field">
                     <Field
                       name="startDate"
-                      component={renderField}
+                      component={DateMask}
                       type="text"
-                      mask={[/\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                      mask={[/[۰-۳]/, /[۰-۹]/, '-', /[۰-۱]/, /[۰-۹]/, '-', /[۰-۹]/, /[۰-۹]/, /[۰-۹]/, /[۰-۹]/]}
                     />
                   </div>
                 </div>
@@ -76,8 +71,8 @@ class Form extends PureComponent {
                   <div className="form__form-group-field">
                     <Field
                       name="endDate"
-                      component={renderField}
-                      mask={[/[0-3]/, /\d/, '-', /[0-1]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                      component={DateMask}
+                      mask={[/[۰-۳]/, /[۰-۹]/, '-', /[۰-۱]/, /[۰-۹]/, '-', /[۰-۹]/, /[۰-۹]/, /[۰-۹]/, /[۰-۹]/]}
                       type="text"
                     />
                   </div>
@@ -100,8 +95,7 @@ class Form extends PureComponent {
                   <div className="form__form-group-field">
                     <Field
                       name="startLike"
-                      component="input"
-                      type="number"
+                      component={InputNumber}
                     />
                   </div>
                 </div>
@@ -112,8 +106,7 @@ class Form extends PureComponent {
                   <div className="form__form-group-field">
                     <Field
                       name="endLike"
-                      component="input"
-                      type="number"
+                      component={InputNumber}
                     />
                   </div>
                 </div>
