@@ -1,8 +1,12 @@
 /* eslint-disable no-param-reassign */
 import React, { PureComponent } from 'react';
-import DatePicker from 'react-datepicker';
-import MinusIcon from 'mdi-react/MinusIcon';
+import { DateRangePicker } from 'react-advance-jalaali-datepicker';
+// import MinusIcon from 'mdi-react/MinusIcon';
 import PropTypes from 'prop-types';
+
+// function DatePickerInput(props) {
+//   return <input className="popo" {...props} />;
+// }
 
 class IntervalDatePickerField extends PureComponent {
   static propTypes = {
@@ -12,11 +16,12 @@ class IntervalDatePickerField extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      startDate: null,
+      startDate: '5',
       endDate: null,
     };
     this.handleChange = this.handleChange.bind(this);
   }
+
 
   handleChange({ startDate, endDate }) {
     startDate = startDate || this.state.startDate;
@@ -37,17 +42,17 @@ class IntervalDatePickerField extends PureComponent {
   render() {
     return (
       <div className="date-picker date-picker--interval">
-        <DatePicker
-          selected={this.state.startDate}
-          selectsStart
-          startDate={this.state.startDate}
-          endDate={this.state.endDate}
-          onChange={this.handleChangeStart}
-          dateFormat="LL"
-          placeholderText="From"
+        <DateRangePicker
+          placeholderStart="تاریخ شروع"
+          placeholderEnd="تاریخ پایان"
+          format="jYYYY/jMM/jDD"
+          onChangeStart={this.change}
+          onChangeEnd={this.changeTimeDate}
+          idStart="rangePickerStart"
+          idEnd="rangePickerEnd"
         />
-        <MinusIcon className="date-picker__svg" />
-        <DatePicker
+        {/* <MinusIcon className="date-picker__svg" />
+          <DatePicker
           selected={this.state.endDate}
           selectsEnd
           startDate={this.state.startDate}
@@ -55,7 +60,7 @@ class IntervalDatePickerField extends PureComponent {
           onChange={this.handleChangeEnd}
           dateFormat="LL"
           placeholderText="To"
-        />
+        /> */}
       </div>
     );
   }
