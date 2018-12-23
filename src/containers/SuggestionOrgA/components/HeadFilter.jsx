@@ -3,13 +3,21 @@ import { Row, Col, Card, CardBody } from 'reactstrap';
 import {
   Field,
   reduxForm,
+  reset,
 } from 'redux-form';
+import store from 'Root/store';
 import renderMultiSelectField from 'Root/shared/components/form/MultiSelect';
 import InputNumber from 'Root/shared/components/mine/InputNumber';
 import DateMask from 'Root/shared/components/mine/DateMask';
 import { enToFa } from 'Root/mapper';
 
+const regex = [/[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/, '/', /[۰-۱]|[0-1]/, /[۰-۹]|[0-9]/, '/', /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/]; // eslint-disable-line
+
 class Form extends PureComponent {
+  clearFields = () => {
+    store.dispatch(reset('suggestionOrgA'));
+  }
+
   render() {
     return (
       <Card className="headfilterRTL">
@@ -30,7 +38,7 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Field
-                      name="multi_select"
+                      name="status"
                       component={renderMultiSelectField}
                       options={[
                         { value: 'one', label: 'One' },
@@ -59,7 +67,7 @@ class Form extends PureComponent {
                       name="startDate"
                       component={DateMask}
                       type="text"
-                      mask={[/[۰-۳]/, /[۰-۹]/, '-', /[۰-۱]/, /[۰-۹]/, '-', /[۰-۹]/, /[۰-۹]/, /[۰-۹]/, /[۰-۹]/]}
+                      mask={regex}
                     />
                   </div>
                 </div>
@@ -72,7 +80,7 @@ class Form extends PureComponent {
                     <Field
                       name="endDate"
                       component={DateMask}
-                      mask={[/[۰-۳]/, /[۰-۹]/, '-', /[۰-۱]/, /[۰-۹]/, '-', /[۰-۹]/, /[۰-۹]/, /[۰-۹]/, /[۰-۹]/]}
+                      mask={regex}
                       type="text"
                     />
                   </div>
@@ -112,9 +120,14 @@ class Form extends PureComponent {
                 </div>
               </Col>
             </Row>
-            <button className="btn btn-primary">
-              ثبت فیلتر
-            </button>
+            <div className="liButtonGroup">
+              <button className="btn btn-primary">
+                ثبت فیلتر
+              </button>
+              <button className="btn btn-secondary" onClick={this.clearFields}>
+                پاک کردن فیلتر ها
+              </button>
+            </div>
           </form>
         </CardBody>
       </Card>
