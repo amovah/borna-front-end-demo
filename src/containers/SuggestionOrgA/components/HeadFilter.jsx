@@ -36,11 +36,11 @@ class Form extends PureComponent {
                   </div>
                 </div>
                 <div className="form__form-group">
-                  <span className="form__form-group-label">
-                    شروع
-                    (روز-ماه-سال)
-                  </span>
                   <div className="form__form-group-field">
+                    <span className="form__form-group-label headFilterBreak">
+                      شروع
+                      (روز-ماه-سال)
+                    </span>
                     <Field
                       name="startDate"
                       component={DateMask}
@@ -50,11 +50,11 @@ class Form extends PureComponent {
                   </div>
                 </div>
                 <div className="form__form-group">
-                  <span className="form__form-group-label">
-                    پایان
-                    (روز-ماه-سال)
-                  </span>
                   <div className="form__form-group-field">
+                    <span className="form__form-group-label headFilterBreak">
+                      پایان
+                      (روز-ماه-سال)
+                    </span>
                     <Field
                       name="endDate"
                       component={DateMask}
@@ -75,10 +75,10 @@ class Form extends PureComponent {
                   </div>
                 </div>
                 <div className="form__form-group">
-                  <span className="form__form-group-label">
-                    شروع
-                  </span>
                   <div className="form__form-group-field">
+                    <span className="form__form-group-label headFilterBreak">
+                      شروع
+                    </span>
                     <Field
                       name="startLike"
                       component={InputNumber}
@@ -86,10 +86,10 @@ class Form extends PureComponent {
                   </div>
                 </div>
                 <div className="form__form-group">
-                  <span className="form__form-group-label">
-                    پایان
-                  </span>
                   <div className="form__form-group-field">
+                    <span className="form__form-group-label headFilterBreak">
+                      پایان
+                    </span>
                     <Field
                       name="endLike"
                       component={InputNumber}

@@ -169,7 +169,7 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabltr"
                           >
-                            {enToFa(moment(d.suggestion.date).format('jYYYY/jM/dddd'))}
+                            {enToFa(moment(d.suggestion.date).format('jYYYY/jM/D HH:mm'))}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabcenter"
