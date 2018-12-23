@@ -124,17 +124,17 @@ class Form extends PureComponent {
                     />
                   </div>
                 </div>
+                <div className="liButtonGroup">
+                  <button className="btn btn-primary">
+                    ثبت فیلتر
+                  </button>
+                  <button className="btn btn-secondary" onClick={this.clearFields}>
+                    پاک کردن فیلتر ها
+                  </button>
+                </div>
               </Col>
-
             </Row>
-            <div className="liButtonGroup">
-              <button className="btn btn-primary">
-                ثبت فیلتر
-              </button>
-              <button className="btn btn-secondary" onClick={this.clearFields}>
-                پاک کردن فیلتر ها
-              </button>
-            </div>
+
           </form>
         </CardBody>
       </Card>

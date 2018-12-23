@@ -12,7 +12,6 @@ import { connect } from 'react-redux';
 import moment from 'Root/moment';
 import { enToFa } from 'Root/mapper';
 
-let counter = 0;
 function getSorting(order, orderBy) {
   return order === 'desc' ? (a, b) => b[orderBy] - a[orderBy] : (a, b) => a[orderBy] - b[orderBy];
 }
@@ -91,6 +90,7 @@ class MatTable extends PureComponent {
       order, orderBy, selected, rowsPerPage, page,
     } = this.state;
     const data = this.props.suggestions;
+    let counter = page * rowsPerPage;
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - (page * rowsPerPage));
 
     return (
