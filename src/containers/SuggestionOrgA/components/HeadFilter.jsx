@@ -31,28 +31,6 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <p>
-                      وضعیت:
-                    </p>
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <Field
-                      name="status"
-                      component={renderMultiSelectField}
-                      options={[
-                        { value: 'one', label: 'One' },
-                        { value: 'two', label: 'Two' },
-                      ]}
-                    />
-                  </div>
-                </div>
-              </Col>
-
-              <Col xs="4">
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <p>
                       تاریخ:
                     </p>
                   </div>
@@ -119,6 +97,35 @@ class Form extends PureComponent {
                   </div>
                 </div>
               </Col>
+
+              <Col xs="4">
+                <div className="form__form-group">
+                  <div className="form__form-group-field">
+                    <p>
+                      وضعیت:
+                    </p>
+                  </div>
+                </div>
+                <div className="form__form-group">
+                  <div className="form__form-group-field">
+                    <Field
+                      name="status"
+                      component={renderMultiSelectField}
+                      options={[
+                        {
+                          value: 'در حال نمایش',
+                          label: 'در حال نمایش',
+                        },
+                        {
+                          value: 'گزارش شده',
+                          label: 'گزارش شده',
+                        },
+                      ]}
+                    />
+                  </div>
+                </div>
+              </Col>
+
             </Row>
             <div className="liButtonGroup">
               <button className="btn btn-primary">
