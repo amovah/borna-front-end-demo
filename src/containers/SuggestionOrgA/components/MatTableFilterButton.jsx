@@ -48,9 +48,6 @@ class MatTableFilterButton extends React.Component {
           className="material-table__filter-menu"
         >
           <MenuItem className="material-table__filter-menu-item">
-            پاک کردن فیلتر ها
-          </MenuItem>
-          <MenuItem className="material-table__filter-menu-item">
             بارگزاری مجدد از سرور
           </MenuItem>
         </Menu>
