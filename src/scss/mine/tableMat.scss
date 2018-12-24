@@ -63,3 +63,21 @@
   word-break: keep-all;
   margin-left: 10px;
 }
+
+.gentokenshitty {
+  padding-top: 35px;
+}
+
+.rightaligngen {
+  text-align: right;
+}
+
+.genrefreshbut {
+  // padding: 10px;
+  border-radius: 100%;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: #f1f1f1;
+  }
+}
