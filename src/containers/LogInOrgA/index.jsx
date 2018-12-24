@@ -1,6 +1,6 @@
 import React from 'react';
 import LogInForm from './components/LogInForm';
-import loginAction from 'Root/redux/actions/userOrgA/loginOrgA';
+import loginAction from 'Root/redux/actions/userOrgA/login';
 
 const onSubmit = (values) => {
   loginAction(values);

@@ -10,12 +10,20 @@ import ProtectedOrgA from 'Root/shared/components/ProtectedOrgA';
 import LoginOrgB from '../LogInOrgB';
 // orgA
 import LoginOrgC from '../LogInOrgC';
+import LayoutOrgC from '../LayoutOrgC/index';
+import ProtectedOrgC from 'Root/shared/components/ProtectedOrgC';
 // orgA
 import LoginOrgD from '../LogInOrgD';
 
-const Pages = () => (
+const PagesOrgA = () => (
   <Switch>
     <Route path="/orgA/suggestion" component={SuggestionOrgA} />
+  </Switch>
+);
+
+const PagesOrgC = () => (
+  <Switch>
+    <Route path="/orgC/suggestion" component={SuggestionOrgA} />
   </Switch>
 );
 
@@ -24,10 +32,21 @@ const orgA = () => (
     <div>
       <LayoutOrgA />
       <div className="container__wrap">
-        <Route path="/orgA" component={Pages} />
+        <Route path="/orgA" component={PagesOrgA} />
       </div>
     </div>
   </ProtectedOrgA>
+);
+
+const orgC = () => (
+  <ProtectedOrgC>
+    <div>
+      <LayoutOrgC />
+      <div className="container__wrap">
+        <Route path="/orgC" component={PagesOrgC} />
+      </div>
+    </div>
+  </ProtectedOrgC>
 );
 
 const Router = () => (
@@ -39,6 +58,7 @@ const Router = () => (
         <Route exact path="/login/orgC" component={LoginOrgC} />
         <Route exact path="/login/orgD" component={LoginOrgD} />
         <Route path="/orgA" component={orgA} />
+        <Route path="/orgC" component={orgC} />
       </Switch>
     </main>
   </MainWrapper>

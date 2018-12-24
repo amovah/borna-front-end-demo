@@ -6,6 +6,7 @@ import {
   userOrgA,
   suggestionOrgA,
   progressing,
+  userOrgC,
 } from 'Root/redux/reducers/index';
 
 const reducer = combineReducers({
@@ -15,6 +16,7 @@ const reducer = combineReducers({
   userOrgA,
   suggestionOrgA,
   progressing,
+  userOrgC,
 });
 
 const store = createStore(reducer);

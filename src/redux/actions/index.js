@@ -9,4 +9,7 @@ export default {
     START: 'progressing/START',
     STOP: 'progressing/STOP',
   },
+  userOrgC: {
+    LOGIN: 'userOrgC/LOGIN',
+  },
 };

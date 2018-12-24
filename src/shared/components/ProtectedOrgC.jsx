@@ -15,5 +15,5 @@ const ProtectedRoute = (props) => {
 };
 
 export default connect(state => ({
-  logged: state.user.logged,
+  logged: state.userOrgC.logged,
 }))(ProtectedRoute);

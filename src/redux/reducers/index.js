@@ -1,6 +1,7 @@
 import themeReducer from './themeReducer';
 import sidebarReducer from './sidebarReducer';
 import userOrgA from './userOrgA';
+import userOrgC from './userOrgC';
 import suggestionOrgA from './suggestionOrgA';
 import progressing from './progressing';
 
@@ -10,4 +11,5 @@ export {
   userOrgA,
   suggestionOrgA,
   progressing,
+  userOrgC,
 };
