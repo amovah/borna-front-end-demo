@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ThemeProps } from '../../shared/prop-types/ReducerProps';
+import Progress from 'Root/containers/Progress';
 
 class MainWrapper extends PureComponent {
   static propTypes = {
@@ -14,6 +15,7 @@ class MainWrapper extends PureComponent {
 
     return (
       <div className={theme.className}>
+        <Progress />
         <div className="wrapper">
           {this.props.children}
         </div>

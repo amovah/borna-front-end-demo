@@ -5,6 +5,7 @@ import {
   themeReducer,
   userReducer,
   suggestionOrgA,
+  progressing,
 } from 'Root/redux/reducers/index';
 
 const reducer = combineReducers({
@@ -13,6 +14,7 @@ const reducer = combineReducers({
   sidebar: sidebarReducer,
   user: userReducer,
   suggestionOrgA,
+  progressing,
 });
 
 const store = createStore(reducer);

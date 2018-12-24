@@ -11,7 +11,7 @@ const rows = [
     id: 'radif', disablePadding: true, label: 'ردیف',
   },
   {
-    id: 'name', disablePadding: false, label: 'اسم و فامیل کاربر',
+    id: 'name', disablePadding: false, label: 'اسم و فامیل کاربر  ',
   },
   {
     id: 'text', disablePadding: false, label: 'متن کاربر',
