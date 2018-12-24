@@ -3,7 +3,8 @@ import { enToFa, faToEn } from 'Root/mapper';
 
 export default class extends PureComponent {
   handleKey = (event) => {
-    this.props.input.onChange(enToFa(event.target.value));
+    const shit = event.target.value.split('').filter(i => (/\d/).test(faToEn(i))).join('');
+    this.props.input.onChange(enToFa(shit));
   }
 
   render() {
@@ -14,6 +15,7 @@ export default class extends PureComponent {
       <input
         type="text"
         onChange={this.handleKey}
+        onKeyPress={this.keyPress}
         value={value}
       />
     );

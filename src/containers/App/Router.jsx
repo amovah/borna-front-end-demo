@@ -12,6 +12,7 @@ import LoginOrgB from '../LogInOrgB';
 import LoginOrgC from '../LogInOrgC';
 import LayoutOrgC from '../LayoutOrgC/index';
 import ProtectedOrgC from 'Root/shared/components/ProtectedOrgC';
+import GenerateTokenOrgC from '../GenerateTokenOrgC';
 // orgA
 import LoginOrgD from '../LogInOrgD';
 
@@ -23,7 +24,7 @@ const PagesOrgA = () => (
 
 const PagesOrgC = () => (
   <Switch>
-    <Route path="/orgC/suggestion" component={SuggestionOrgA} />
+    <Route path="/orgC/generate-token" component={GenerateTokenOrgC} />
   </Switch>
 );
 

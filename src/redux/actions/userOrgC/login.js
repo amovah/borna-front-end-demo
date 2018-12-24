@@ -7,5 +7,5 @@ export default async () => {
     type: types.userOrgC.LOGIN,
   });
 
-  history.push('/orgC/suggestion');
+  history.push('/orgC/generate-token');
 };

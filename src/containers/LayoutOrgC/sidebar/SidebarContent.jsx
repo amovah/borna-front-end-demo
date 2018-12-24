@@ -16,7 +16,7 @@ class SidebarContent extends Component {
     return (
       <div className="sidebar__content">
         <ul className="sidebar__block">
-          <SidebarLink title="پنل کنترل نظرات" route="/orgA/suggestion" onClick={this.hideSidebar} />
+          <SidebarLink title="تولید توکن" route="/orgC/generate-token" />
           {/* <SidebarCategory title="صفحه ها" icon="diamond">
             <SidebarLink title="صفح" route="/pages/one" onClick={this.hideSidebar} />
             <SidebarLink title="صفح" route="/pages/one" onClick={this.hideSidebar} />
