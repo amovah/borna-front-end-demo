@@ -5,9 +5,9 @@ import MainWrapper from './MainWrapper';
 import LoginOrgA from '../LogInOrgA';
 import LayoutOrgA from '../LayoutOrgA/index';
 import SuggestionOrgA from '../SuggestionOrgA';
+import ProtectedOrgA from 'Root/shared/components/ProtectedOrgA';
 // orgA
 import LoginOrgB from '../LogInOrgB';
-import Protected from 'Root/shared/components/Protected';
 // orgA
 import LoginOrgC from '../LogInOrgC';
 // orgA
@@ -20,14 +20,14 @@ const Pages = () => (
 );
 
 const orgA = () => (
-  <Protected>
+  <ProtectedOrgA>
     <div>
       <LayoutOrgA />
       <div className="container__wrap">
         <Route path="/orgA" component={Pages} />
       </div>
     </div>
-  </Protected>
+  </ProtectedOrgA>
 );
 
 const Router = () => (
