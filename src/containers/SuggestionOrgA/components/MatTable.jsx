@@ -13,7 +13,39 @@ import moment from 'Root/moment';
 import { enToFa } from 'Root/mapper';
 
 function getSorting(order, orderBy) {
-  return order === 'desc' ? (a, b) => b[orderBy] - a[orderBy] : (a, b) => a[orderBy] - b[orderBy];
+  return (a, b) => {
+    let first = a;
+    let last = b;
+    if (order === 'desc') {
+      [last, first] = [first, last];
+    }
+
+    switch (orderBy) {
+      case 'name': {
+        return (first.firstname + first.lastname).localeCompare(last.firstname + last.lastname);
+      }
+
+      case 'text': {
+        return (first.suggestion.text).localeCompare(last.suggestion.text);
+      }
+
+      case 'status': {
+        return (first.suggestion.status).localeCompare(last.suggestion.status);
+      }
+
+      case 'date': {
+        return first.suggestion.date - last.suggestion.date;
+      }
+
+      case 'likes': {
+        return first.suggestion.likes - last.suggestion.likes;
+      }
+
+      default: {
+        return 0;
+      }
+    }
+  };
 }
 
 const labelOfFuck = ({ from, to, count }) => {
@@ -27,7 +59,7 @@ const labelOfFuck = ({ from, to, count }) => {
 class MatTable extends PureComponent {
   state = {
     order: 'asc',
-    orderBy: 'calories',
+    orderBy: 'radif',
     selected: [],
     page: 0,
     rowsPerPage: 5,
