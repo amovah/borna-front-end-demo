@@ -1,13 +1,13 @@
 import themeReducer from './themeReducer';
 import sidebarReducer from './sidebarReducer';
-import userReducer from './userReducer';
+import userOrgA from './userOrgA';
 import suggestionOrgA from './suggestionOrgA';
 import progressing from './progressing';
 
 export {
   themeReducer,
   sidebarReducer,
-  userReducer,
+  userOrgA,
   suggestionOrgA,
   progressing,
 };

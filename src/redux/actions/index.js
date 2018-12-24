@@ -1,6 +1,6 @@
 export default {
-  user: {
-    LOGIN: 'user/LOGIN',
+  userOrgA: {
+    LOGIN: 'userOrgA/LOGIN',
   },
   suggestionOrgA: {
     LOAD: 'suggestionOrgA/LOAD',

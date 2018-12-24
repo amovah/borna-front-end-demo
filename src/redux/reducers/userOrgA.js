@@ -6,7 +6,7 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case types.user.LOGIN: {
+    case types.userOrgA.LOGIN: {
       return {
         ...state,
         logged: true,

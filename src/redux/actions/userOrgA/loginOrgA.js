@@ -4,7 +4,7 @@ import history from 'Root/history';
 
 export default async () => {
   store.dispatch({
-    type: types.user.LOGIN,
+    type: types.userOrgA.LOGIN,
   });
 
   store.dispatch({

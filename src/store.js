@@ -3,7 +3,7 @@ import { reducer as reduxFormReducer } from 'redux-form';
 import {
   sidebarReducer,
   themeReducer,
-  userReducer,
+  userOrgA,
   suggestionOrgA,
   progressing,
 } from 'Root/redux/reducers/index';
@@ -12,7 +12,7 @@ const reducer = combineReducers({
   form: reduxFormReducer, // mounted under "form",
   theme: themeReducer,
   sidebar: sidebarReducer,
-  user: userReducer,
+  userOrgA,
   suggestionOrgA,
   progressing,
 });
