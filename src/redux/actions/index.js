@@ -15,4 +15,7 @@ export default {
   userOrgC: {
     LOGIN: 'userOrgC/LOGIN',
   },
+  tokensOrgC: {
+    LOAD: 'tokensOrgC/LOAD',
+  },
 };

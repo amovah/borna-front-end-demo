@@ -8,6 +8,7 @@ import {
   progressing,
   userOrgC,
   usersOrgC,
+  tokensOrgC,
 } from 'Root/redux/reducers/index';
 
 const reducer = combineReducers({
@@ -19,6 +20,7 @@ const reducer = combineReducers({
   progressing,
   userOrgC,
   usersOrgC,
+  tokensOrgC,
 });
 
 const store = createStore(reducer);

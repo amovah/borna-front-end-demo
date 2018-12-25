@@ -43,9 +43,9 @@ class MatTable extends PureComponent {
   };
 
   handleSelectAllClick = (event, checked) => {
-    const { suggestions } = this.props;
+    const { tokens } = this.props;
     if (checked) {
-      this.setState(() => ({ selected: suggestions.map(n => n.id) }));
+      this.setState(() => ({ selected: tokens.map(n => n.id) }));
       return;
     }
     this.setState({ selected: [] });
@@ -89,7 +89,7 @@ class MatTable extends PureComponent {
     const {
       order, orderBy, selected, rowsPerPage, page,
     } = this.state;
-    const data = this.props.suggestions;
+    const data = this.props.tokens;
     let counter = page * rowsPerPage;
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - (page * rowsPerPage));
 
@@ -146,48 +146,38 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${d.firstname} ${d.lastname}`}
-                          </TableCell>
-                          <TableCell
-                            className="material-table__cell material-table__cell mattabfarsi"
-                          >
-                            {d.suggestion.text}
-                          </TableCell>
-                          <TableCell
-                            className="material-table__cell material-table__cell mattabfarsi"
-                          >
-                            {
-                              d.suggestion.status === 'در حال نمایش' ?
-                                <span className="mattabbadge-green">
-                                  {d.suggestion.status}
-                                </span> :
-                                <span className="mattabbadge-red">
-                                  {d.suggestion.status}
-                                </span>
-                            }
+                            {`${d.destination.firstname} ${d.destination.lastname}`}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabltr"
                           >
-                            {enToFa(moment(d.suggestion.date).format('jYYYY/jM/D HH:mm'))}
+                            {enToFa(moment(d.date).format('jYYYY/jM/D HH:mm'))}
                           </TableCell>
                           <TableCell
-                            className="material-table__cell material-table__cell mattabfarsi mattabcenter"
+                            className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {enToFa(d.suggestion.likes.toString())}
+                            {d.amount.toLocaleString('fa')}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
                             {
-                              d.suggestion.status === 'در حال نمایش' ?
-                                <Button color="danger" className="mattabbtn">
-                                  گزارش
-                                </Button> :
-                                <Button color="success" className="mattabbtn">
-                                  نمایش
-                                </Button>
+                              d.status === 'موفقیت‌آمیز' ?
+                                <span className="mattabbadge-green">
+                                  {d.status}
+                                </span> :
+                                <span className="mattabbadge-red">
+                                  {d.status}
+                                </span>
                             }
+                          </TableCell>
+
+                          <TableCell
+                            className="material-table__cell material-table__cell mattabfarsi"
+                          >
+                            <Button color="primary" className="mattabbtn">
+                              نمایش کاربر
+                            </Button>
                           </TableCell>
                         </TableRow>
                       );
@@ -222,5 +212,5 @@ class MatTable extends PureComponent {
 }
 
 export default connect(state => ({
-  suggestions: state.suggestionOrgA,
+  tokens: state.tokensOrgC,
 }))(MatTable);
