@@ -13,7 +13,37 @@ import moment from 'Root/moment';
 import { enToFa } from 'Root/mapper';
 
 function getSorting(order, orderBy) {
-  return order === 'desc' ? (a, b) => b[orderBy] - a[orderBy] : (a, b) => a[orderBy] - b[orderBy];
+  return (a, b) => {
+    let first = b;
+    let last = a;
+    if (order === 'desc') {
+      [last, first] = [first, last];
+    }
+
+    switch (orderBy) {
+      case 'name': {
+        const fName = first.destination.firstname + first.destination.lastname;
+        const lName = last.destination.firstname + last.destination.lastname;
+        return fName.localeCompare(lName);
+      }
+
+      case 'status': {
+        return first.status.localeCompare(last.status);
+      }
+
+      case 'date': {
+        return first.date - last.date;
+      }
+
+      case 'amount': {
+        return first.amount - last.amount;
+      }
+
+      default: {
+        return 0;
+      }
+    }
+  };
 }
 
 const labelOfFuck = ({ from, to, count }) => {

@@ -17,7 +17,7 @@ const rows = [
     id: 'date', disablePadding: false, label: 'تاریخ',
   },
   {
-    id: 'text', disablePadding: false, label: 'مقدار',
+    id: 'amount', disablePadding: false, label: 'مقدار',
   },
   {
     id: 'status', disablePadding: false, label: 'وضعیت',
