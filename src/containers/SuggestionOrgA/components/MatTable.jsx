@@ -14,8 +14,8 @@ import { enToFa } from 'Root/mapper';
 
 function getSorting(order, orderBy) {
   return (a, b) => {
-    let first = a;
-    let last = b;
+    let first = b;
+    let last = a;
     if (order === 'desc') {
       [last, first] = [first, last];
     }
