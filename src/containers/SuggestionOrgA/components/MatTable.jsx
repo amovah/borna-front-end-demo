@@ -22,23 +22,25 @@ function getSorting(order, orderBy) {
 
     switch (orderBy) {
       case 'name': {
-        return (first.firstname + first.lastname).localeCompare(last.firstname + last.lastname);
+        const fName = first.creator.firstname + first.creator.lastname;
+        const lName = last.creator.firstname + last.creator.lastname;
+        return fName.localeCompare(lName);
       }
 
       case 'text': {
-        return (first.suggestion.text).localeCompare(last.suggestion.text);
+        return first.text.localeCompare(last.text);
       }
 
       case 'status': {
-        return (first.suggestion.status).localeCompare(last.suggestion.status);
+        return first.status.localeCompare(last.status);
       }
 
       case 'date': {
-        return first.suggestion.date - last.suggestion.date;
+        return first.date - last.date;
       }
 
       case 'likes': {
-        return first.suggestion.likes - last.suggestion.likes;
+        return first.likes - last.likes;
       }
 
       default: {
@@ -178,41 +180,41 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${d.firstname} ${d.lastname}`}
+                            {`${d.creator.firstname} ${d.creator.lastname}`}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {d.suggestion.text}
+                            {d.text}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
                             {
-                              d.suggestion.status === 'در حال نمایش' ?
+                              d.status === 'در حال نمایش' ?
                                 <span className="mattabbadge-green">
-                                  {d.suggestion.status}
+                                  {d.status}
                                 </span> :
                                 <span className="mattabbadge-red">
-                                  {d.suggestion.status}
+                                  {d.status}
                                 </span>
                             }
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabltr"
                           >
-                            {enToFa(moment(d.suggestion.date).format('jYYYY/jM/D HH:mm'))}
+                            {enToFa(moment(d.date).format('jYYYY/jM/D HH:mm'))}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabcenter"
                           >
-                            {enToFa(d.suggestion.likes.toString())}
+                            {d.likes.toLocaleString('fa')}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
                             {
-                              d.suggestion.status === 'در حال نمایش' ?
+                              d.status === 'در حال نمایش' ?
                                 <Button color="danger" className="mattabbtn">
                                   گزارش
                                 </Button> :
