@@ -5,6 +5,9 @@ export default {
   suggestionOrgA: {
     LOAD: 'suggestionOrgA/LOAD',
   },
+  usersOrgC: {
+    LOAD: 'usersOrgC/LOAD',
+  },
   progressing: {
     START: 'progressing/START',
     STOP: 'progressing/STOP',

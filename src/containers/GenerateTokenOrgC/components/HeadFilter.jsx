@@ -11,6 +11,7 @@ import InputNumber from 'Root/shared/components/mine/InputNumber';
 import DateMask from 'Root/shared/components/mine/DateMask';
 import { enToFa } from 'Root/mapper';
 import RefreshIcon from 'mdi-react/RefreshIcon';
+import { connect } from 'react-redux';
 
 const regex = [/[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/, '/', /[۰-۱]|[0-1]/, /[۰-۹]|[0-9]/, '/', /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/]; // eslint-disable-line
 
@@ -52,16 +53,10 @@ class Form extends PureComponent {
                     <Field
                       name="to"
                       component={renderMultiSelectField}
-                      options={[
-                        {
-                          value: 'در حال نمایش',
-                          label: 'در حال نمایش',
-                        },
-                        {
-                          value: 'گزارش شده',
-                          label: 'گزارش شده',
-                        },
-                      ]}
+                      options={this.props.users.map(i => ({
+                        value: i.id,
+                        label: `${i.firstname} ${i.lastname} ${i.nationalId}`,
+                      }))}
                     />
                   </div>
                 </div>
@@ -101,6 +96,8 @@ class Form extends PureComponent {
   }
 }
 
-export default reduxForm({
+export default connect(state => ({
+  users: state.usersOrgC,
+}))(reduxForm({
   form: 'generateTokenOrgC',
-})(Form);
+})(Form));

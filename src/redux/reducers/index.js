@@ -4,6 +4,7 @@ import userOrgA from './userOrgA';
 import userOrgC from './userOrgC';
 import suggestionOrgA from './suggestionOrgA';
 import progressing from './progressing';
+import usersOrgC from './usersOrgC';
 
 export {
   themeReducer,
@@ -12,4 +13,5 @@ export {
   suggestionOrgA,
   progressing,
   userOrgC,
+  usersOrgC,
 };

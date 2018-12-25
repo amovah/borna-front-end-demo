@@ -15,7 +15,6 @@ export default class extends PureComponent {
       <input
         type="text"
         onChange={this.handleKey}
-        onKeyPress={this.keyPress}
         value={value}
       />
     );
