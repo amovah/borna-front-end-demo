@@ -18,4 +18,7 @@ export default {
   tokensOrgC: {
     LOAD: 'tokensOrgC/LOAD',
   },
+  transactionsOrgC: {
+    LOAD: 'transactionsOrgC/LOAD',
+  },
 };
