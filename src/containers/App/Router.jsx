@@ -14,6 +14,7 @@ import LayoutOrgC from '../LayoutOrgC/index';
 import ProtectedOrgC from 'Root/shared/components/ProtectedOrgC';
 import GenerateTokenOrgC from '../GenerateTokenOrgC';
 import ReportGenTok from '../ReportGenTok';
+import ReportTransOrgC from '../ReportTransOrgC';
 // orgA
 import LoginOrgD from '../LogInOrgD';
 
@@ -27,6 +28,7 @@ const PagesOrgC = () => (
   <Switch>
     <Route path="/orgC/generate-token" component={GenerateTokenOrgC} />
     <Route path="/orgC/report-token-generation" component={ReportGenTok} />
+    <Route path="/orgC/report-transactions" component={ReportTransOrgC} />
   </Switch>
 );
 
