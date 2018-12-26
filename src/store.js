@@ -9,7 +9,7 @@ import {
   userOrgC,
   usersOrgC,
   tokensOrgC,
-  transactionOrgC,
+  transactionsOrgC,
 } from 'Root/redux/reducers/index';
 
 const reducer = combineReducers({
@@ -22,7 +22,7 @@ const reducer = combineReducers({
   userOrgC,
   usersOrgC,
   tokensOrgC,
-  transactionOrgC,
+  transactionsOrgC,
 });
 
 const store = createStore(reducer);
