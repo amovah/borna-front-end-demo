@@ -55,7 +55,7 @@ class Form extends PureComponent {
                       component={renderMultiSelectField}
                       options={this.props.users.map(i => ({
                         value: i.id,
-                        label: `${i.firstname} ${i.lastname} ${i.nationalId}`,
+                        label: `${i.firstname} ${i.lastname} ${enToFa(i.nationalId)}`,
                       }))}
                     />
                   </div>
