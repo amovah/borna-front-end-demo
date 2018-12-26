@@ -11,7 +11,10 @@ const rows = [
     id: 'radif', disablePadding: true, label: 'ردیف',
   },
   {
-    id: 'name', disablePadding: false, label: 'اسم و فامیل کاربر  ',
+    id: 'destination', disablePadding: false, label: 'اسم و فامیل کاربر مبدا',
+  },
+  {
+    id: 'source', disablePadding: false, label: 'اسم و فامیل کاربر مقصد',
   },
   {
     id: 'date', disablePadding: false, label: 'تاریخ',

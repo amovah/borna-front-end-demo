@@ -73,9 +73,9 @@ class MatTable extends PureComponent {
   };
 
   handleSelectAllClick = (event, checked) => {
-    const { tokens } = this.props;
+    const { transactions } = this.props;
     if (checked) {
-      this.setState(() => ({ selected: tokens.map(n => n.id) }));
+      this.setState(() => ({ selected: transactions.map(n => n.id) }));
       return;
     }
     this.setState({ selected: [] });
@@ -119,7 +119,7 @@ class MatTable extends PureComponent {
     const {
       order, orderBy, selected, rowsPerPage, page,
     } = this.state;
-    const data = this.props.tokens;
+    const data = this.props.transactions;
     let counter = page * rowsPerPage;
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - (page * rowsPerPage));
 
@@ -176,6 +176,11 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
+                            {`${d.source.firstname} ${d.source.lastname}`}
+                          </TableCell>
+                          <TableCell
+                            className="material-table__cell material-table__cell mattabfarsi"
+                          >
                             {`${d.destination.firstname} ${d.destination.lastname}`}
                           </TableCell>
                           <TableCell
@@ -203,10 +208,13 @@ class MatTable extends PureComponent {
                           </TableCell>
 
                           <TableCell
-                            className="material-table__cell material-table__cell mattabfarsi"
+                            className="material-table__cell material-table__cell mattabfarsi mattabbuts"
                           >
                             <Button color="primary" className="mattabbtn">
-                              نمایش کاربر
+                              نمایش کاربر مبدا
+                            </Button>
+                            <Button color="primary" className="mattabbtn">
+                              نمایش کاربر مقصد
                             </Button>
                           </TableCell>
                         </TableRow>
@@ -242,5 +250,5 @@ class MatTable extends PureComponent {
 }
 
 export default connect(state => ({
-  tokens: state.tokensOrgC,
+  transactions: state.transactionsOrgC,
 }))(MatTable);
