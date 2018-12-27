@@ -32,7 +32,7 @@ const PagesOrgC = () => (
   </Switch>
 );
 
-const orgA = () => (
+const OrgA = () => (
   <ProtectedOrgA>
     <div>
       <LayoutOrgA />
@@ -43,7 +43,7 @@ const orgA = () => (
   </ProtectedOrgA>
 );
 
-const orgC = () => (
+const OrgC = () => (
   <ProtectedOrgC>
     <div>
       <LayoutOrgC />
@@ -62,8 +62,8 @@ const Router = () => (
         <Route exact path="/login/orgB" component={LoginOrgB} />
         <Route exact path="/login/orgC" component={LoginOrgC} />
         <Route exact path="/login/orgD" component={LoginOrgD} />
-        <Route path="/orgA" component={orgA} />
-        <Route path="/orgC" component={orgC} />
+        <Route path="/orgA" component={OrgA} />
+        <Route path="/orgC" component={OrgC} />
       </Switch>
     </main>
   </MainWrapper>
