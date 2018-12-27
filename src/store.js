@@ -7,6 +7,7 @@ import {
   suggestionOrgA,
   progressing,
   userOrgC,
+  userOrgB,
   usersOrgC,
   tokensOrgC,
   transactionsOrgC,
@@ -23,6 +24,7 @@ const reducer = combineReducers({
   usersOrgC,
   tokensOrgC,
   transactionsOrgC,
+  userOrgB,
 });
 
 const store = createStore(reducer);
