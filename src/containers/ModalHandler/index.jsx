@@ -2,17 +2,17 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Modal, Button, ButtonToolbar } from 'reactstrap';
 import classNames from 'classnames';
+import closeModal from 'Root/redux/actions/modal/close';
 
 class ModalHandler extends PureComponent {
   toggle = () => {
-    console.log('toggle');
-    // store.dispatch(closeModal())
+    closeModal();
   }
 
   render() {
     if (this.props.modal.isOpen) {
       const {
-        color, btn, title, message, colored, header,
+        color, title, message, colored, header, close,
       } = this.props.modal;
       let Icon;
 
@@ -40,7 +40,7 @@ class ModalHandler extends PureComponent {
       return (
         <Modal
           isOpen={this.props.modal.isOpen}
-          toggle={this.toggle}
+          toggle={close}
           className={`modal-dialog--${color} ${modalClass}`}
         >
           <div className="modal__header">
@@ -50,8 +50,7 @@ class ModalHandler extends PureComponent {
             {message}
           </div>
           <ButtonToolbar className="modal__footer">
-            <Button onClick={this.toggle}>Cancel</Button>{' '}
-            <Button outline={colored} color={color} onClick={this.toggle}>Ok</Button>
+            {this.props.modal.buttons}
           </ButtonToolbar>
         </Modal>
       );

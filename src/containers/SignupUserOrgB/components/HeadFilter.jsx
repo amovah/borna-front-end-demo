@@ -18,6 +18,7 @@ import QRImage from 'Root/shared/img/qr.jpeg';
 import DefaultUser from 'Root/shared/img/defaultUser.png';
 // import Modal from './Modal';
 import openModal from 'Root/redux/actions/modal/open';
+import closeModal from 'Root/redux/actions/modal/close';
 
 const regex = [/[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/, '/', /[۰-۱]|[0-1]/, /[۰-۹]|[0-9]/, '/', /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/]; // eslint-disable-line
 
@@ -31,18 +32,28 @@ class Form extends Component {
   }
 
   refresh = () => {
-    // const shit = store.getState().form.SingupUserForm;
-    // if (shit.values) {
-    //   // store.dispatch(showModal())
-    //   console.log(shit);
-    // } else {
-    //   store.dispatch(reset('SingupUserForm'));
-    // }
-    openModal({
-      color: 'warning',
-      title: 'suck it',
-      message: 'sick kon baw',
-    });
+    const shit = store.getState().form.SingupUserForm;
+    const confirm = () => {
+      store.dispatch(reset('SingupUserForm'));
+      closeModal();
+    };
+
+    if (shit.values) {
+      openModal({
+        color: 'warning',
+        title: 'اخطار',
+        message: 'آیا مطمین هستید که میخواهید فرم را تازه کنید؟',
+        buttons: [
+          <Button onClick={closeModal}>خیر</Button>,
+          <Button color="warning" onClick={confirm}>بله</Button>,
+        ],
+        close() {
+          closeModal();
+        },
+      });
+    } else {
+      confirm();
+    }
   }
 
   fuckloo = () => {
