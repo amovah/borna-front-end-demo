@@ -4,15 +4,18 @@ import {
   Field,
   reduxForm,
   reset,
+  change,
 } from 'redux-form';
 import store from 'Root/store';
 import renderMultiSelectField from 'Root/shared/components/form/MultiSelect';
 import InputNumber from 'Root/shared/components/mine/InputNumber';
 import DateMask from 'Root/shared/components/mine/DateMask';
+import ImageField from 'Root/shared/components/mine/ImageField';
 import { enToFa } from 'Root/mapper';
 import RefreshIcon from 'mdi-react/RefreshIcon';
 import { connect } from 'react-redux';
 import QRImage from 'Root/shared/img/qr.jpeg';
+import DefaultUser from 'Root/shared/img/defaultUser.png';
 
 const regex = [/[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/, '/', /[۰-۱]|[0-1]/, /[۰-۹]|[0-9]/, '/', /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/]; // eslint-disable-line
 
@@ -25,8 +28,14 @@ class Form extends Component {
     store.dispatch(reset('SingupUserForm'));
   }
 
-  salam = () => {
-    store.dispatch(reset('SingupUserForm'));
+  refresh = () => {
+    const shit = store.getState().form.SingupUserForm;
+    if (shit.values) {
+      // store.dispatch(showModal())
+      console.log(shit);
+    } else {
+      store.dispatch(reset('SingupUserForm'));
+    }
   }
 
   fuckloo = () => {
@@ -44,7 +53,7 @@ class Form extends Component {
               </h3>
             </Col>
             <Col xs="1">
-              <RefreshIcon className="genrefreshbut" onClick={this.salam} />
+              <RefreshIcon className="genrefreshbut" onClick={this.refresh} />
             </Col>
           </Row>
           <form className="form form--vertical widthsad" onSubmit={this.props.handleSubmit}>
@@ -52,7 +61,13 @@ class Form extends Component {
               <Col xs="10">
                 <Row>
                   <Col xs="2">
-                    <img src="bullshit.png" alt="aks karbar" />
+                    <div className="avatarOfKarbar">
+                      <Field
+                        name="avatar"
+                        component={ImageField}
+                        alt="عکس کاربر"
+                      />
+                    </div>
                   </Col>
                   <Col xs="5">
                     <div className="form__form-group">
@@ -146,7 +161,11 @@ class Form extends Component {
               </Col>
               <Col xs="2">
                 <div className="centerQR">
-                  <img src={QRImage} alt="qr" />
+                  <Field
+                    name="QRCode"
+                    component={ImageField}
+                    alt="کیو آر کد"
+                  />
                   <p>
                     وضعیت
                   </p>
