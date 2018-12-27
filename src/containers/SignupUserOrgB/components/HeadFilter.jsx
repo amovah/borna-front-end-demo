@@ -16,6 +16,8 @@ import RefreshIcon from 'mdi-react/RefreshIcon';
 import { connect } from 'react-redux';
 import QRImage from 'Root/shared/img/qr.jpeg';
 import DefaultUser from 'Root/shared/img/defaultUser.png';
+// import Modal from './Modal';
+import openModal from 'Root/redux/actions/modal/open';
 
 const regex = [/[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/, '/', /[۰-۱]|[0-1]/, /[۰-۹]|[0-9]/, '/', /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/]; // eslint-disable-line
 
@@ -29,13 +31,18 @@ class Form extends Component {
   }
 
   refresh = () => {
-    const shit = store.getState().form.SingupUserForm;
-    if (shit.values) {
-      // store.dispatch(showModal())
-      console.log(shit);
-    } else {
-      store.dispatch(reset('SingupUserForm'));
-    }
+    // const shit = store.getState().form.SingupUserForm;
+    // if (shit.values) {
+    //   // store.dispatch(showModal())
+    //   console.log(shit);
+    // } else {
+    //   store.dispatch(reset('SingupUserForm'));
+    // }
+    openModal({
+      color: 'warning',
+      title: 'suck it',
+      message: 'sick kon baw',
+    });
   }
 
   fuckloo = () => {

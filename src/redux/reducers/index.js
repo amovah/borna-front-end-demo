@@ -8,6 +8,7 @@ import usersOrgC from './usersOrgC';
 import tokensOrgC from './tokensOrgC';
 import transactionsOrgC from './transactionsOrgC';
 import userOrgB from './userOrgB';
+import modal from './modal';
 
 export {
   themeReducer,
@@ -20,4 +21,5 @@ export {
   tokensOrgC,
   transactionsOrgC,
   userOrgB,
+  modal,
 };

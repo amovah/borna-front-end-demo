@@ -24,4 +24,8 @@ export default {
   transactionsOrgC: {
     LOAD: 'transactionsOrgC/LOAD',
   },
+  modal: {
+    OPEN: 'modal/OPEN',
+    CLOSE: 'model/CLOSE',
+  },
 };
