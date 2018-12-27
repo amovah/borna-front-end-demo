@@ -6,18 +6,19 @@ import LoginOrgA from '../LogInOrgA';
 import LayoutOrgA from '../LayoutOrgA/index';
 import SuggestionOrgA from '../SuggestionOrgA';
 import ProtectedOrgA from 'Root/shared/components/ProtectedOrgA';
-// orgA
+// orgB
 import LoginOrgB from '../LogInOrgB';
 import LayoutOrgB from '../LayoutOrgB/index';
 import ProtectedOrgB from 'Root/shared/components/ProtectedOrgB';
-// orgA
+import ControlUsersOrgB from '../ControlUsersOrgB';
+// orgC
 import LoginOrgC from '../LogInOrgC';
 import LayoutOrgC from '../LayoutOrgC/index';
 import ProtectedOrgC from 'Root/shared/components/ProtectedOrgC';
 import GenerateTokenOrgC from '../GenerateTokenOrgC';
 import ReportGenTok from '../ReportGenTok';
 import ReportTransOrgC from '../ReportTransOrgC';
-// orgA
+// orgD
 import LoginOrgD from '../LogInOrgD';
 
 const PagesOrgA = () => (
@@ -33,6 +34,13 @@ const PagesOrgC = () => (
     <Route path="/orgC/report-transactions" component={ReportTransOrgC} />
   </Switch>
 );
+
+const PagesOrgB = () => (
+  <Switch>
+    <Route path="/orgB/control-users" component={ControlUsersOrgB} />
+  </Switch>
+);
+
 
 const OrgA = () => (
   <ProtectedOrgA>
@@ -61,7 +69,7 @@ const OrgB = () => (
     <div>
       <LayoutOrgB />
       <div className="container__wrap">
-        <Route path="/orgB" component={PagesOrgC} />
+        <Route path="/orgB" component={PagesOrgB} />
       </div>
     </div>
   </ProtectedOrgB>
