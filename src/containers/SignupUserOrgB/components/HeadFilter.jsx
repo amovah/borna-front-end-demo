@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { Row, Col, Card, CardBody, Button } from 'reactstrap';
 import {
   Field,
@@ -12,10 +12,15 @@ import DateMask from 'Root/shared/components/mine/DateMask';
 import { enToFa } from 'Root/mapper';
 import RefreshIcon from 'mdi-react/RefreshIcon';
 import { connect } from 'react-redux';
+import QRImage from 'Root/shared/img/qr.jpeg';
 
 const regex = [/[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/, '/', /[۰-۱]|[0-1]/, /[۰-۹]|[0-9]/, '/', /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/]; // eslint-disable-line
 
-class Form extends PureComponent {
+class Form extends Component {
+  state = {
+    disabled: true,
+  }
+
   clearFields = () => {
     store.dispatch(reset('SingupUserForm'));
   }
@@ -44,7 +49,7 @@ class Form extends PureComponent {
           </Row>
           <form className="form form--vertical widthsad" onSubmit={this.props.handleSubmit}>
             <Row>
-              <Col xs="9">
+              <Col xs="10">
                 <Row>
                   <Col xs="2">
                     <img src="bullshit.png" alt="aks karbar" />
@@ -59,6 +64,7 @@ class Form extends PureComponent {
                           name="firstname"
                           component="input"
                           type="text"
+                          disabled
                         />
                       </div>
                     </div>
@@ -70,6 +76,7 @@ class Form extends PureComponent {
                         <Field
                           name="nationalId"
                           component={InputNumber}
+                          disabled
                         />
                       </div>
                     </div>
@@ -84,6 +91,7 @@ class Form extends PureComponent {
                           name="lastname"
                           component="input"
                           type="text"
+                          disabled
                         />
                       </div>
                     </div>
@@ -97,6 +105,7 @@ class Form extends PureComponent {
                           component={DateMask}
                           type="text"
                           mask={regex}
+                          disabled
                         />
                       </div>
                     </div>
@@ -112,6 +121,7 @@ class Form extends PureComponent {
                         <Field
                           name="mobileNumber"
                           component={InputNumber}
+                          disabled
                         />
                       </div>
                     </div>
@@ -127,25 +137,28 @@ class Form extends PureComponent {
                           component={DateMask}
                           type="text"
                           mask={regex}
+                          disabled
                         />
                       </div>
                     </div>
                   </Col>
                 </Row>
               </Col>
-              <Col xs="3">
-                <img src="A" alt="qr" />
-                <p>
-                  وضعیت
-                </p>
+              <Col xs="2">
+                <div className="centerQR">
+                  <img src={QRImage} alt="qr" />
+                  <p>
+                    وضعیت
+                  </p>
+                </div>
               </Col>
             </Row>
             <Row>
               <div className="liButtonGroup">
-                <Button color="success">
+                <Button color="success" disabled={this.state.disabled}>
                   تایید مشتری
                 </Button>
-                <Button color="danger" onClick={this.fuckloo}>
+                <Button color="danger" disabled={this.state.disabled} onClick={this.fuckloo}>
                   رد مشتری
                 </Button>
               </div>

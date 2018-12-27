@@ -21,6 +21,7 @@ export default class extends PureComponent {
         type={type}
         mask={mask}
         onChange={this.handleChange}
+        disabled={this.props.disabled}
       />
     );
   }

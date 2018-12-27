@@ -16,6 +16,7 @@ export default class extends PureComponent {
         type="text"
         onChange={this.handleKey}
         value={value}
+        disabled={this.props.disabled}
       />
     );
   }
