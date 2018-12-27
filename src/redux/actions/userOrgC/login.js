@@ -19,5 +19,5 @@ export default async () => {
   //   type: types.transactionsOrgC.LOAD,
   // });
 
-  history.push('/orgB/user-control');
+  history.push('/orgB/control-users');
 };
