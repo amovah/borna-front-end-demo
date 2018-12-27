@@ -4,20 +4,20 @@ import history from 'Root/history';
 
 export default async () => {
   store.dispatch({
-    type: types.userOrgB.LOGIN,
+    type: types.userOrgC.LOGIN,
   });
 
-  // store.dispatch({
-  //   type: types.usersOrgC.LOAD,
-  // });
-  //
-  // store.dispatch({
-  //   type: types.tokensOrgC.LOAD,
-  // });
-  //
-  // store.dispatch({
-  //   type: types.transactionsOrgC.LOAD,
-  // });
+  store.dispatch({
+    type: types.usersOrgC.LOAD,
+  });
 
-  history.push('/orgB/user-control');
+  store.dispatch({
+    type: types.tokensOrgC.LOAD,
+  });
+
+  store.dispatch({
+    type: types.transactionsOrgC.LOAD,
+  });
+
+  history.push('/orgC/generate-token');
 };
