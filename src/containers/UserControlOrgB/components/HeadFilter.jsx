@@ -17,7 +17,7 @@ const regex = [/[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/, '/', /[۰-۱]|[0-1]/, /[۰-۹]|
 
 class Form extends PureComponent {
   clearFields = () => {
-    store.dispatch(reset('ReportTransForm'));
+    store.dispatch(reset('UserControlForm'));
   }
 
   render() {
@@ -30,47 +30,31 @@ class Form extends PureComponent {
                 فیلتر؛
               </h3>
             </Col>
-            <Col xs="1">
-              <RefreshIcon className="genrefreshbut" onClick={this.salam} />
-            </Col>
           </Row>
           <form className="form form--vertical widthsad" onSubmit={this.props.handleSubmit}>
             <Row>
               <Col xs="3">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <p>
-                      حساب:
-                    </p>
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
                     <span className="form__form-group-label headFilterBreak">
-                      مبدا:
+                      نام:
                     </span>
                     <Field
-                      name="source"
-                      component={renderMultiSelectField}
-                      options={this.props.users.map(i => ({
-                        value: i.id,
-                        label: `${i.firstname} ${i.lastname} ${enToFa(i.nationalId)}`,
-                      }))}
+                      name="firstname"
+                      component="input"
+                      type="text"
                     />
                   </div>
                 </div>
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <span className="form__form-group-label headFilterBreak">
-                      مقصد:
+                      نام خانوادگی:
                     </span>
                     <Field
-                      name="destination"
-                      component={renderMultiSelectField}
-                      options={this.props.users.map(i => ({
-                        value: i.id,
-                        label: `${i.firstname} ${i.lastname} ${enToFa(i.nationalId)}`,
-                      }))}
+                      name="lastname"
+                      component="input"
+                      type="text"
                     />
                   </div>
                 </div>
@@ -78,18 +62,11 @@ class Form extends PureComponent {
               <Col xs="3">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <p>
-                      مقدار:
-                    </p>
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
                     <span className="form__form-group-label headFilterBreak">
-                      حداقل:
+                      شماره ملی:
                     </span>
                     <Field
-                      name="startAmount"
+                      name="nationalId"
                       component={InputNumber}
                     />
                   </div>
@@ -97,10 +74,10 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <span className="form__form-group-label headFilterBreak">
-                      حداکثر
+                      شماره موبایل:
                     </span>
                     <Field
-                      name="endAmount"
+                      name="mobileNumber"
                       component={InputNumber}
                     />
                   </div>
@@ -111,7 +88,7 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <p>
-                      تاریخ:
+                      تاریخ تولد:
                     </p>
                   </div>
                 </div>
@@ -159,12 +136,12 @@ class Form extends PureComponent {
                       component={renderMultiSelectField}
                       options={[
                         {
-                          value: 'موفقیت‌آمیز',
-                          label: 'موفقیت‌آمیز',
+                          value: 'در دسترس',
+                          label: 'در دسترس',
                         },
                         {
-                          value: 'ناموفق',
-                          label: 'ناموفق',
+                          value: 'توقیف شده',
+                          label: 'توقیف شده',
                         },
                       ]}
                     />
@@ -190,5 +167,5 @@ class Form extends PureComponent {
 export default connect(state => ({
   users: state.usersOrgC,
 }))(reduxForm({
-  form: 'ReportTransForm',
+  form: 'UserControlForm',
 })(Form));

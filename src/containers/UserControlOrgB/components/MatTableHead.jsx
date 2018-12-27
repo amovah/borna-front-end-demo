@@ -11,19 +11,22 @@ const rows = [
     id: 'radif', disablePadding: true, label: 'ردیف',
   },
   {
-    id: 'destination', disablePadding: false, label: 'اسم و فامیل کاربر مبدا',
+    id: 'firstname', disablePadding: false, label: 'نام',
   },
   {
-    id: 'source', disablePadding: false, label: 'اسم و فامیل کاربر مقصد',
+    id: 'lastname', disablePadding: false, label: 'نام خانوادگی',
   },
   {
-    id: 'date', disablePadding: false, label: 'تاریخ',
+    id: 'nationalId', disablePadding: false, label: 'کد ملی',
   },
   {
-    id: 'amount', disablePadding: false, label: 'مقدار',
+    id: 'birthday', disablePadding: false, label: 'تاریخ تولد',
   },
   {
     id: 'status', disablePadding: false, label: 'وضعیت',
+  },
+  {
+    id: 'mobileNumber', disablePadding: false, label: 'شماره موبایل',
   },
   {
     id: 'actions', disablePadding: false, label: 'عملیات',
