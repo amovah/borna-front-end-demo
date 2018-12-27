@@ -10,7 +10,7 @@ import ProtectedOrgA from 'Root/shared/components/ProtectedOrgA';
 import LoginOrgB from '../LogInOrgB';
 import LayoutOrgB from '../LayoutOrgB/index';
 import ProtectedOrgB from 'Root/shared/components/ProtectedOrgB';
-import ControlUsersOrgB from '../ControlUsersOrgB';
+import UserControlOrgB from '../UserControlOrgB';
 // orgC
 import LoginOrgC from '../LogInOrgC';
 import LayoutOrgC from '../LayoutOrgC/index';
@@ -37,7 +37,7 @@ const PagesOrgC = () => (
 
 const PagesOrgB = () => (
   <Switch>
-    <Route path="/orgB/control-users" component={ControlUsersOrgB} />
+    <Route path="/orgB/user-control" component={UserControlOrgB} />
   </Switch>
 );
 
