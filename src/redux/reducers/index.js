@@ -10,6 +10,7 @@ import transactionsOrgC from './transactionsOrgC';
 import userOrgB from './userOrgB';
 import modal from './modal';
 import depositsOrgB from './depositsOrgB';
+import userControlOrgB from './userControlOrgB';
 
 export {
   themeReducer,
@@ -24,4 +25,5 @@ export {
   userOrgB,
   modal,
   depositsOrgB,
+  userControlOrgB,
 };

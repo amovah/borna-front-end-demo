@@ -31,4 +31,7 @@ export default {
   depositsOrgB: {
     LOAD: 'depositsOrgB/LOAD',
   },
+  userControlOrgB: {
+    LOAD: 'userControlOrgB/LOAD',
+  },
 };

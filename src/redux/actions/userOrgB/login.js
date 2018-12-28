@@ -11,10 +11,10 @@ export default async () => {
     type: types.depositsOrgB.LOAD,
   });
 
-  // store.dispatch({
-  //   type: types.tokensOrgC.LOAD,
-  // });
-  //
+  store.dispatch({
+    type: types.userControlOrgB.LOAD,
+  });
+
   // store.dispatch({
   //   type: types.transactionsOrgC.LOAD,
   // });
