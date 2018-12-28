@@ -84,6 +84,7 @@ class Form extends Component {
                         name="avatar"
                         component={ImageField}
                         alt="عکس کاربر"
+                        sample={DefaultUser}
                       />
                     </div>
                   </Col>
@@ -183,6 +184,7 @@ class Form extends Component {
                     name="QRCode"
                     component={ImageField}
                     alt="کیو آر کد"
+                    sample={QRImage}
                   />
                   <p>
                     وضعیت
