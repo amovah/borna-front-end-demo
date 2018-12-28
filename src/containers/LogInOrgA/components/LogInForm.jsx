@@ -10,6 +10,7 @@ import ImageField from 'Root/shared/components/mine/ImageField';
 import Panel from 'Root/shared/components/Panel';
 import { Row, Col, Card, CardBody, Button } from 'reactstrap';
 import renderCheckBoxField from 'Root/shared/components/form/CheckBox';
+import QRImage from 'Root/shared/img/qr.jpeg';
 
 class LogInForm extends PureComponent {
   static propTypes = {
@@ -32,6 +33,7 @@ class LogInForm extends PureComponent {
                 name="qrCode"
                 component={ImageField}
                 alt="منتظر  QR کد بمانید"
+                sample={QRImage}
               />
             </div>
           </Col>

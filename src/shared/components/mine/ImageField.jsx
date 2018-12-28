@@ -13,7 +13,7 @@ export default class extends PureComponent {
     return (
       <img
         onChange={this.handleChange}
-        src={value}
+        src={value || this.props.sample}
         alt={this.props.alt}
       />
     );
