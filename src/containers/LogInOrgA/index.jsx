@@ -8,12 +8,7 @@ const onSubmit = (values) => {
 
 const LogIn = () => (
   <div className="account">
-    <div className="account__wrapper">
-      <div className="account__card">
-        <LogInForm onSubmit={onSubmit} />
-      </div>
-    </div>
-
+    <LogInForm onSubmit={onSubmit} />
     <div className="version-indicator-in-login-page">
       <p>
         ورژن ۰.۹.۰
