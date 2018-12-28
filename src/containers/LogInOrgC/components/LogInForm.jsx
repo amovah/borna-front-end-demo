@@ -5,7 +5,7 @@ import KeyVariantIcon from 'mdi-react/KeyVariantIcon';
 import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import titleLogo from 'shared/img/logo.png';
+import titleLogo from 'Root/shared/img/logo/logo.png';
 
 class LogInForm extends PureComponent {
   static propTypes = {
@@ -32,10 +32,10 @@ class LogInForm extends PureComponent {
     return (
       <form className="form" onSubmit={handleSubmit}>
         <div className="login-page-title">
-          {/* <img
+          <img
             src={titleLogo}
             alt="khafes"
-          /> */}
+          />
           <h1>
             سومیش
           </h1>

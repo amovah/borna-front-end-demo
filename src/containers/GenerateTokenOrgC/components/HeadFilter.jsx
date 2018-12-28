@@ -40,7 +40,8 @@ class Form extends PureComponent {
           </Row>
           <form className="form form--vertical widthsad" onSubmit={this.props.handleSubmit}>
             <Row>
-              <Col xs="4">
+              <Col xs="1" />
+              <Col xs="6">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <p>
@@ -62,7 +63,7 @@ class Form extends PureComponent {
                 </div>
               </Col>
 
-              <Col xs="4">
+              <Col xs="2">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <p>
@@ -80,7 +81,7 @@ class Form extends PureComponent {
                 </div>
               </Col>
 
-              <Col xs="4" className="rightaligngen">
+              <Col xs="2" className="rightaligngen">
                 <div className="liButtonGroup gentokenshitty">
                   <button className="btn btn-primary">
                     انتقال
