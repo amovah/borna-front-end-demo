@@ -42,7 +42,7 @@ export default class AlertComponent extends PureComponent {
 
     this.state = {
       visible: true,
-      collapse: true,
+      collapse: false,
       refresh: false,
     };
   }

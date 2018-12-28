@@ -8,7 +8,8 @@ import PropTypes from 'prop-types';
 import titleLogo from 'Root/shared/img/logo/logo.png';
 import ImageField from 'Root/shared/components/mine/ImageField';
 import Panel from 'Root/shared/components/Panel';
-import { Row, Col, Card, CardBody } from 'reactstrap';
+import { Row, Col, Card, CardBody, Button } from 'reactstrap';
+import renderCheckBoxField from 'Root/shared/components/form/CheckBox';
 
 class LogInForm extends PureComponent {
   static propTypes = {
@@ -58,10 +59,80 @@ class LogInForm extends PureComponent {
           <Col xs="3" />
           <Col xs="6">
             <Panel xs={12} title="تنظیمات">
-              <p>Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered
-                had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure
-                education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly.
-              </p>
+              <Row>
+                <Col xs="4">
+                  <div className="form__form-group">
+                    <div className="form__form-group-field">
+                      <Field
+                        name="nationalId"
+                        component={renderCheckBoxField}
+                        label="کد ملی"
+                      />
+
+                    </div>
+                  </div>
+                  <div className="form__form-group">
+                    <div className="form__form-group-field">
+                      <Field
+                        name="mobineNumber"
+                        component={renderCheckBoxField}
+                        label="شماره موبایل"
+                      />
+                    </div>
+                  </div>
+                </Col>
+
+                <Col xs="4">
+                  <div className="form__form-group">
+                    <div className="form__form-group-field">
+                      <Field
+                        name="lastname"
+                        component={renderCheckBoxField}
+                        label="نام خانوادگی"
+                        defaultChecked
+                      />
+                    </div>
+                  </div>
+                  <div className="form__form-group">
+                    <div className="form__form-group-field">
+                      <Field
+                        name="birthdayDate"
+                        component={renderCheckBoxField}
+                        label="تاریخ تولد"
+                      />
+                    </div>
+                  </div>
+                </Col>
+                <Col xs="4">
+                  <div className="form__form-group">
+                    <div className="form__form-group-field">
+                      <Field
+                        name="firstname"
+                        component={renderCheckBoxField}
+                        label="نام"
+                        defaultChecked
+                      />
+                    </div>
+                  </div>
+                  <div className="form__form-group">
+                    <div className="form__form-group-field">
+                      <Field
+                        name="avatar"
+                        component={renderCheckBoxField}
+                        label="عکس"
+                      />
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs="6">
+                  <Button color="primary" size="sm">
+                    تولید QR
+                  </Button>
+                </Col>
+                <Col xs="6" />
+              </Row>
             </Panel>
           </Col>
           <Col xs="3" />
