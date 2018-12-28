@@ -12,6 +12,7 @@ import LayoutOrgB from '../LayoutOrgB/index';
 import ProtectedOrgB from 'Root/shared/components/ProtectedOrgB';
 import UserControlOrgB from '../UserControlOrgB';
 import SignupUserOrgB from '../SignupUserOrgB';
+import DepositOrgB from '../DepositOrgB';
 // orgC
 import LoginOrgC from '../LogInOrgC';
 import LayoutOrgC from '../LayoutOrgC/index';
@@ -40,6 +41,7 @@ const PagesOrgB = () => (
   <Switch>
     <Route path="/orgB/user-control" component={UserControlOrgB} />
     <Route path="/orgB/signup-user" component={SignupUserOrgB} />
+    <Route path="/orgB/deposit" component={DepositOrgB} />
   </Switch>
 );
 

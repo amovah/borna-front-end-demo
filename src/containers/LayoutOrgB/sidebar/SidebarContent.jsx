@@ -18,6 +18,7 @@ class SidebarContent extends Component {
         <ul className="sidebar__block">
           <SidebarLink title="کنترل کاربران" route="/orgB/user-control" />
           <SidebarLink title="ثبت نام کاربر" route="/orgB/signup-user" />
+          <SidebarLink title="سپرده گذاری" route="/orgB/deposit" />
           {/* <SidebarCategory title="صفحه ها" icon="diamond">
             <SidebarLink title="صفح" route="/pages/one" onClick={this.hideSidebar} />
             <SidebarLink title="صفح" route="/pages/one" onClick={this.hideSidebar} />
