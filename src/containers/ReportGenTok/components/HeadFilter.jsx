@@ -36,6 +36,30 @@ class Form extends PureComponent {
           </Row>
           <form className="form form--vertical widthsad" onSubmit={this.props.handleSubmit}>
             <Row>
+              <Col xs="1" />
+              <Col xs="10">
+                <div className="form__form-group">
+                  <div className="form__form-group-field">
+                    <p>
+                      حساب مقصد:
+                    </p>
+                  </div>
+                </div>
+                <div className="form__form-group">
+                  <div className="form__form-group-field">
+                    <Field
+                      name="destination"
+                      component={renderMultiSelectField}
+                      options={this.props.users.map(i => ({
+                        value: i.id,
+                                    label: `${i.firstname} ${i.lastname} ${enToFa(i.nationalId)}`,
+                      }))}
+                    />
+                  </div>
+                </div>
+              </Col>
+            </Row>
+            <Row>
               <Col xs="4">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
@@ -138,30 +162,6 @@ class Form extends PureComponent {
                   <button className="btn btn-secondary" onClick={this.clearFields}>
                     پاک کردن فیلتر ها
                   </button>
-                </div>
-              </Col>
-            </Row>
-
-            <Row>
-              <Col xs="4">
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <p>
-                      حساب مقصد:
-                    </p>
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <Field
-                      name="destination"
-                      component={renderMultiSelectField}
-                      options={this.props.users.map(i => ({
-                        value: i.id,
-                        label: `${i.firstname} ${i.lastname} ${enToFa(i.nationalId)}`,
-                      }))}
-                    />
-                  </div>
                 </div>
               </Col>
             </Row>
