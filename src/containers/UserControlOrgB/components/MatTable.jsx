@@ -21,22 +21,28 @@ function getSorting(order, orderBy) {
     }
 
     switch (orderBy) {
-      case 'name': {
-        const fName = first.destination.firstname + first.destination.lastname;
-        const lName = last.destination.firstname + last.destination.lastname;
-        return fName.localeCompare(lName);
+      case 'firstname': {
+        return first.firstname.localeCompare(last.firstname);
+      }
+
+      case 'lastname': {
+        return first.lastname.localeCompare(last.lastname);
+      }
+
+      case 'nationalId': {
+        return first.nationalId.localeCompare(last.nationalId);
+      }
+
+      case 'birthday': {
+        return parseInt(first.birthDate, 10) - parseInt(last.birthDate, 10);
       }
 
       case 'status': {
         return first.status.localeCompare(last.status);
       }
 
-      case 'date': {
-        return first.date - last.date;
-      }
-
-      case 'amount': {
-        return first.amount - last.amount;
+      case 'mobileNumber': {
+        return first.mobileNumber.localeCompare(last.mobileNumber);
       }
 
       default: {
@@ -176,28 +182,28 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${d.source.firstname} ${d.source.lastname}`}
+                            {`${d.firstname}`}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${d.destination.firstname} ${d.destination.lastname}`}
+                            {`${d.lastname}`}
+                          </TableCell>
+                          <TableCell
+                            className="material-table__cell material-table__cell mattabfarsi"
+                          >
+                            {enToFa(d.nationalId)}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabltr"
                           >
-                            {enToFa(moment(d.date).format('jYYYY/jM/D HH:mm'))}
-                          </TableCell>
-                          <TableCell
-                            className="material-table__cell material-table__cell mattabfarsi"
-                          >
-                            {d.amount.toLocaleString('fa')}
+                            {enToFa(moment(parseInt(d.birthDate, 10)).format('jYYYY/jM/D HH:mm'))}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
                             {
-                              d.status === 'موفقیت‌آمیز' ?
+                              d.status === 'در دسترس' ?
                                 <span className="mattabbadge-green">
                                   {d.status}
                                 </span> :
@@ -206,16 +212,26 @@ class MatTable extends PureComponent {
                                 </span>
                             }
                           </TableCell>
-
+                          <TableCell
+                            className="material-table__cell material-table__cell mattabfarsi"
+                          >
+                            {d.mobileNumber}
+                          </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabbuts"
                           >
                             <Button color="primary" className="mattabbtn">
                               نمایش کاربر مبدا
                             </Button>
-                            <Button color="primary" className="mattabbtn">
-                              نمایش کاربر مقصد
-                            </Button>
+                            {
+                              d.status === 'در دسترس' ?
+                                <Button color="danger" className="mattabbtn">
+                                  توقیف کردن
+                                </Button> :
+                                <Button color="success" className="mattabbtn">
+                                  آزاد کردن
+                                </Button>
+                            }
                           </TableCell>
                         </TableRow>
                       );
@@ -250,5 +266,5 @@ class MatTable extends PureComponent {
 }
 
 export default connect(state => ({
-  transactions: state.transactionsOrgC,
+  transactions: state.userControlOrgB,
 }))(MatTable);
