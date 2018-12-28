@@ -211,10 +211,10 @@ class MatTable extends PureComponent {
                             className="material-table__cell material-table__cell mattabfarsi mattabbuts"
                           >
                             <Button color="primary" className="mattabbtn">
-                              نمایش کاربر مبدا
+                              کاربر مقصد
                             </Button>
                             <Button color="primary" className="mattabbtn">
-                              نمایش کاربر مقصد
+                              کاربر مبدا
                             </Button>
                           </TableCell>
                         </TableRow>
