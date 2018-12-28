@@ -28,4 +28,7 @@ export default {
     OPEN: 'modal/OPEN',
     CLOSE: 'model/CLOSE',
   },
+  depositsOrgB: {
+    LOAD: 'depositsOrgB/LOAD',
+  },
 };

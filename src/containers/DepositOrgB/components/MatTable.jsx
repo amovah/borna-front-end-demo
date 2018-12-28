@@ -22,21 +22,33 @@ function getSorting(order, orderBy) {
 
     switch (orderBy) {
       case 'name': {
-        const fName = first.destination.firstname + first.destination.lastname;
-        const lName = last.destination.firstname + last.destination.lastname;
+        const fName = first.owner.firstname + first.owner.lastname;
+        const lName = last.owner.firstname + last.owner.lastname;
         return fName.localeCompare(lName);
       }
 
-      case 'status': {
-        return first.status.localeCompare(last.status);
+      case 'createDate': {
+        return parseInt(first.createDate, 10) - parseInt(last.createDate, 10);
       }
 
-      case 'date': {
-        return first.date - last.date;
+      case 'profitDate': {
+        return parseInt(first.updateDate, 10) - parseInt(last.updateDate, 10);
       }
 
-      case 'amount': {
-        return first.amount - last.amount;
+      case 'deposit': {
+        return first.deposit.localeCompare(last.deposit);
+      }
+
+      case 'profit': {
+        return first.profit.localeCompare(last.profit);
+      }
+
+      case 'depositType': {
+        return first.interval.localeCompare(last.interval);
+      }
+
+      case 'profitPercent': {
+        return first.profitPercentage.localeCompare(last.profitPercentage);
       }
 
       default: {
@@ -73,9 +85,9 @@ class MatTable extends PureComponent {
   };
 
   handleSelectAllClick = (event, checked) => {
-    const { transactions } = this.props;
+    const { deposits } = this.props;
     if (checked) {
-      this.setState(() => ({ selected: transactions.map(n => n.id) }));
+      this.setState(() => ({ selected: deposits.map(n => n.id) }));
       return;
     }
     this.setState({ selected: [] });
@@ -119,7 +131,7 @@ class MatTable extends PureComponent {
     const {
       order, orderBy, selected, rowsPerPage, page,
     } = this.state;
-    const data = this.props.transactions;
+    const data = this.props.deposits;
     let counter = page * rowsPerPage;
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - (page * rowsPerPage));
 
@@ -176,46 +188,37 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${d.source.firstname} ${d.source.lastname}`}
-                          </TableCell>
-                          <TableCell
-                            className="material-table__cell material-table__cell mattabfarsi"
-                          >
-                            {`${d.destination.firstname} ${d.destination.lastname}`}
+                            {`${d.owner.firstname} ${d.owner.lastname}`}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabltr"
                           >
-                            {enToFa(moment(d.date).format('jYYYY/jM/D HH:mm'))}
+                            {enToFa(moment(parseInt(d.createDate, 10)).format('jYYYY/jM/D HH:mm'))}
+                          </TableCell>
+                          <TableCell
+                            className="material-table__cell material-table__cell mattabfarsi mattabltr"
+                          >
+                            {enToFa(moment(parseInt(d.updateDate, 10)).format('jYYYY/jM/D HH:mm'))}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {d.amount.toLocaleString('fa')}
+                            {`${enToFa(d.deposit)}`}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {
-                              d.status === 'موفقیت‌آمیز' ?
-                                <span className="mattabbadge-green">
-                                  {d.status}
-                                </span> :
-                                <span className="mattabbadge-red">
-                                  {d.status}
-                                </span>
-                            }
+                            {`${enToFa(d.profit)}`}
                           </TableCell>
-
                           <TableCell
-                            className="material-table__cell material-table__cell mattabfarsi mattabbuts"
+                            className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            <Button color="primary" className="mattabbtn">
-                              نمایش کاربر مبدا
-                            </Button>
-                            <Button color="primary" className="mattabbtn">
-                              نمایش کاربر مقصد
-                            </Button>
+                            {`${enToFa(d.interval)}`}
+                          </TableCell>
+                          <TableCell
+                            className="material-table__cell material-table__cell mattabfarsi"
+                          >
+                            {`${enToFa(d.profitPercentage)}`}
                           </TableCell>
                         </TableRow>
                       );
@@ -250,5 +253,5 @@ class MatTable extends PureComponent {
 }
 
 export default connect(state => ({
-  transactions: state.transactionsOrgC,
+  deposits: state.depositsOrgB,
 }))(MatTable);

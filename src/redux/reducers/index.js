@@ -9,6 +9,7 @@ import tokensOrgC from './tokensOrgC';
 import transactionsOrgC from './transactionsOrgC';
 import userOrgB from './userOrgB';
 import modal from './modal';
+import depositsOrgB from './depositsOrgB';
 
 export {
   themeReducer,
@@ -22,4 +23,5 @@ export {
   transactionsOrgC,
   userOrgB,
   modal,
+  depositsOrgB,
 };

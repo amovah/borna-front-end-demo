@@ -7,10 +7,10 @@ export default async () => {
     type: types.userOrgB.LOGIN,
   });
 
-  // store.dispatch({
-  //   type: types.usersOrgC.LOAD,
-  // });
-  //
+  store.dispatch({
+    type: types.depositsOrgB.LOAD,
+  });
+
   // store.dispatch({
   //   type: types.tokensOrgC.LOAD,
   // });

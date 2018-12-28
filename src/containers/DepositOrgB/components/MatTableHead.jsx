@@ -11,25 +11,25 @@ const rows = [
     id: 'radif', disablePadding: true, label: 'ردیف',
   },
   {
-    id: 'firstname', disablePadding: false, label: 'نام',
+    id: 'name', disablePadding: false, label: 'اسم و فامیل کاربر',
   },
   {
-    id: 'lastname', disablePadding: false, label: 'نام خانوادگی',
+    id: 'createDate', disablePadding: false, label: 'تاریخ افتتاح حساب',
   },
   {
-    id: 'nationalId', disablePadding: false, label: 'کد ملی',
+    id: 'profitDate', disablePadding: false, label: 'تاریخ آخرین سود',
   },
   {
-    id: 'birthday', disablePadding: false, label: 'تاریخ تولد',
+    id: 'deposit', disablePadding: false, label: 'موجودی',
   },
   {
-    id: 'status', disablePadding: false, label: 'وضعیت',
+    id: 'profit', disablePadding: false, label: 'سود',
   },
   {
-    id: 'mobileNumber', disablePadding: false, label: 'شماره موبایل',
+    id: 'depositType', disablePadding: false, label: 'نوع سپرده',
   },
   {
-    id: 'actions', disablePadding: false, label: 'عملیات',
+    id: 'profitPercent', disablePadding: false, label: 'درصد سود',
   },
 ];
 
