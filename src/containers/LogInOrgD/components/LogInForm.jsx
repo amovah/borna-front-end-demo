@@ -42,7 +42,7 @@ class LogInForm extends PureComponent {
         </div>
         <div className="form__form-group">
           <span className="form__form-group-label">
-          نام کاربری
+            نام کاربری
           </span>
           <div className="form__form-group-field">
             <div className="form__form-group-icon">
@@ -58,7 +58,7 @@ class LogInForm extends PureComponent {
         </div>
         <div className="form__form-group">
           <span className="form__form-group-label">
-          رمز عبور
+            رمز عبور
           </span>
           <div className="form__form-group-field">
             <div className="form__form-group-icon">
@@ -68,7 +68,7 @@ class LogInForm extends PureComponent {
               name="password"
               component="input"
               type={this.state.showPassword ? 'text' : 'password'}
-              placeholder="رمز ورود"
+              placeholder="رمز عبور"
             />
             <button
               className={`form__form-group-button${this.state.showPassword ? ' active' : ''}`}

@@ -68,7 +68,7 @@ class LogInForm extends PureComponent {
               name="password"
               component="input"
               type={this.state.showPassword ? 'text' : 'password'}
-              placeholder="رمز ورود"
+              placeholder="رمز عبور"
             />
             <button
               className={`form__form-group-button${this.state.showPassword ? ' active' : ''}`}
