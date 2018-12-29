@@ -21,9 +21,15 @@ function getSorting(order, orderBy) {
     }
 
     switch (orderBy) {
-      case 'name': {
+      case 'destination': {
         const fName = first.destination.firstname + first.destination.lastname;
         const lName = last.destination.firstname + last.destination.lastname;
+        return fName.localeCompare(lName);
+      }
+
+      case 'source': {
+        const fName = first.source.firstname + first.source.lastname;
+        const lName = last.source.firstname + last.source.lastname;
         return fName.localeCompare(lName);
       }
 
