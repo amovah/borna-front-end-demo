@@ -24,16 +24,18 @@ class Form extends PureComponent {
     return (
       <Card className="headfilterRTL">
         <CardBody>
-          <Row>
-            <Col xs="11">
-              <h3 className="filterTitle">
-                فیلتر؛
-              </h3>
-            </Col>
-            <Col xs="1">
-              <RefreshIcon className="genrefreshbut" onClick={this.salam} />
-            </Col>
-          </Row>
+          <div className="alireza-header">
+            <Row>
+              <Col xs="11">
+                <h3 className="filterTitle bold-text">
+                  فیلتر
+                </h3>
+              </Col>
+              <Col xs="1">
+                <RefreshIcon className="genrefreshbut" onClick={this.salam} />
+              </Col>
+            </Row>
+          </div>
           <form className="form form--vertical widthsad" onSubmit={this.props.handleSubmit}>
             <Row>
               <Col xs="3">
