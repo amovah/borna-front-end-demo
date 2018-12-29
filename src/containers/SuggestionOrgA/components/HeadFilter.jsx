@@ -22,106 +22,122 @@ class Form extends PureComponent {
     return (
       <Card className="headfilterRTL">
         <CardBody>
-          <h3 className="filterTitle">
-            فیلتر:
-          </h3>
+          <div className="alireza-header">
+            <Row>
+              <Col xs="11">
+                <h3 className="filterTitle bold-text">
+                  فیلتر
+                </h3>
+              </Col>
+            </Row>
+          </div>
           <form className="form form--vertical widthsad" onSubmit={this.props.handleSubmit}>
             <Row>
               <Col xs="4">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <p>
-                      تاریخ:
-                    </p>
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          تاریخ شروع
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="startDate"
+                          component={DateMask}
+                          type="text"
+                          mask={regex}
+                          placeholder="__/__/____"
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      شروع
-                      (روز-ماه-سال)
-                    </span>
-                    <Field
-                      name="startDate"
-                      component={DateMask}
-                      type="text"
-                      mask={regex}
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          تاریخ پایان
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="endDate"
+                          component={DateMask}
+                          mask={regex}
+                          type="text"
+                          placeholder="__/__/____"
+                        />
+                      </Col>
+                    </Row>
+                  </div>
+                </div>
+              </Col>
+              <Col xs="4">
+                <div className="form__form-group">
+                  <div className="form__form-group-field">
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          حداقل لایک
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="startLike"
+                          component={InputNumber}
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      پایان
-                      (روز-ماه-سال)
-                    </span>
-                    <Field
-                      name="endDate"
-                      component={DateMask}
-                      mask={regex}
-                      type="text"
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          حداکثر لایک
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="endLike"
+                          component={InputNumber}
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
               </Col>
 
-
               <Col xs="4">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <p>
-                      تعداد لایک:
-                    </p>
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      شروع
-                    </span>
-                    <Field
-                      name="startLike"
-                      component={InputNumber}
-                    />
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      پایان
-                    </span>
-                    <Field
-                      name="endLike"
-                      component={InputNumber}
-                    />
-                  </div>
-                </div>
-              </Col>
-
-              <Col xs="4">
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <p>
-                      وضعیت:
-                    </p>
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <Field
-                      name="status"
-                      component={renderMultiSelectField}
-                      options={[
-                        {
-                          value: 'در حال نمایش',
-                          label: 'در حال نمایش',
-                        },
-                        {
-                          value: 'گزارش شده',
-                          label: 'گزارش شده',
-                        },
-                      ]}
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          وضعیت:
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="status"
+                          component={renderMultiSelectField}
+                          options={[
+                            {
+                              value: 'در حال نمایش',
+                              label: 'در حال نمایش',
+                            },
+                            {
+                              value: 'گزارش شده',
+                              label: 'گزارش شده',
+                            },
+                          ]}
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
                 <div className="liButtonGroup">
