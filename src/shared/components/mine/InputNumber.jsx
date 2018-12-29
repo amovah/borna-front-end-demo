@@ -17,6 +17,7 @@ export default class extends PureComponent {
         onChange={this.handleKey}
         value={value}
         disabled={this.props.disabled}
+        className="ltronly"
       />
     );
   }

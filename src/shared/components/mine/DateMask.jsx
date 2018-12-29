@@ -19,11 +19,12 @@ export default class extends PureComponent {
     return (
       <MaskedInput
         value={input.value}
-        placeholder={placeholder || '__/__/____'}
+        placeholder="____/__/__"
         type={type}
         mask={regex}
         onChange={this.handleChange}
         disabled={this.props.disabled}
+        className="ltronly"
       />
     );
   }
