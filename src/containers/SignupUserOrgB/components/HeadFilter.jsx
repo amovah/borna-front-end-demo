@@ -91,88 +91,118 @@ class Form extends Component {
                   <Col xs="5">
                     <div className="form__form-group">
                       <div className="form__form-group-field">
-                        <span className="form__form-group-label headFilterBreak">
-                          نام:
-                        </span>
-                        <Field
-                          name="firstname"
-                          component="input"
-                          type="text"
-                          disabled
-                        />
+                        <Row>
+                          <Col xs="3">
+                            <span className="form__form-group-label headFilterBreak">
+                              نام:
+                            </span>
+                          </Col>
+                          <Col xs="9">
+                            <Field
+                              name="firstname"
+                              component="input"
+                              type="text"
+                              disabled
+                            />
+                          </Col>
+                        </Row>
                       </div>
                     </div>
                     <div className="form__form-group">
                       <div className="form__form-group-field">
-                        <span className="form__form-group-label headFilterBreak">
-                          کد ملی:
-                        </span>
-                        <Field
-                          name="nationalId"
-                          component={InputNumber}
-                          disabled
-                        />
-                      </div>
-                    </div>
-                  </Col>
-                  <Col xs="5">
-                    <div className="form__form-group">
-                      <div className="form__form-group-field">
-                        <span className="form__form-group-label headFilterBreak">
-                          نام خانوادگی:
-                        </span>
-                        <Field
-                          name="lastname"
-                          component="input"
-                          type="text"
-                          disabled
-                        />
+                        <Row>
+                          <Col xs="3">
+                            <span className="form__form-group-label headFilterBreak">
+                              کد ملی:
+                            </span>
+                          </Col>
+                          <Col xs="9">
+                            <Field
+                              name="nationalId"
+                              component={InputNumber}
+                              disabled
+                            />
+                          </Col>
+                        </Row>
                       </div>
                     </div>
                     <div className="form__form-group">
                       <div className="form__form-group-field">
-                        <span className="form__form-group-label headFilterBreak">
-                          تاریخ تولد:
-                        </span>
-                        <Field
-                          name="birthdayDate"
-                          component={DateMask}
-                          type="text"
-                          mask={regex}
-                          disabled
-                        />
-                      </div>
-                    </div>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs="7">
-                    <div className="form__form-group">
-                      <div className="form__form-group-field">
-                        <span className="form__form-group-label headFilterBreak">
-                          شماره موبایل:
-                        </span>
-                        <Field
-                          name="mobileNumber"
-                          component={InputNumber}
-                          disabled
-                        />
+                        <Row>
+                          <Col xs="3">
+                            <span className="form__form-group-label headFilterBreak">
+                              شماره موبایل:
+                            </span>
+                          </Col>
+                          <Col xs="9">
+                            <Field
+                              name="mobileNumber"
+                              component={InputNumber}
+                              disabled
+                            />
+                          </Col>
+                        </Row>
                       </div>
                     </div>
                   </Col>
                   <Col xs="5">
                     <div className="form__form-group">
                       <div className="form__form-group-field">
-                        <span className="form__form-group-label headFilterBreak">
-                          تاریخ الان:
-                        </span>
-                        <Field
-                          name="birthdayDate"
-                          component={DateMask}
-                          type="text"
-                          mask={regex}
-                          disabled
-                        />
+                        <Row>
+                          <Col xs="3">
+                            <span className="form__form-group-label headFilterBreak">
+                              نام خانوادگی:
+                            </span>
+                          </Col>
+                          <Col xs="9">
+                            <Field
+                              name="lastname"
+                              component="input"
+                              type="text"
+                              disabled
+                            />
+                          </Col>
+                        </Row>
+                      </div>
+                    </div>
+                    <div className="form__form-group">
+                      <div className="form__form-group-field">
+                        <Row>
+                          <Col xs="3">
+                            <span className="form__form-group-label headFilterBreak">
+                              تاریخ تولد:
+                            </span>
+                          </Col>
+                          <Col xs="9">
+                            <Field
+                              name="birthdayDate"
+                              component={DateMask}
+                              type="text"
+                              mask={regex}
+                              disabled
+                            />
+                          </Col>
+                        </Row>
+                      </div>
+                    </div>
+                    <div className="form__form-group">
+                      <div className="form__form-group-field">
+                        <Row>
+                          <Col xs="3">
+                            <span className="form__form-group-label headFilterBreak">
+                              تاریخ الان:
+                            </span>
+                          </Col>
+                          <Col xs="9">
+                            <Field
+                              name="birthdayDate"
+                              component={DateMask}
+                              type="text"
+                              mask={regex}
+                              disabled
+                            />
+                          </Col>
+                        </Row>
                       </div>
                     </div>
                   </Col>
