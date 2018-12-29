@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Row, Col, Card, CardBody, Button } from 'reactstrap';
+import { Row, Col, Card, CardBody, Button, CardTitle } from 'reactstrap';
 import {
   Field,
   reduxForm,
@@ -28,16 +28,18 @@ class Form extends PureComponent {
     return (
       <Card className="headfilterRTL">
         <CardBody>
-          <Row>
-            <Col xs="11">
-              <h3 className="filterTitle">
-                بخش تولید توکن:
-              </h3>
-            </Col>
-            <Col xs="1">
-              <RefreshIcon className="genrefreshbut" onClick={this.salam} />
-            </Col>
-          </Row>
+          <div className="alireza-header">
+            <Row>
+              <Col xs="11">
+                <h3 className="filterTitle bold-text">
+                  تولید توکن
+                </h3>
+              </Col>
+              <Col xs="1">
+                <RefreshIcon className="genrefreshbut" onClick={this.salam} />
+              </Col>
+            </Row>
+          </div>
           <form className="form form--vertical widthsad" onSubmit={this.props.handleSubmit}>
             <Row>
               <Col xs="1" />
