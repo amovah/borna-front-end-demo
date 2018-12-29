@@ -123,7 +123,7 @@ class LogInForm extends PureComponent {
                       <Row>
                         <Col xs="6">
                           <Button color="primary" size="sm">
-                            تولید QR
+                            تولید کد
                           </Button>
                         </Col>
                         <Col xs="6" />
