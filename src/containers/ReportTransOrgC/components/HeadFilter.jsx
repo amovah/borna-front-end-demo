@@ -41,70 +41,80 @@ class Form extends PureComponent {
               <Col xs="3">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <p>
-                      حساب:
-                    </p>
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          حساب مبدا
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="source"
+                          component={renderMultiSelectField}
+                          options={this.props.users.map(i => ({
+                            value: i.id,
+                            label: `${i.firstname} ${i.lastname} ${enToFa(i.nationalId)}`,
+                          }))}
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      مبدا:
-                    </span>
-                    <Field
-                      name="source"
-                      component={renderMultiSelectField}
-                      options={this.props.users.map(i => ({
-                        value: i.id,
-                        label: `${i.firstname} ${i.lastname} ${enToFa(i.nationalId)}`,
-                      }))}
-                    />
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      مقصد:
-                    </span>
-                    <Field
-                      name="destination"
-                      component={renderMultiSelectField}
-                      options={this.props.users.map(i => ({
-                        value: i.id,
-                        label: `${i.firstname} ${i.lastname} ${enToFa(i.nationalId)}`,
-                      }))}
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          حساب مقصد
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="destination"
+                          component={renderMultiSelectField}
+                          options={this.props.users.map(i => ({
+                            value: i.id,
+                            label: `${i.firstname} ${i.lastname} ${enToFa(i.nationalId)}`,
+                          }))}
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
               </Col>
               <Col xs="3">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <p>
-                      مقدار:
-                    </p>
+                    <Row>
+                      <Col xs="3">
+                        <span>
+                          حداقل مقدار
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="startAmount"
+                          component={InputNumber}
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      حداقل:
-                    </span>
-                    <Field
-                      name="startAmount"
-                      component={InputNumber}
-                    />
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      حداکثر
-                    </span>
-                    <Field
-                      name="endAmount"
-                      component={InputNumber}
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          حداکثر مقدار
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="endAmount"
+                          component={InputNumber}
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
               </Col>
@@ -112,64 +122,71 @@ class Form extends PureComponent {
               <Col xs="3">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <p>
-                      تاریخ:
-                    </p>
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          تاریخ شروع
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="startDate"
+                          component={DateMask}
+                          type="text"
+                          mask={regex}
+                          placeholder="__/__/____"
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      شروع
-                      (روز-ماه-سال)
-                    </span>
-                    <Field
-                      name="startDate"
-                      component={DateMask}
-                      type="text"
-                      mask={regex}
-                    />
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      پایان
-                      (روز-ماه-سال)
-                    </span>
-                    <Field
-                      name="endDate"
-                      component={DateMask}
-                      mask={regex}
-                      type="text"
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          تاریخ پایان
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="endDate"
+                          component={DateMask}
+                          mask={regex}
+                          type="text"
+                          placeholder="__/__/____"
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
               </Col>
               <Col xs="3">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <p>
-                      وضعیت:
-                    </p>
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <Field
-                      name="status"
-                      component={renderMultiSelectField}
-                      options={[
-                        {
-                          value: 'موفقیت‌آمیز',
-                          label: 'موفقیت‌آمیز',
-                        },
-                        {
-                          value: 'ناموفق',
-                          label: 'ناموفق',
-                        },
-                      ]}
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <p>
+                          وضعیت:
+                        </p>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="status"
+                          component={renderMultiSelectField}
+                          options={[
+                            {
+                              value: 'موفقیت‌آمیز',
+                              label: 'موفقیت‌آمیز',
+                            },
+                            {
+                              value: 'ناموفق',
+                              label: 'ناموفق',
+                            },
+                          ]}
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
                 <div className="liButtonGroup">

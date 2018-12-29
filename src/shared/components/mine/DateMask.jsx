@@ -17,7 +17,7 @@ export default class extends PureComponent {
     return (
       <MaskedInput
         value={input.value}
-        placeholder={placeholder}
+        placeholder={placeholder || '__/__/____'}
         type={type}
         mask={mask}
         onChange={this.handleChange}
