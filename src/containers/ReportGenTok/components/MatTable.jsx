@@ -156,15 +156,10 @@ class MatTable extends PureComponent {
                         <TableRow
                           className="material-table__row"
                           role="checkbox"
-                          onClick={event => this.handleClick(event, d.id)}
                           aria-checked={isSelected}
                           tabIndex={-1}
                           key={d.id}
-                          selected={isSelected}
                         >
-                          <TableCell className="material-table__cell" padding="checkbox">
-                            <Checkbox checked={isSelected} className="material-table__checkbox" />
-                          </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                             component="th"
