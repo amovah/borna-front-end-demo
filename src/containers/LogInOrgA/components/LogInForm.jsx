@@ -26,8 +26,8 @@ class LogInForm extends PureComponent {
     return (
       <form onSubmit={handleSubmit} className="centerTor">
         <Row>
-          <Col xs="3" />
-          <Col xs="6">
+          <Col xs="2" />
+          <Col xs="8">
             <Card>
               <CardBody>
                 <div className="qrCodeSection">
@@ -38,17 +38,17 @@ class LogInForm extends PureComponent {
                     sample={QRImage}
                   />
                 </div>
-                <h3 className="login-orga-title">
+                <h3 className="login-orga-title bold-text">
                   سیستم احراز هویت
                 </h3>
                 <Row>
-                  <Col xs="2" />
-                  <Col xs="8">
+                  <Col xs="3" />
+                  <Col xs="6">
                     <p className="width-kamter-in-orga">
                       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
                     </p>
                   </Col>
-                  <Col xs="2" />
+                  <Col xs="3" />
                 </Row>
                 <Row>
                   <Col xs="2" />
@@ -135,7 +135,7 @@ class LogInForm extends PureComponent {
               </CardBody>
             </Card>
           </Col>
-          <Col xs="3" />
+          <Col xs="2" />
         </Row>
       </form>
     );
