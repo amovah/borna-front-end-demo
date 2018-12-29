@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Card, CardBody, Col, Button } from 'reactstrap';
+import { Card, CardBody, Col, Button, Row } from 'reactstrap';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -134,13 +134,19 @@ class MatTable extends PureComponent {
         <Card>
           <CardBody>
             <div className="card__title">
-              <h3 className="bold-text textright">بخش نظارت</h3>
+              <Row>
+                <Col xs="2">
+                  <MatTableToolbar
+                    numSelected={selected.length}
+                    handleDeleteSelected={this.handleDeleteSelected}
+                    onRequestSort={this.handleRequestSort}
+                  />
+                </Col>
+                <Col xs="10">
+                  <h3 className="bold-text textright">بخش نظارت</h3>
+                </Col>
+              </Row>
             </div>
-            <MatTableToolbar
-              numSelected={selected.length}
-              handleDeleteSelected={this.handleDeleteSelected}
-              onRequestSort={this.handleRequestSort}
-            />
             <div className="material-table__wrap">
               <Table className="material-table">
                 <MatTableHead
