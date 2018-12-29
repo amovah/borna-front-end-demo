@@ -14,9 +14,11 @@ export default {
   },
   userOrgC: {
     LOGIN: 'userOrgC/LOGIN',
+    LOGOUT: 'userOrgC/LOGOUT',
   },
   userOrgB: {
     LOGIN: 'userOrgB/LOGIN',
+    LOGOUT: 'userOrgB/LOGOUT',
   },
   tokensOrgC: {
     LOAD: 'tokensOrgC/LOAD',
