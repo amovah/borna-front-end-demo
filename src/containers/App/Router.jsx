@@ -34,6 +34,7 @@ const PagesOrgC = () => (
     <Route path="/orgC/generate-token" component={GenerateTokenOrgC} />
     <Route path="/orgC/report-token-generation" component={ReportGenTok} />
     <Route path="/orgC/report-transactions" component={ReportTransOrgC} />
+    <Route path="/orgC/suggestion" component={SuggestionOrgA} />
   </Switch>
 );
 

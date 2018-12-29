@@ -19,5 +19,9 @@ export default async () => {
     type: types.transactionsOrgC.LOAD,
   });
 
+  store.dispatch({
+    type: types.suggestionOrgA.LOAD,
+  });
+
   history.push('/orgC/generate-token');
 };
