@@ -24,62 +24,88 @@ class Form extends PureComponent {
     return (
       <Card className="headfilterRTL">
         <CardBody>
-          <Row>
-            <Col xs="11">
-              <h3 className="filterTitle">
-                فیلتر؛
-              </h3>
-            </Col>
-          </Row>
+          <div className="alireza-header">
+            <Row>
+              <Col xs="11">
+                <h3 className="filterTitle bold-text">
+                  فیلتر
+                </h3>
+              </Col>
+            </Row>
+          </div>
           <form className="form form--vertical widthsad" onSubmit={this.props.handleSubmit}>
             <Row>
               <Col xs="3">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      نام:
-                    </span>
-                    <Field
-                      name="firstname"
-                      component="input"
-                      type="text"
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          نام:
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="firstname"
+                          component="input"
+                          type="text"
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      نام خانوادگی:
-                    </span>
-                    <Field
-                      name="lastname"
-                      component="input"
-                      type="text"
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          نام خانوادگی:
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="lastname"
+                          component="input"
+                          type="text"
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
               </Col>
               <Col xs="3">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      شماره ملی:
-                    </span>
-                    <Field
-                      name="nationalId"
-                      component={InputNumber}
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          شماره ملی:
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="nationalId"
+                          component={InputNumber}
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      شماره موبایل:
-                    </span>
-                    <Field
-                      name="mobileNumber"
-                      component={InputNumber}
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          شماره موبایل:
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="mobileNumber"
+                          component={InputNumber}
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
               </Col>
@@ -87,64 +113,71 @@ class Form extends PureComponent {
               <Col xs="3">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <p>
-                      تاریخ تولد:
-                    </p>
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          تاریخ شروع
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="startDate"
+                          component={DateMask}
+                          type="text"
+                          mask={regex}
+                          placeholder="__/__/____"
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      شروع
-                      (روز-ماه-سال)
-                    </span>
-                    <Field
-                      name="startDate"
-                      component={DateMask}
-                      type="text"
-                      mask={regex}
-                    />
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <span className="form__form-group-label headFilterBreak">
-                      پایان
-                      (روز-ماه-سال)
-                    </span>
-                    <Field
-                      name="endDate"
-                      component={DateMask}
-                      mask={regex}
-                      type="text"
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          تاریخ پایان
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="endDate"
+                          component={DateMask}
+                          mask={regex}
+                          type="text"
+                          placeholder="__/__/____"
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
               </Col>
               <Col xs="3">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
-                    <p>
-                      وضعیت:
-                    </p>
-                  </div>
-                </div>
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <Field
-                      name="status"
-                      component={renderMultiSelectField}
-                      options={[
-                        {
-                          value: 'در دسترس',
-                          label: 'در دسترس',
-                        },
-                        {
-                          value: 'توقیف شده',
-                          label: 'توقیف شده',
-                        },
-                      ]}
-                    />
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          وضعیت
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="status"
+                          component={renderMultiSelectField}
+                          options={[
+                            {
+                              value: 'در دسترس',
+                              label: 'در دسترس',
+                            },
+                            {
+                              value: 'توقیف شده',
+                              label: 'توقیف شده',
+                            },
+                          ]}
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
                 <div className="liButtonGroup">
