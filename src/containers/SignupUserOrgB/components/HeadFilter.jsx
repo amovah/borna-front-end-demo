@@ -64,16 +64,18 @@ class Form extends Component {
     return (
       <Card className="headfilterRTL">
         <CardBody>
-          <Row>
-            <Col xs="11">
-              <h3 className="filterTitle">
-                بخش ثبت نام
-              </h3>
-            </Col>
-            <Col xs="1">
-              <RefreshIcon className="genrefreshbut" onClick={this.refresh} />
-            </Col>
-          </Row>
+          <div className="alireza-header">
+            <Row>
+              <Col xs="11">
+                <h3 className="filterTitle bold-text">
+                  بخش ثبت نام
+                </h3>
+              </Col>
+              <Col xs="1">
+                <RefreshIcon className="genrefreshbut" onClick={this.salam} />
+              </Col>
+            </Row>
+          </div>
           <form className="form form--vertical widthsad" onSubmit={this.props.handleSubmit}>
             <Row>
               <Col xs="10">
