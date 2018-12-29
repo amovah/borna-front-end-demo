@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -13,10 +14,10 @@ export default class TopbarMenuLinks extends PureComponent {
     const { title, icon, path } = this.props;
 
     return (
-      <Link className="topbar__link" to={path}>
+      <div className="topbar__link" onClick={this.props.onClick}>
         <span className={`topbar__link-icon lnr lnr-${icon}`} />
         <p className="topbar__link-title">{title}</p>
-      </Link>
+      </div>
     );
   }
 }

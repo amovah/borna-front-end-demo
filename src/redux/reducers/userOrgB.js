@@ -13,6 +13,13 @@ export default function (state = initialState, action) {
       };
     }
 
+    case types.userOrgB.LOGOUT: {
+      return {
+        ...state,
+        logged: false,
+      };
+    }
+
     default: {
       return state;
     }
