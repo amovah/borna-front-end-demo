@@ -26,8 +26,8 @@ class LogInForm extends PureComponent {
     return (
       <form onSubmit={handleSubmit} className="centerTor">
         <Row>
-          <Col xs="2" />
-          <Col xs="8">
+          <Col xs="3" />
+          <Col xs="6">
             <Card>
               <CardBody>
                 <div className="qrCodeSection">
@@ -135,7 +135,7 @@ class LogInForm extends PureComponent {
               </CardBody>
             </Card>
           </Col>
-          <Col xs="2" />
+          <Col xs="3" />
         </Row>
       </form>
     );
