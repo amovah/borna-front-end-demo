@@ -207,7 +207,7 @@ class MatTable extends PureComponent {
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
                             <Button color="primary" className="mattabbtn">
-                              نمایش کاربر
+                              کاربر
                             </Button>
                           </TableCell>
                         </TableRow>
