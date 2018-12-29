@@ -143,7 +143,9 @@ class MatTable extends PureComponent {
                   />
                 </Col>
                 <Col xs="10">
-                  <h3 className="bold-text textright">بخش نظارت</h3>
+                  <h3 className="bold-text textright">
+                    لیست کاربران
+                  </h3>
                 </Col>
               </Row>
             </div>
@@ -221,7 +223,7 @@ class MatTable extends PureComponent {
                             className="material-table__cell material-table__cell mattabfarsi mattabbuts"
                           >
                             <Button color="primary" className="mattabbtn">
-                              کاربر مبدا
+                              کاربر
                             </Button>
                             {
                               d.status === 'در دسترس' ?

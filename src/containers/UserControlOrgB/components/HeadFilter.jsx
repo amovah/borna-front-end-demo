@@ -6,7 +6,7 @@ import {
   reset,
 } from 'redux-form';
 import store from 'Root/store';
-import renderMultiSelectField from 'Root/shared/components/form/MultiSelect';
+import renderMultiSelectField from 'Root/shared/components/form/Select';
 import InputNumber from 'Root/shared/components/mine/InputNumber';
 import DateMask from 'Root/shared/components/mine/DateMask';
 import { enToFa } from 'Root/mapper';
@@ -39,12 +39,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
                           نام:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="firstname"
                           component="input"
@@ -57,12 +57,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
                           نام خانوادگی:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="lastname"
                           component="input"
@@ -77,12 +77,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
                           شماره ملی:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="nationalId"
                           component={InputNumber}
@@ -94,12 +94,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
                           شماره موبایل:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="mobileNumber"
                           component={InputNumber}
@@ -114,12 +114,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
-                          تاریخ شروع
+                          حداقل تاریخ:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="startDate"
                           component={DateMask}
@@ -134,12 +134,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
-                          تاریخ پایان
+                          حداکثر تاریخ:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="endDate"
                           component={DateMask}
@@ -156,12 +156,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
-                          وضعیت
+                          وضعیت:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="status"
                           component={renderMultiSelectField}
