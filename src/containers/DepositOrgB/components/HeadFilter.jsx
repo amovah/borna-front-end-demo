@@ -28,7 +28,7 @@ class Form extends PureComponent {
             <Row>
               <Col xs="11">
                 <h3 className="filterTitle bold-text">
-                  فیلتر
+                  فیلترها
                 </h3>
               </Col>
             </Row>
@@ -39,12 +39,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
-                          تاریخ شروع
+                          حداقل تاریخ:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="startDate"
                           component={DateMask}
@@ -59,12 +59,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
-                          تاریخ پایان
+                          حداکثر تاریخ:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="endDate"
                           component={DateMask}
@@ -81,12 +81,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
                           موجودی شروع:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="startDeposit"
                           component={InputNumber}
@@ -98,12 +98,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
                           موجودی پایان:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="endDeposit"
                           component={InputNumber}
@@ -118,12 +118,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
                           سود شروع:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="startProfit"
                           component={InputNumber}
@@ -135,12 +135,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
                           سود پایان:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="endProfit"
                           component={InputNumber}
@@ -154,12 +154,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="4">
+                      <Col xs="5">
                         <span className="form__form-group-label headFilterBreak">
                           درصد سود شروع:
                         </span>
                       </Col>
-                      <Col xs="8">
+                      <Col xs="7">
                         <Field
                           name="startProfitPercent"
                           component={InputNumber}
@@ -171,12 +171,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="4">
+                      <Col xs="5">
                         <span className="form__form-group-label headFilterBreak">
                           درصد سود پایان:
                         </span>
                       </Col>
-                      <Col xs="8">
+                      <Col xs="7">
                         <Field
                           name="endProfitPercent"
                           component={InputNumber}

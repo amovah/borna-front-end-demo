@@ -28,7 +28,7 @@ class Form extends PureComponent {
             <Row>
               <Col xs="11">
                 <h3 className="filterTitle bold-text">
-                  فیلتر
+                  فیلترها
                 </h3>
               </Col>
             </Row>

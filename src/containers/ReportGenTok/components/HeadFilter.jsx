@@ -6,7 +6,7 @@ import {
   reset,
 } from 'redux-form';
 import store from 'Root/store';
-import renderMultiSelectField from 'Root/shared/components/form/MultiSelect';
+import renderMultiSelectField from 'Root/shared/components/form/Select';
 import InputNumber from 'Root/shared/components/mine/InputNumber';
 import DateMask from 'Root/shared/components/mine/DateMask';
 import { enToFa } from 'Root/mapper';
@@ -28,7 +28,7 @@ class Form extends PureComponent {
             <Row>
               <Col xs="11">
                 <h3 className="filterTitle bold-text">
-                  فیلتر
+                  فیلترها
                 </h3>
               </Col>
               <Col xs="1">
@@ -70,12 +70,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
                           مقدار حداقل:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="startAmount"
                           component={InputNumber}
@@ -87,12 +87,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
-                          مقدار حداکثر
+                          مقدار حداکثر:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="endAmount"
                           component={InputNumber}
@@ -107,12 +107,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
-                          تاریخ شروع
+                          حداقل تاریخ:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="startDate"
                           component={DateMask}
@@ -127,12 +127,12 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Row>
-                      <Col xs="3">
+                      <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
-                          تاریخ پایان
+                          حداکثر تاریخ:
                         </span>
                       </Col>
-                      <Col xs="9">
+                      <Col xs="8">
                         <Field
                           name="endDate"
                           component={DateMask}

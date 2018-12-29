@@ -6,7 +6,7 @@ import {
   reset,
 } from 'redux-form';
 import store from 'Root/store';
-import renderMultiSelectField from 'Root/shared/components/form/MultiSelect';
+import renderMultiSelectField from 'Root/shared/components/form/Select';
 import InputNumber from 'Root/shared/components/mine/InputNumber';
 import DateMask from 'Root/shared/components/mine/DateMask';
 import { enToFa } from 'Root/mapper';
