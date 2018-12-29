@@ -87,7 +87,7 @@ class Form extends PureComponent {
                   <div className="form__form-group-field">
                     <Row>
                       <Col xs="3">
-                        <span>
+                        <span className="form__form-group-label headFilterBreak">
                           حداقل مقدار
                         </span>
                       </Col>
