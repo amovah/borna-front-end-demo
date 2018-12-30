@@ -143,7 +143,9 @@ class MatTable extends PureComponent {
                   />
                 </Col>
                 <Col xs="10">
-                  <h3 className="bold-text textright">بخش نظارت</h3>
+                  <h3 className="bold-text textright">
+                    لیست تراکنش‌های کاربران
+                  </h3>
                 </Col>
               </Row>
             </div>
