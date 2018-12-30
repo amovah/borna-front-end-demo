@@ -28,7 +28,10 @@ export default async ({
     ...query,
   });
 
-  let modifiedUrl = `${url}?${queryString}`;
+  let modifiedUrl = url;
+  if (queryString) {
+    modifiedUrl = `${url}?${queryString}`;
+  }
 
   if (options.filter) {
     modifiedUrl = `${modifiedUrl}&filter=${JSON.stringify(options.filter)}`;
