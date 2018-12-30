@@ -1,6 +1,9 @@
 export default {
   userOrgA: {
     LOGIN: 'userOrgA/LOGIN',
+    NONCE: 'userOrgA/NONCE',
+    START_POLLING: 'userOrgA/START_POLLING',
+    STOP_POLLING: 'userOrgA/STOP_POLLING',
   },
   suggestionOrgA: {
     LOAD: 'suggestionOrgA/LOAD',

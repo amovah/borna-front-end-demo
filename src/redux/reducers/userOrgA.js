@@ -2,6 +2,8 @@ import types from 'Root/redux/actions';
 
 const initialState = {
   logged: false,
+  nonce: null,
+  isPolling: false,
 };
 
 export default function (state = initialState, action) {
@@ -10,6 +12,27 @@ export default function (state = initialState, action) {
       return {
         ...state,
         logged: true,
+      };
+    }
+
+    case types.userOrgA.NONCE: {
+      return {
+        ...state,
+        nonce: action.nonce,
+      };
+    }
+
+    case types.userOrgA.START_POLLING: {
+      return {
+        ...state,
+        isPolling: true,
+      };
+    }
+
+    case types.userOrgA.STOP_POLLING: {
+      return {
+        ...state,
+        isPolling: false,
       };
     }
 
