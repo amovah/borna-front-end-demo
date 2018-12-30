@@ -44,7 +44,7 @@ class Form extends PureComponent {
                     <Row>
                       <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
-                          مقدار حداقل:
+                          حداقل مقدار:
                         </span>
                       </Col>
                       <Col xs="8">
@@ -61,7 +61,7 @@ class Form extends PureComponent {
                     <Row>
                       <Col xs="4">
                         <span className="form__form-group-label headFilterBreak">
-                          مقدار حداکثر:
+                          حداکثر مقدار:
                         </span>
                       </Col>
                       <Col xs="8">
