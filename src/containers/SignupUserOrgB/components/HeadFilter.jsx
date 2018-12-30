@@ -68,7 +68,7 @@ class Form extends Component {
             <Row>
               <Col xs="11">
                 <h3 className="filterTitle bold-text">
-                  بخش ثبت نام
+                  بخش ثبت‌نام
                 </h3>
               </Col>
               <Col xs="1">
