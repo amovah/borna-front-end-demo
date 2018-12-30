@@ -3,8 +3,18 @@ import LogInForm from './components/LogInForm';
 import loginAction from 'Root/redux/actions/userOrgA/login';
 import RefreshIcon from 'mdi-react/RefreshIcon';
 import generateQR from 'Root/redux/actions/userOrgA/generateQR';
+import store from 'Root/store';
+import { reset, submit, change } from 'redux-form';
 
 const onSubmit = () => {
+  generateQR();
+};
+
+const resetForm = () => {
+  store.dispatch(reset('loginOrgA'));
+  store.dispatch(change('loginOrgA', 'firstname', true));
+  store.dispatch(change('loginOrgA', 'lastname', true));
+
   generateQR();
 };
 
@@ -12,7 +22,7 @@ const LogIn = () => (
   <div className="account">
     <LogInForm onSubmit={onSubmit} />
     <div className="thatRefreshBut">
-      <RefreshIcon className="genrefreshbut" />
+      <RefreshIcon className="genrefreshbut" onClick={resetForm} />
     </div>
     <div className="version-indicator-in-login-page">
       <p>
