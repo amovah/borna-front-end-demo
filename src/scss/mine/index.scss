@@ -22,3 +22,8 @@ button {
 .ltronly {
   direction: ltr;
 }
+
+.progressFixed {
+  position: sticky;
+  top: 0;
+}

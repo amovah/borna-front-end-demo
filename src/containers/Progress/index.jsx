@@ -5,7 +5,11 @@ import { connect } from 'react-redux';
 class Prog extends PureComponent {
   render() {
     if (this.props.progressing) {
-      return <LinearProgress className="zProgress" />;
+      return (
+        <div className="progressFixed">
+          <LinearProgress className="zProgress" />
+        </div>
+      );
     }
     return null;
   }
