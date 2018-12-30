@@ -38,34 +38,6 @@ class Form extends PureComponent {
           </div>
           <form className="form form--vertical widthsad" onSubmit={this.props.handleSubmit}>
             <Row>
-              <Col xs="1" />
-              <Col xs="10">
-                <div className="form__form-group">
-                  <div className="form__form-group-field">
-                    <Row>
-                      <Col xs="2">
-                        <p>
-                          حساب مقصد:
-                        </p>
-                      </Col>
-                      <Col xs="10">
-                        <div className="form__form-group-field">
-                          <Field
-                            name="destination"
-                            component={renderMultiSelectField}
-                            options={this.props.users.map(i => ({
-                              value: i.id,
-                                          label: `${i.firstname} ${i.lastname} ${enToFa(i.nationalId)}`,
-                            }))}
-                          />
-                        </div>
-                      </Col>
-                    </Row>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
               <Col xs="4">
                 <div className="form__form-group">
                   <div className="form__form-group-field">
@@ -171,7 +143,27 @@ class Form extends PureComponent {
                         />
                       </Col>
                     </Row>
-
+                  </div>
+                </div>
+                <div className="form__form-group">
+                  <div className="form__form-group-field">
+                    <Row>
+                      <Col xs="3">
+                        <span className="form__form-group-label headFilterBreak">
+                          حساب مقصد:
+                        </span>
+                      </Col>
+                      <Col xs="9">
+                        <Field
+                          name="destination"
+                          component={renderMultiSelectField}
+                          options={this.props.users.map(i => ({
+                            value: i.id,
+                            label: `${i.firstname} ${i.lastname} ${enToFa(i.nationalId)}`,
+                          }))}
+                        />
+                      </Col>
+                    </Row>
                   </div>
                 </div>
                 <div className="liButtonGroup">

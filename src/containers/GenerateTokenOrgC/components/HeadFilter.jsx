@@ -47,7 +47,7 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <p>
-                      به:
+                      به حساب کاربر:
                     </p>
                   </div>
                 </div>
