@@ -222,9 +222,6 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabbuts"
                           >
-                            <Button color="primary" className="mattabbtn">
-                              کاربر
-                            </Button>
                             {
                               d.status === 'در دسترس' ?
                                 <Button color="danger" className="mattabbtn">
