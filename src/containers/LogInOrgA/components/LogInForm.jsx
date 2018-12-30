@@ -11,14 +11,18 @@ import Panel from 'Root/shared/components/Panel';
 import { Row, Col, Card, CardBody, Button } from 'reactstrap';
 import renderCheckBoxField from 'Root/shared/components/form/CheckBox';
 import QRImage from 'Root/shared/img/qr.jpeg';
+import fetch from 'Root/fetch';
+import config from 'Root/config';
+import generateQR from 'Root/redux/actions/userOrgA/generateQR';
 
 class LogInForm extends PureComponent {
   static propTypes = {
     handleSubmit: PropTypes.func.isRequired,
   };
-  showPassword = (e) => {
-    e.preventDefault();
-  };
+
+  componentDidMount() {
+    generateQR();
+  }
 
   render() {
     const { handleSubmit } = this.props;
@@ -69,7 +73,7 @@ class LogInForm extends PureComponent {
                           <div className="form__form-group">
                             <div className="form__form-group-field">
                               <Field
-                                name="mobineNumber"
+                                name="mobileNumber"
                                 component={renderCheckBoxField}
                                 label="شماره موبایل"
                               />
@@ -91,7 +95,7 @@ class LogInForm extends PureComponent {
                           <div className="form__form-group">
                             <div className="form__form-group-field">
                               <Field
-                                name="birthdayDate"
+                                name="birthDate"
                                 component={renderCheckBoxField}
                                 label="تاریخ تولد"
                               />
@@ -112,7 +116,7 @@ class LogInForm extends PureComponent {
                           <div className="form__form-group">
                             <div className="form__form-group-field">
                               <Field
-                                name="avatar"
+                                name="imageURL"
                                 component={renderCheckBoxField}
                                 label="عکس"
                               />

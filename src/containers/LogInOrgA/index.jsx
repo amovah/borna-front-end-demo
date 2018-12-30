@@ -2,9 +2,10 @@ import React from 'react';
 import LogInForm from './components/LogInForm';
 import loginAction from 'Root/redux/actions/userOrgA/login';
 import RefreshIcon from 'mdi-react/RefreshIcon';
+import generateQR from 'Root/redux/actions/userOrgA/generateQR';
 
-const onSubmit = (values) => {
-  // loginAction(values);
+const onSubmit = () => {
+  generateQR();
 };
 
 const LogIn = () => (
