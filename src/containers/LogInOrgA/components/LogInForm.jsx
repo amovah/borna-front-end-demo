@@ -122,7 +122,7 @@ class LogInForm extends PureComponent {
                       </Row>
                       <Row>
                         <Col xs="6">
-                          <Button color="primary" size="sm">
+                          <Button color="primary">
                             تولید کد
                           </Button>
                         </Col>
