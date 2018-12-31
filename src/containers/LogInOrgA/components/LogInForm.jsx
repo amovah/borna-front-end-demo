@@ -40,12 +40,18 @@ class LogInForm extends PureComponent {
             <Card>
               <CardBody>
                 <div className="qrCodeSection">
-                  <Field
-                    name="qrCode"
-                    component={ImageField}
-                    alt="منتظر  QR کد بمانید"
-                    sample={QRImage}
-                  />
+                  <Row>
+                    <Col xs="4" />
+                    <Col xs="4">
+                      <Field
+                        name="qrCode"
+                        component={ImageField}
+                        alt="منتظر  QR کد بمانید"
+                        sample={QRImage}
+                      />
+                    </Col>
+                    <Col xs="4" />
+                  </Row>
                 </div>
                 <h3 className="login-orga-title bold-text">
                   سیستم احراز هویت
