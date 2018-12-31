@@ -5,7 +5,7 @@ import fetch from 'Root/fetch';
 import stopPolling from './stopPolling';
 
 const polling = async () => {
-  const { nonce, isPolling } = store.getState().userOrgA;
+  const { nonce, isPolling, afterDone } = store.getState().userOrgA;
 
   if (isPolling) {
     const res = await fetch({
@@ -18,7 +18,7 @@ const polling = async () => {
     if (Object.keys(res.data).length === 0 && isPolling) {
       setTimeout(polling, 1000);
     } else {
-      res.data.a();
+      afterDone(res.data);
 
       stopPolling();
       store.dispatch({
@@ -32,12 +32,13 @@ const polling = async () => {
   }
 };
 
-export default () => {
+export default (afterDone) => {
   const { isPolling, isRunning } = store.getState().userOrgA;
 
   if (!isPolling && !isRunning) {
     store.dispatch({
       type: types.userOrgA.START_POLLING,
+      afterDone,
     });
 
     store.dispatch({
@@ -48,6 +49,7 @@ export default () => {
   } else if (!isPolling && isRunning) {
     store.dispatch({
       type: types.userOrgA.START_POLLING,
+      afterDone,
     });
   }
 };

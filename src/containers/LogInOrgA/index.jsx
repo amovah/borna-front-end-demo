@@ -5,9 +5,27 @@ import RefreshIcon from 'mdi-react/RefreshIcon';
 import generateQR from 'Root/redux/actions/userOrgA/generateQR';
 import store from 'Root/store';
 import { reset, submit, change } from 'redux-form';
+import startPolling from 'Root/redux/actions/userOrgA/startPolling';
+import openModal from 'Root/redux/actions/modal/open';
+import closeModal from 'Root/redux/actions/modal/close';
+import ModalMessage from './components/ModalMessage';
+import { Button } from 'reactstrap';
 
 const onSubmit = () => {
   generateQR();
+  startPolling(() => {
+    openModal({
+      color: 'success',
+      message: <ModalMessage />,
+      buttons: [
+        <Button onClick={closeModal}>بستن</Button>,
+      ],
+      close() {
+        closeModal();
+      },
+      large: true,
+    });
+  });
 };
 
 const resetForm = () => {
@@ -16,6 +34,19 @@ const resetForm = () => {
   store.dispatch(change('loginOrgA', 'lastname', true));
 
   generateQR();
+  startPolling(() => {
+    openModal({
+      color: 'success',
+      message: <ModalMessage />,
+      buttons: [
+        <Button onClick={closeModal}>بستن</Button>,
+      ],
+      close() {
+        closeModal();
+      },
+      large: true,
+    });
+  });
 };
 
 const LogIn = () => (

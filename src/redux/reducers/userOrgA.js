@@ -27,6 +27,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         isPolling: true,
+        afterDone: action.afterDone,
       };
     }
 

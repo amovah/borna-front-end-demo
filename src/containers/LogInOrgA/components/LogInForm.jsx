@@ -15,6 +15,10 @@ import fetch from 'Root/fetch';
 import config from 'Root/config';
 import generateQR from 'Root/redux/actions/userOrgA/generateQR';
 import stopPolling from 'Root/redux/actions/userOrgA/stopPolling';
+import startPolling from 'Root/redux/actions/userOrgA/startPolling';
+import openModal from 'Root/redux/actions/modal/open';
+import closeModal from 'Root/redux/actions/modal/close';
+import ModalMessage from './ModalMessage';
 
 class LogInForm extends PureComponent {
   static propTypes = {
@@ -23,6 +27,19 @@ class LogInForm extends PureComponent {
 
   componentDidMount() {
     generateQR();
+    startPolling(() => {
+      openModal({
+        color: 'success',
+        message: <ModalMessage />,
+        buttons: [
+          <Button onClick={closeModal}>بستن</Button>,
+        ],
+        close() {
+          closeModal();
+        },
+        large: true,
+      });
+    });
   }
 
   componentWillUnmount() {

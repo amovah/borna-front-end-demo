@@ -12,7 +12,7 @@ class ModalHandler extends PureComponent {
   render() {
     if (this.props.modal.isOpen) {
       const {
-        color, title, message, colored, header, close,
+        color, title, message, colored, header, close, large,
       } = this.props.modal;
       let Icon;
 
@@ -35,6 +35,7 @@ class ModalHandler extends PureComponent {
       const modalClass = classNames({
         'modal-dialog--colored': colored,
         'modal-dialog--header': header,
+        'large-modal-here': large,
       });
 
       return (
