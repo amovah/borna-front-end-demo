@@ -13,15 +13,22 @@ export default async (values) => {
       body: JSON.stringify(values),
     },
   });
-  showNoti({
-    color: 'warning',
-    title: 'نام کاربری یا رمز عبور اشتباه است.',
-  }, 'right-top');
-  console.log(showNoti);
-  // store.dispatch({
-  //   type: types.userOrgB.LOGIN,
-  // });
-  //
+
+  if (res.res.status !== 200) {
+    return showNoti({
+      color: 'warning',
+      title: 'نام کاربری یا رمز عبور اشتباه است.',
+    }, 'right-top');
+  }
+
+  store.dispatch({
+    type: types.userOrgB.LOGIN,
+    token: res.data.id,
+    userId: res.data.userId,
+  });
+
+  history.push('/orgB/user-control');
+
   // store.dispatch({
   //   type: types.depositsOrgB.LOAD,
   // });
@@ -34,5 +41,5 @@ export default async (values) => {
   //   type: types.transactionsOrgC.LOAD,
   // });
 
-  // history.push('/orgB/user-control');
+  return 0;
 };

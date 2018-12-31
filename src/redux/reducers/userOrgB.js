@@ -10,6 +10,8 @@ export default function (state = initialState, action) {
       return {
         ...state,
         logged: true,
+        token: action.token,
+        userId: action.userId,
       };
     }
 

@@ -9,7 +9,7 @@ NotificationSystem.newInstance({}, n => noti = n);
 const showNotification = (notification, position) => {
   noti.notice({
     content: <BasicNotification {...notification} />,
-    duration: 500,
+    duration: 5,
     closable: true,
     style: { top: 0, left: 0 },
     className: position,
