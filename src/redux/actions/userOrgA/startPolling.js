@@ -32,7 +32,7 @@ const polling = async () => {
   }
 };
 
-export default (afterDone) => {
+export default (afterDone = () => {}) => {
   const { isPolling, isRunning } = store.getState().userOrgA;
 
   if (!isPolling && !isRunning) {
