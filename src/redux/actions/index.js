@@ -24,6 +24,11 @@ export default {
   userOrgB: {
     LOGIN: 'userOrgB/LOGIN',
     LOGOUT: 'userOrgB/LOGOUT',
+    NONCE: 'userOrgB/NONCE',
+    START_POLLING: 'userOrgB/START_POLLING',
+    STOP_POLLING: 'userOrgB/STOP_POLLING',
+    START_RUNNING: 'userOrgB/START_RUNNING',
+    STOP_RUNNING: 'userOrgB/STOP_RUNNING',
   },
   tokensOrgC: {
     LOAD: 'tokensOrgC/LOAD',

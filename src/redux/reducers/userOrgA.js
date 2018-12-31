@@ -38,6 +38,20 @@ export default function (state = initialState, action) {
       };
     }
 
+    case types.userOrgA.START_RUNNING: {
+      return {
+        ...state,
+        isRunning: true,
+      };
+    }
+
+    case types.userOrgA.STOP_RUNNING: {
+      return {
+        ...state,
+        isRunning: false,
+      };
+    }
+
     default: {
       return state;
     }
