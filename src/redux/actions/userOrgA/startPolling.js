@@ -19,17 +19,29 @@ const polling = async () => {
     } else {
       res.data.a();
     }
+  } else {
+    store.dispatch({
+      type: types.userOrgA.STOP_RUNNING,
+    });
   }
 };
 
 export default () => {
-  const { isPolling } = store.getState().userOrgA;
+  const { isPolling, isRunning } = store.getState().userOrgA;
 
-  if (!isPolling) {
+  if (!isPolling && !isRunning) {
     store.dispatch({
       type: types.userOrgA.START_POLLING,
     });
 
+    store.dispatch({
+      type: types.userOrgA.START_RUNNING,
+    });
+
     polling();
+  } else if (!isPolling && isRunning) {
+    store.dispatch({
+      type: types.userOrgA.START_POLLING,
+    });
   }
 };

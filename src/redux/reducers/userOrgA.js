@@ -4,6 +4,7 @@ const initialState = {
   logged: false,
   nonce: null,
   isPolling: false,
+  isRunning: false,
 };
 
 export default function (state = initialState, action) {

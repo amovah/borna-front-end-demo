@@ -4,6 +4,8 @@ export default {
     NONCE: 'userOrgA/NONCE',
     START_POLLING: 'userOrgA/START_POLLING',
     STOP_POLLING: 'userOrgA/STOP_POLLING',
+    START_RUNNING: 'userOrgA/START_RUNNING',
+    STOP_RUNNING: 'userOrgA/STOP_RUNNING',
   },
   suggestionOrgA: {
     LOAD: 'suggestionOrgA/LOAD',
