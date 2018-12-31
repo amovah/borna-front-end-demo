@@ -50,7 +50,7 @@ class LogInForm extends PureComponent {
               <AccountOutlineIcon />
             </div>
             <Field
-              name="name"
+              name="email"
               component="input"
               type="text"
               placeholder="نام کاربری"
