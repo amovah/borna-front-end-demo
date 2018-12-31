@@ -13,6 +13,6 @@ export default async () => {
     },
   });
 
-  store.dispatch(change('loginOrgA', 'qrCode', `${config.server}/${res.data.qrURL}`));
+  store.dispatch(change('SingupUserForm', 'QRCode', `${config.server}/${res.data.qrURL}`));
   nonce(res.data.nonce);
 };

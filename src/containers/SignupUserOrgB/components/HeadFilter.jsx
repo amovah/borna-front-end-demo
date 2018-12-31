@@ -16,15 +16,26 @@ import RefreshIcon from 'mdi-react/RefreshIcon';
 import { connect } from 'react-redux';
 import QRImage from 'Root/shared/img/qr.jpeg';
 import DefaultUser from 'Root/shared/img/defaultUser.png';
-// import Modal from './Modal';
 import openModal from 'Root/redux/actions/modal/open';
 import closeModal from 'Root/redux/actions/modal/close';
+import generateQR from 'Root/redux/actions/userOrgB/generateQR';
+import startPolling from 'Root/redux/actions/userOrgB/startPolling';
+import stopPolling from 'Root/redux/actions/userOrgB/stopPolling';
 
 const regex = [/[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/, '/', /[۰-۱]|[0-1]/, /[۰-۹]|[0-9]/, '/', /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/]; // eslint-disable-line
 
 class Form extends Component {
   state = {
     disabled: true,
+  }
+
+  componentDidMount() {
+    generateQR();
+    startPolling();
+  }
+
+  componentWillUnmount() {
+    stopPolling();
   }
 
   clearFields = () => {
@@ -35,6 +46,7 @@ class Form extends Component {
     const shit = store.getState().form.SingupUserForm;
     const confirm = () => {
       store.dispatch(reset('SingupUserForm'));
+      generateQR();
       closeModal();
     };
 
