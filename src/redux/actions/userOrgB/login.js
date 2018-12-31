@@ -3,6 +3,7 @@ import store from 'Root/store';
 import history from 'Root/history';
 import fetch from 'Root/fetch';
 import config from 'Root/config';
+import showNoti from 'Root/redux/actions/noti/show';
 
 export default async (values) => {
   const res = await fetch({
@@ -12,8 +13,11 @@ export default async (values) => {
       body: JSON.stringify(values),
     },
   });
-
-  console.log(res);
+  showNoti({
+    color: 'warning',
+    title: 'نام کاربری یا رمز عبور اشتباه است.',
+  }, 'right-top');
+  console.log(showNoti);
   // store.dispatch({
   //   type: types.userOrgB.LOGIN,
   // });
