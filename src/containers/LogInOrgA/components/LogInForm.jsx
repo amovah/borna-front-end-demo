@@ -14,6 +14,7 @@ import QRImage from 'Root/shared/img/qr.jpeg';
 import fetch from 'Root/fetch';
 import config from 'Root/config';
 import generateQR from 'Root/redux/actions/userOrgA/generateQR';
+import stopPolling from 'Root/redux/actions/userOrgA/stopPolling';
 
 class LogInForm extends PureComponent {
   static propTypes = {
@@ -22,6 +23,10 @@ class LogInForm extends PureComponent {
 
   componentDidMount() {
     generateQR();
+  }
+
+  componentWillUnmount() {
+    stopPolling();
   }
 
   render() {

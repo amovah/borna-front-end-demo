@@ -2,6 +2,7 @@ import types from 'Root/redux/actions';
 import store from 'Root/store';
 import config from 'Root/config';
 import fetch from 'Root/fetch';
+import stopPolling from './stopPolling';
 
 const polling = async () => {
   const { nonce, isPolling } = store.getState().userOrgA;
@@ -18,6 +19,11 @@ const polling = async () => {
       setTimeout(polling, 1000);
     } else {
       res.data.a();
+
+      stopPolling();
+      store.dispatch({
+        type: types.userOrgA.STOP_RUNNING,
+      });
     }
   } else {
     store.dispatch({
