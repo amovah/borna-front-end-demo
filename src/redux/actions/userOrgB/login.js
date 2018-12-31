@@ -29,17 +29,13 @@ export default async (values) => {
 
   history.push('/orgB/user-control');
 
-  // store.dispatch({
-  //   type: types.depositsOrgB.LOAD,
-  // });
-  //
-  // store.dispatch({
-  //   type: types.userControlOrgB.LOAD,
-  // });
+  store.dispatch({
+    type: types.depositsOrgB.LOAD,
+  });
 
-  // store.dispatch({
-  //   type: types.transactionsOrgC.LOAD,
-  // });
+  store.dispatch({
+    type: types.userControlOrgB.LOAD,
+  });
 
   return 0;
 };
