@@ -30,7 +30,7 @@ export class ImageNotification extends PureComponent {
   static propTypes = {
     img: PropTypes.string.isRequired,
     title: PropTypes.string,
-    message: PropTypes.string.isRequired,
+    // message: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -46,7 +46,7 @@ export class ImageNotification extends PureComponent {
           <img src={img} alt="" />
         </div>
         <h5 className="notification__title bold-text">{title}</h5>
-        <p className="notification__message">{message}</p>
+        <p className="notification__message">{message || null}</p>
       </div>
     );
   }

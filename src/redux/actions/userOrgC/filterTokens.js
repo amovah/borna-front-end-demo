@@ -14,14 +14,23 @@ const showWar = (text) => {
 };
 
 export default async (values) => {
-  const validValues = {};
+  const validValues = {
+  };
+
+  if (values.startAmount || values.endAmount) {
+    validValues.amount = {};
+  }
+
+  if (values.startDate || values.endDate) {
+    validValues.date = {};
+  }
 
   if (values.startAmount) {
-    validValues.startAmount = parseInt(faToEn(values.startAmount), 10);
+    validValues.amount.gt = parseInt(faToEn(values.startAmount), 10);
   }
 
   if (values.endAmount) {
-    validValues.endAmount = parseInt(faToEn(values.endAmount), 10);
+    validValues.amount.lt = parseInt(faToEn(values.endAmount), 10);
   }
 
   if (values.startDate) {
@@ -29,7 +38,7 @@ export default async (values) => {
     if (!m.isValid()) {
       return showWar('حداقل تاریخ معتبر نیست');
     }
-    validValues.startDate = m.valueOf();
+    validValues.date.gt = m.valueOf();
   }
 
   if (values.endDate) {
@@ -37,7 +46,7 @@ export default async (values) => {
     if (!m.isValid()) {
       return showWar('حداکثر تاریخ معتبر نیست.');
     }
-    validValues.endDate = m.valueOf();
+    validValues.date.lt = m.valueOf();
   }
 
   if (values.status) {
@@ -52,7 +61,9 @@ export default async (values) => {
     url: `${config.server}orgC/tokenIssueList`,
     options: {
       method: 'GET',
-      filter: validValues,
+      filter: {
+        where: validValues,
+      },
     },
   });
 
