@@ -12,15 +12,12 @@ import DateMask from 'Root/shared/components/mine/DateMask';
 import { enToFa } from 'Root/mapper';
 import RefreshIcon from 'mdi-react/RefreshIcon';
 import { connect } from 'react-redux';
+import loadClient from 'Root/redux/actions/userOrgC/loadClient';
 
 const regex = [/[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/, '/', /[۰-۱]|[0-1]/, /[۰-۹]|[0-9]/, '/', /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/]; // eslint-disable-line
 
 class Form extends PureComponent {
   clearFields = () => {
-    store.dispatch(reset('generateTokenOrgC'));
-  }
-
-  salam = () => {
     store.dispatch(reset('generateTokenOrgC'));
   }
 
@@ -36,7 +33,7 @@ class Form extends PureComponent {
                 </h3>
               </Col>
               <Col xs="1">
-                <RefreshIcon className="genrefreshbut" onClick={this.salam} />
+                <RefreshIcon className="genrefreshbut" onClick={() => loadClient(true)} />
               </Col>
             </Row>
           </div>
