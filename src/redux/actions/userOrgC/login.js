@@ -4,6 +4,7 @@ import history from 'Root/history';
 import fetch from 'Root/fetch';
 import config from 'Root/config';
 import showNoti from 'Root/redux/actions/noti/show';
+import loadTokens from './loadTokens';
 
 export default async (values) => {
   const res = await fetch({
@@ -32,9 +33,7 @@ export default async (values) => {
     type: types.usersOrgC.LOAD,
   });
 
-  store.dispatch({
-    type: types.tokensOrgC.LOAD,
-  });
+  loadTokens();
 
   store.dispatch({
     type: types.transactionsOrgC.LOAD,
