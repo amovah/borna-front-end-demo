@@ -2,15 +2,12 @@ import React from 'react';
 import { Container, Row } from 'reactstrap';
 import MatTable from './components/MatTable';
 import HeadFilter from './components/HeadFilter';
-
-const showres = (values) => {
-  console.log(values);
-};
+import filterTokens from 'Root/redux/actions/userOrgC/filterTokens';
 
 const MaterialTable = () => (
   <Container>
     <div>
-      <HeadFilter onSubmit={showres} />
+      <HeadFilter onSubmit={filterTokens} />
     </div>
     <Row>
       <MatTable />

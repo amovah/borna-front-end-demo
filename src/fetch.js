@@ -34,7 +34,7 @@ export default async ({
   }
 
   if (options.filter) {
-    modifiedUrl = `${modifiedUrl}&filter=${JSON.stringify(options.filter)}`;
+    modifiedUrl = `${modifiedUrl}&filter=${generateQueryString(options.filter)}`;
   }
 
   const res = await global.fetch(modifiedUrl, {
