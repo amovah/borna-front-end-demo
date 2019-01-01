@@ -29,12 +29,14 @@ export default async ({
   });
 
   let modifiedUrl = url;
+  let next = '?';
   if (queryString) {
     modifiedUrl = `${url}?${queryString}`;
+    next = '&';
   }
 
   if (options.filter) {
-    modifiedUrl = `${modifiedUrl}&filter=${generateQueryString(options.filter)}`;
+    modifiedUrl = `${modifiedUrl}${next}filter=${JSON.stringify(options.filter)}`;
   }
 
   const res = await global.fetch(modifiedUrl, {
