@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SidebarLink from './SidebarLink';
 import loadTokens from 'Root/redux/actions/userOrgC/loadTokens';
+import loadTrans from 'Root/redux/actions/userOrgC/loadTrans';
 // import SidebarCategory from './SidebarCategory';
 
 class SidebarContent extends Component {
@@ -23,7 +24,11 @@ class SidebarContent extends Component {
             route="/orgC/report-token-generation"
             onClick={() => loadTokens(true)}
           />
-          <SidebarLink title="تراکنش‌های کابران" route="/orgC/report-transactions" />
+          <SidebarLink
+            title="تراکنش‌های کابران"
+            route="/orgC/report-transactions"
+            onClick={() => loadTrans(true)}
+          />
           <SidebarLink title="کنترل نظرات" route="/orgC/suggestion" />
           {/* <SidebarCategory title="صفحه ها" icon="diamond">
             <SidebarLink title="صفح" route="/pages/one" onClick={this.hideSidebar} />

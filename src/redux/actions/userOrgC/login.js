@@ -5,6 +5,7 @@ import fetch from 'Root/fetch';
 import config from 'Root/config';
 import showNoti from 'Root/redux/actions/noti/show';
 import loadTokens from './loadTokens';
+import loadTrans from './loadTrans';
 
 export default async (values) => {
   const res = await fetch({
@@ -34,10 +35,7 @@ export default async (values) => {
   });
 
   loadTokens();
-
-  store.dispatch({
-    type: types.transactionsOrgC.LOAD,
-  });
+  loadTrans();
 
   store.dispatch({
     type: types.suggestionOrgA.LOAD,

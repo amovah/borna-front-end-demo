@@ -4,6 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import FilterListIcon from 'mdi-react/FilterListIcon';
+import loadTrans from 'Root/redux/actions/userOrgC/loadTrans';
 
 class MatTableFilterButton extends React.Component {
   static propTypes = {
@@ -47,7 +48,7 @@ class MatTableFilterButton extends React.Component {
           onClose={this.handleClose}
           className="material-table__filter-menu"
         >
-          <MenuItem className="material-table__filter-menu-item">
+          <MenuItem className="material-table__filter-menu-item" onClick={() => loadTrans(true)}>
             بارگزاری مجدد
           </MenuItem>
         </Menu>
