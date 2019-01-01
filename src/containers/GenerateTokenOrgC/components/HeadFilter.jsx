@@ -54,7 +54,7 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Field
-                      name="to"
+                      name="toAddress"
                       component={renderMultiSelectField}
                       options={this.props.users.map(i => ({
                         value: i.id,
@@ -76,7 +76,7 @@ class Form extends PureComponent {
                 <div className="form__form-group">
                   <div className="form__form-group-field">
                     <Field
-                      name="value"
+                      name="amount"
                       component={InputNumber}
                     />
                   </div>

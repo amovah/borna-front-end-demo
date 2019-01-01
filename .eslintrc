@@ -27,5 +27,6 @@
     'import/first': 0,
     'react/prop-types': 0,
     'no-unused-vars': 0,
+    'no-restricted-syntax': 0,
   }
 }
