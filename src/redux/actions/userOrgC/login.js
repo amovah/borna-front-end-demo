@@ -6,6 +6,7 @@ import config from 'Root/config';
 import showNoti from 'Root/redux/actions/noti/show';
 import loadTokens from './loadTokens';
 import loadTrans from './loadTrans';
+import loadClient from './loadClient';
 
 export default async (values) => {
   const res = await fetch({
@@ -29,11 +30,7 @@ export default async (values) => {
     userId: res.data.userId,
   });
 
-
-  store.dispatch({
-    type: types.usersOrgC.LOAD,
-  });
-
+  loadClient();
   loadTokens();
   loadTrans();
 
