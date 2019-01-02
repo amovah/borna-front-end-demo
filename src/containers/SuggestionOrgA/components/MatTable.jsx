@@ -182,7 +182,7 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${d.creator.firstname} ${d.creator.lastname}`}
+                            {`${d.firstname} ${d.lastname}`}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
@@ -205,18 +205,19 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabltr"
                           >
-                            {enToFa(moment(d.date).format('jYYYY/jM/D HH:mm'))}
+                            {enToFa(moment(parseInt(d.birthDate, 10)).format('jYYYY/jM/D HH:mm'))}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabcenter"
                           >
-                            {d.likes.toLocaleString('fa')}
+                            {/* {d.likes.toLocaleString('fa')} */}
+                            {(10).toLocaleString('fa')}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
                             {
-                              d.status === 'در حال نمایش' ?
+                              d.status === 'تائید شده' ?
                                 <Button color="danger" className="mattabbtn">
                                   گزارش
                                 </Button> :

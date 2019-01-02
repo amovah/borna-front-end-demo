@@ -7,6 +7,7 @@ import showNoti from 'Root/redux/actions/noti/show';
 import loadTokens from './loadTokens';
 import loadTrans from './loadTrans';
 import loadClient from './loadClient';
+import loadSuggestion from './loadSuggestion';
 
 export default async (values) => {
   const res = await fetch({
@@ -33,10 +34,7 @@ export default async (values) => {
   loadClient();
   loadTokens();
   loadTrans();
-
-  store.dispatch({
-    type: types.suggestionOrgA.LOAD,
-  });
+  loadSuggestion();
 
   history.push('/orgC/generate-token');
 
