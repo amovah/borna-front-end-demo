@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import SidebarLink from './SidebarLink';
 import loadTokens from 'Root/redux/actions/userOrgC/loadTokens';
 import loadTrans from 'Root/redux/actions/userOrgC/loadTrans';
+import loadSuggestion from 'Root/redux/actions/userOrgC/loadSuggestion';
 // import SidebarCategory from './SidebarCategory';
 
 class SidebarContent extends Component {
@@ -29,7 +30,11 @@ class SidebarContent extends Component {
             route="/orgC/report-transactions"
             onClick={() => loadTrans(true)}
           />
-          <SidebarLink title="کنترل نظرات" route="/orgC/suggestion" />
+          <SidebarLink
+            title="کنترل نظرات"
+            route="/orgC/suggestion"
+            onClick={() => loadSuggestion(true)}
+          />
           {/* <SidebarCategory title="صفحه ها" icon="diamond">
             <SidebarLink title="صفح" route="/pages/one" onClick={this.hideSidebar} />
             <SidebarLink title="صفح" route="/pages/one" onClick={this.hideSidebar} />
