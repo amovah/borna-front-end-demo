@@ -17,10 +17,6 @@ export default async (values) => {
   const validValues = {
   };
 
-  if (values.startLike || values.endLike) {
-    validValues.like = {};
-  }
-
   if (values.startDate || values.endDate) {
     validValues.date = {};
   }
@@ -53,8 +49,24 @@ export default async (values) => {
     validValues.status = values.status.value;
   }
 
+  if (values.firstname) {
+    validValues.firstname = values.firstname;
+  }
+
+  if (values.lastname) {
+    validValues.lastname = values.lastname;
+  }
+
+  if (values.nationalId) {
+    validValues.nationalId = values.nationalId;
+  }
+
+  if (values.mobileNumber) {
+    validValues.mobileNumber = values.mobileNumber;
+  }
+
   const res = await fetch({
-    url: `${config.server}orgC/suggestionList`,
+    url: `${config.server}orgB/orgB1/clientList`,
     options: {
       method: 'GET',
       filter: {
@@ -71,7 +83,7 @@ export default async (values) => {
   }
 
   store.dispatch({
-    type: types.suggestionOrgA.LOAD,
+    type: types.userControlOrgB.LOAD,
     data: res.data,
   });
 
