@@ -22,13 +22,13 @@ function getSorting(order, orderBy) {
 
     switch (orderBy) {
       case 'name': {
-        const fName = first.creator.firstname + first.creator.lastname;
-        const lName = last.creator.firstname + last.creator.lastname;
+        const fName = first.clientModel.firstname + first.clientModel.lastname;
+        const lName = last.clientModel.firstname + last.clientModel.lastname;
         return fName.localeCompare(lName);
       }
 
       case 'text': {
-        return first.text.localeCompare(last.text);
+        return first.message.localeCompare(last.text);
       }
 
       case 'status': {
@@ -36,7 +36,7 @@ function getSorting(order, orderBy) {
       }
 
       case 'date': {
-        return first.date - last.date;
+        return first.createDate - last.createDate;
       }
 
       case 'likes': {
@@ -182,12 +182,12 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${d.firstname} ${d.lastname}`}
+                            {`${d.clientModel.firstname} ${d.clientModel.lastname}`}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {d.text}
+                            {d.message}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
@@ -205,13 +205,12 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabltr"
                           >
-                            {enToFa(moment(parseInt(d.birthDate, 10)).format('jYYYY/jM/D HH:mm'))}
+                            {enToFa(moment(parseInt(d.createDate, 10)).format('jYYYY/jM/D HH:mm'))}
                           </TableCell>
                           <TableCell
-                            className="material-table__cell material-table__cell mattabfarsi mattabcenter"
+                            className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {/* {d.likes.toLocaleString('fa')} */}
-                            {(10).toLocaleString('fa')}
+                            {d.likes.toLocaleString('fa')}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
