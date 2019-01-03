@@ -217,7 +217,7 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {d.mobileNumber}
+                            {enToFa(d.mobileNumber)}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabbuts"
