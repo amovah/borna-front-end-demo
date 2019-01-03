@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SidebarLink from './SidebarLink';
 import loadClient from 'Root/redux/actions/userOrgB/loadClient';
+import loadDeposits from 'Root/redux/actions/userOrgB/loadDeposits';
 // import SidebarCategory from './SidebarCategory';
 
 class SidebarContent extends Component {
@@ -23,7 +24,11 @@ class SidebarContent extends Component {
             onClick={() => loadClient(true)}
           />
           <SidebarLink title="ثبت‌نام کاربر" route="/orgB/signup-user" />
-          <SidebarLink title="سپرده‌گذاری" route="/orgB/deposit" />
+          <SidebarLink
+            title="سپرده‌گذاری"
+            route="/orgB/deposit"
+            onClick={() => loadDeposits(true)}
+          />
           {/* <SidebarCategory title="صفحه ها" icon="diamond">
             <SidebarLink title="صفح" route="/pages/one" onClick={this.hideSidebar} />
             <SidebarLink title="صفح" route="/pages/one" onClick={this.hideSidebar} />

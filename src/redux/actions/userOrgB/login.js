@@ -5,6 +5,7 @@ import fetch from 'Root/fetch';
 import config from 'Root/config';
 import showNoti from 'Root/redux/actions/noti/show';
 import loadClient from './loadClient';
+import loadDeposits from './loadDeposits';
 
 export default async (values) => {
   const res = await fetch({
@@ -28,13 +29,10 @@ export default async (values) => {
     userId: res.data.userId,
   });
 
-  history.push('/orgB/user-control');
-
-  store.dispatch({
-    type: types.depositsOrgB.LOAD,
-  });
-
+  loadDeposits();
   loadClient();
+
+  history.push('/orgB/user-control');
 
   return 0;
 };
