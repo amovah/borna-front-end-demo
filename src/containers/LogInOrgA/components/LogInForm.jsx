@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { PureComponent } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, change } from 'redux-form';
 import EyeIcon from 'mdi-react/EyeIcon';
 import KeyVariantIcon from 'mdi-react/KeyVariantIcon';
 import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
@@ -26,6 +26,7 @@ class LogInForm extends PureComponent {
   };
 
   componentDidMount() {
+    store.dispatch(change('loginOrgA', 'bankname', 'بانک تست'));
     generateQR();
     startPolling(() => {
       openModal({
@@ -153,12 +154,31 @@ class LogInForm extends PureComponent {
                         </Col>
                       </Row>
                       <Row>
-                        <Col xs="6">
+                        <Col xs="5">
                           <Button color="primary">
                             تولید کد
                           </Button>
                         </Col>
-                        <Col xs="6" />
+                        <Col xs="7">
+                          <div className="form__form-group">
+                            <div className="form__form-group-field">
+                              <Row>
+                                <Col xs="4">
+                                  <span className="form__form-group-label headFilterBreak">
+                                    نام بانک:
+                                  </span>
+                                </Col>
+                                <Col xs="8">
+                                  <Field
+                                    name="bankname"
+                                    component="input"
+                                    type="text"
+                                  />
+                                </Col>
+                              </Row>
+                            </div>
+                          </div>
+                        </Col>
                       </Row>
                     </Panel>
                   </Col>

@@ -32,6 +32,7 @@ const resetForm = () => {
   store.dispatch(reset('loginOrgA'));
   store.dispatch(change('loginOrgA', 'firstname', true));
   store.dispatch(change('loginOrgA', 'lastname', true));
+  store.dispatch(change('loginOrgA', 'bankname', 'بانک تست'));
 
   generateQR();
   startPolling(() => {
