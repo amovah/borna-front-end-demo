@@ -21,6 +21,42 @@ export default async (values) => {
     validValues.date = {};
   }
 
+  if (values.startDeposit || values.endDeposit) {
+    validValues.deposit = {};
+  }
+
+  if (values.startProfit || values.endProfit) {
+    validValues.profit = {};
+  }
+
+  if (values.startProfitPercent || values.endProfitPercent) {
+    validValues.profitPercent = {};
+  }
+
+  if (values.startDeposit) {
+    validValues.deposit.gt = parseInt(faToEn(values.startDeposit), 10);
+  }
+
+  if (values.endDeposit) {
+    validValues.deposit.lt = parseInt(faToEn(values.endDeposit), 10);
+  }
+
+  if (values.startProfit) {
+    validValues.profit.gt = parseInt(faToEn(values.startProfit), 10);
+  }
+
+  if (values.endProfit) {
+    validValues.profit.lt = parseInt(faToEn(values.endProfit), 10);
+  }
+
+  if (values.startProfitPercent) {
+    validValues.profitPercent.gt = parseInt(faToEn(values.startProfitPercent), 10);
+  }
+
+  if (values.endProfitPercent) {
+    validValues.profitPercent.lt = parseInt(faToEn(values.endProfitPercent), 10);
+  }
+
   if (values.startDate) {
     const m = moment(faToEn(values.startDate), 'jYYYY/jMM/jDD');
     if (!m.isValid()) {
@@ -35,26 +71,6 @@ export default async (values) => {
       return showWar('حداکثر تاریخ معتبر نیست.');
     }
     validValues.date.lt = m.valueOf();
-  }
-
-  if (values.status) {
-    validValues.status = values.status.value;
-  }
-
-  if (values.firstname) {
-    validValues.firstname = values.firstname;
-  }
-
-  if (values.lastname) {
-    validValues.lastname = values.lastname;
-  }
-
-  if (values.nationalId) {
-    validValues.nationalId = values.nationalId;
-  }
-
-  if (values.mobileNumber) {
-    validValues.mobileNumber = values.mobileNumber;
   }
 
   const res = await fetch({
