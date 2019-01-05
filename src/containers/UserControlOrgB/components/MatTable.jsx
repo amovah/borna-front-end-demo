@@ -205,7 +205,7 @@ class MatTable extends PureComponent {
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
                             {
-                              d.status === 'در دسترس' ?
+                              d.status === 'تائید شده' ?
                                 <span className="mattabbadge-green">
                                   {d.status}
                                 </span> :
@@ -223,7 +223,7 @@ class MatTable extends PureComponent {
                             className="material-table__cell material-table__cell mattabfarsi mattabbuts"
                           >
                             {
-                              d.status === 'در دسترس' ?
+                              d.status === 'تائید شده' ?
                                 <Button color="danger" className="mattabbtn">
                                   توقیف کردن
                                 </Button> :
