@@ -182,10 +182,10 @@ class Form extends PureComponent {
                 </div>
                 <div className="liButtonGroup">
                   <button className="btn btn-primary">
-                    ثبت فیلتر
+                    جستوجو
                   </button>
                   <button className="btn btn-secondary" onClick={this.clearFields}>
-                    پاک کردن فیلتر ها
+                    پاک کردن فیلتر‌ها
                   </button>
                 </div>
               </Col>

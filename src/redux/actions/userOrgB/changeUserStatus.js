@@ -15,8 +15,6 @@ export default (clientId, operation) => async () => {
     },
   });
 
-  console.log('yea');
-
   if (res.res.status !== 200) {
     return showNoti({
       color: 'danger',
