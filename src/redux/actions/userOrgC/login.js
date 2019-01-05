@@ -10,7 +10,7 @@ import loadClient from './loadClient';
 import loadSuggestion from './loadSuggestion';
 
 export default async (values) => {
-  if (!values.email && !values.password) {
+  if (!values.email || !values.password) {
     return showNoti({
       color: 'warning',
       title: 'تمامی فیلد‌ها را پر کنید.',
