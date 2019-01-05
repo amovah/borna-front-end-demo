@@ -91,7 +91,7 @@ export default async (values) => {
   }
 
   store.dispatch({
-    type: types.userControlOrgB.LOAD,
+    type: types.depositsOrgB.LOAD,
     data: res.data,
   });
 
