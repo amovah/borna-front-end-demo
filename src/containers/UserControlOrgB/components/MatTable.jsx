@@ -11,6 +11,7 @@ import MatTableToolbar from './MatTableToolbar';
 import { connect } from 'react-redux';
 import moment from 'Root/moment';
 import { enToFa } from 'Root/mapper';
+import changeUserStatus from 'Root/redux/actions/userOrgB/changeUserStatus';
 
 function getSorting(order, orderBy) {
   return (a, b) => {
@@ -224,10 +225,18 @@ class MatTable extends PureComponent {
                           >
                             {
                               d.status === 'تائید شده' ?
-                                <Button color="danger" className="mattabbtn">
+                                <Button
+                                  color="danger"
+                                  className="mattabbtn"
+                                  onClick={changeUserStatus(d.id, 'rejected')}
+                                >
                                   توقیف کردن
                                 </Button> :
-                                <Button color="success" className="mattabbtn">
+                                <Button
+                                  color="success"
+                                  className="mattabbtn"
+                                  onClick={changeUserStatus(d.id, 'approved')}
+                                >
                                   آزاد کردن
                                 </Button>
                             }
