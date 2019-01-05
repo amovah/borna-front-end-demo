@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { PureComponent } from 'react';
-import { Field, reduxForm, change } from 'redux-form';
+import { Field, reduxForm, change, reset } from 'redux-form';
 import EyeIcon from 'mdi-react/EyeIcon';
 import KeyVariantIcon from 'mdi-react/KeyVariantIcon';
 import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
@@ -19,6 +19,29 @@ import startPolling from 'Root/redux/actions/userOrgA/startPolling';
 import openModal from 'Root/redux/actions/modal/open';
 import closeModal from 'Root/redux/actions/modal/close';
 import ModalMessage from './ModalMessage';
+import RefreshIcon from 'mdi-react/RefreshIcon';
+
+const resetForm = () => {
+  store.dispatch(reset('loginOrgA'));
+  store.dispatch(change('loginOrgA', 'firstname', true));
+  store.dispatch(change('loginOrgA', 'lastname', true));
+  store.dispatch(change('loginOrgA', 'orgname', 'سازمان ثالث'));
+
+  generateQR();
+  startPolling(() => {
+    openModal({
+      color: 'success',
+      message: <ModalMessage />,
+      buttons: [
+        <Button onClick={closeModal}>بستن</Button>,
+      ],
+      close() {
+        closeModal();
+      },
+      large: true,
+    });
+  });
+}
 
 class LogInForm extends PureComponent {
   static propTypes = {
@@ -26,7 +49,7 @@ class LogInForm extends PureComponent {
   };
 
   componentDidMount() {
-    store.dispatch(change('loginOrgA', 'bankname', 'بانک تست'));
+    store.dispatch(change('loginOrgA', 'orgname', 'سازمان ثالث'));
     generateQR();
     startPolling(() => {
       openModal({
@@ -57,6 +80,9 @@ class LogInForm extends PureComponent {
           <Col xs="6">
             <Card>
               <CardBody>
+                <div className="thatRefreshBut">
+                  <RefreshIcon className="genrefreshbut" onClick={resetForm} />
+                </div>
                 <div className="qrCodeSection">
                   <Row>
                     <Col xs="4" />
@@ -165,14 +191,15 @@ class LogInForm extends PureComponent {
                               <Row>
                                 <Col xs="4">
                                   <span className="form__form-group-label headFilterBreak">
-                                    نام بانک:
+                                    نام سازمان:
                                   </span>
                                 </Col>
                                 <Col xs="8">
                                   <Field
-                                    name="bankname"
+                                    name="orgname"
                                     component="input"
                                     type="text"
+                                    className="fuckuthefield"
                                   />
                                 </Col>
                               </Row>

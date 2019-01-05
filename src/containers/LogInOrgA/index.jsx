@@ -1,7 +1,6 @@
 import React from 'react';
 import LogInForm from './components/LogInForm';
 import loginAction from 'Root/redux/actions/userOrgA/login';
-import RefreshIcon from 'mdi-react/RefreshIcon';
 import generateQR from 'Root/redux/actions/userOrgA/generateQR';
 import store from 'Root/store';
 import { reset, submit, change } from 'redux-form';
@@ -53,9 +52,6 @@ const resetForm = () => {
 const LogIn = () => (
   <div className="account">
     <LogInForm onSubmit={onSubmit} />
-    <div className="thatRefreshBut">
-      <RefreshIcon className="genrefreshbut" onClick={resetForm} />
-    </div>
     <div className="version-indicator-in-login-page">
       <p>
         ورژن ۰.۹.۰

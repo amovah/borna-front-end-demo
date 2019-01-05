@@ -31,3 +31,17 @@ button {
   height: 10px;
   width: 100vw;
 }
+
+.fuckuthefield {
+  border: 1px solid #f2f4f7;
+  color: #646777;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 12px;
+  height: 32px;
+  transition: border 0.3s;
+  background: transparent;
+  overflow: visible;
+  font-size: 100%;
+  line-height: 1.15;
+}
