@@ -16,11 +16,4 @@ export default async (showNoot) => {
     type: types.suggestionOrgA.LOAD,
     data: res.data,
   });
-
-  if (showNoot) {
-    showNoti({
-      color: 'success',
-      title: 'با موفقیت اطلاعات بارگزاری شد.',
-    }, 'right-top');
-  }
 };

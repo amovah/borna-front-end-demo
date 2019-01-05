@@ -83,8 +83,5 @@ export default async (values) => {
     data: res.data,
   });
 
-  return showNoti({
-    color: 'success',
-    title: 'با موفقیت اطلاعات بارگزاری شد.',
-  }, 'right-top');
+  return null;
 };
