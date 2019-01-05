@@ -23,16 +23,14 @@ export default props => (
           <div className="form__form-group-field">
             <Row>
               <Col xs="4">
-                <span className="form__form-group-label headFilterBreak">
+                <p className="form__form-group-label headFilterBreak">
                   نام:
-                </span>
+                </p>
               </Col>
               <Col xs="8">
-                <input
-                  type="text"
-                  disabled
-                  value={props.user.firstname}
-                />
+                <p>
+                  {props.user.firstname}
+                </p>
               </Col>
             </Row>
           </div>
@@ -40,18 +38,15 @@ export default props => (
         <div className="form__form-group">
           <div className="form__form-group-field">
             <Row>
-              <Col xs="4">
-                <span className="form__form-group-label headFilterBreak">
+              <Col xs="6">
+                <p className="form__form-group-label headFilterBreak">
                   کد ملی:
-                </span>
+                </p>
               </Col>
-              <Col xs="8">
-                <input
-                  type="text"
-                  disabled
-                  className="ltronly"
-                  value={enToFa(props.user.nationalId)}
-                />
+              <Col xs="6">
+                <p>
+                  {enToFa(props.user.nationalId)}
+                </p>
               </Col>
             </Row>
           </div>
@@ -59,18 +54,15 @@ export default props => (
         <div className="form__form-group">
           <div className="form__form-group-field">
             <Row>
-              <Col xs="4">
-                <span className="form__form-group-label headFilterBreak">
+              <Col xs="6">
+                <p className="form__form-group-label headFilterBreak">
                   شماره موبایل:
-                </span>
+                </p>
               </Col>
-              <Col xs="8">
-                <input
-                  type="text"
-                  disabled
-                  className="ltronly"
-                  value={enToFa(props.user.mobileNumber)}
-                />
+              <Col xs="6">
+                <p>
+                  {enToFa(props.user.mobileNumber)}
+                </p>
               </Col>
             </Row>
           </div>
@@ -80,17 +72,15 @@ export default props => (
         <div className="form__form-group">
           <div className="form__form-group-field">
             <Row>
-              <Col xs="4">
-                <span className="form__form-group-label headFilterBreak">
+              <Col xs="6">
+                <p className="form__form-group-label headFilterBreak">
                   نام خانوادگی:
-                </span>
+                </p>
               </Col>
-              <Col xs="8">
-                <input
-                  type="text"
-                  disabled
-                  value={props.user.lastname}
-                />
+              <Col xs="6">
+                <p>
+                  {props.user.lastname}
+                </p>
               </Col>
             </Row>
           </div>
@@ -98,18 +88,15 @@ export default props => (
         <div className="form__form-group">
           <div className="form__form-group-field">
             <Row>
-              <Col xs="4">
-                <span className="form__form-group-label headFilterBreak">
+              <Col xs="6">
+                <p className="form__form-group-label headFilterBreak">
                   تاریخ تولد:
-                </span>
+                </p>
               </Col>
-              <Col xs="8">
-                <input
-                  type="text"
-                  disabled
-                  className="ltronly"
-                  value={enToFa(moment(parseInt(props.user.birthDate, 10)).format('jYYYY/jM/D HH:mm'))}
-                />
+              <Col xs="6">
+                <p>
+                  {enToFa(moment(parseInt(props.user.birthDate, 10)).format('jYYYY/jM/D HH:mm'))}
+                </p>
               </Col>
             </Row>
           </div>
@@ -119,16 +106,14 @@ export default props => (
           <div className="form__form-group-field">
             <Row>
               <Col xs="4">
-                <span className="form__form-group-label headFilterBreak">
+                <p className="form__form-group-label headFilterBreak">
                   وضعیت:
-                </span>
+                </p>
               </Col>
               <Col xs="8">
-                <input
-                  type="text"
-                  disabled
-                  value={props.user.status}
-                />
+                <p>
+                  {props.user.status}
+                </p>
               </Col>
             </Row>
           </div>
