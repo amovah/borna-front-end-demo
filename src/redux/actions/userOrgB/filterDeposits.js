@@ -74,7 +74,7 @@ export default async (values) => {
   }
 
   const res = await fetch({
-    url: `${config.server}orgB/orgB1/clientList`,
+    url: `${config.server}orgB/orgB1/depositList`,
     options: {
       method: 'GET',
       filter: {
