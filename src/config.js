@@ -1,3 +1,6 @@
+import { env } from 'process';
+
 export default {
-  server: 'http://localhost:3010/api/',
+  server: 'https://general-webservice.herokuapp.com/api/',
+  // server:'http://localhost:3010/api/',
 };

@@ -50,7 +50,9 @@ class Form extends Component {
       closeModal();
     };
 
-    if (shit.values) {
+    delete shit.values.QRCode;
+
+    if (Object.keys(shit.values).length) {
       openModal({
         color: 'warning',
         title: 'اخطار',
@@ -84,7 +86,7 @@ class Form extends Component {
                 </h3>
               </Col>
               <Col xs="1">
-                <RefreshIcon className="genrefreshbut" onClick={this.salam} />
+                <RefreshIcon className="genrefreshbut" onClick={this.refresh} />
               </Col>
             </Row>
           </div>
