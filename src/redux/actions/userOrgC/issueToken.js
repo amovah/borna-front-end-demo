@@ -4,6 +4,13 @@ import config from 'Root/config';
 import { enToFa, faToEn } from 'Root/mapper';
 
 export default async (values) => {
+  if (!values.toAddress || !values.amount) {
+    return showNoti({
+      color: 'warning',
+      title: 'تمامی فیلد‌ها را پر کنید.',
+    }, 'right-top');
+  }
+
   const validValues = {
     ...values,
     amount: parseInt(faToEn(values.amount), 10),
