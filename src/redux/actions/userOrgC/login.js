@@ -43,6 +43,11 @@ export default async (values) => {
   loadTrans();
   loadSuggestion();
 
+  localStorage.orgB = JSON.stringify({
+    token: res.data.id,
+    userId: res.data.userId,
+  });
+
   history.push('/orgC/generate-token');
 
   return 0;

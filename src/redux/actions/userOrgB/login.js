@@ -39,6 +39,11 @@ export default async (values) => {
   loadDeposits();
   loadClient();
 
+  localStorage.orgB = JSON.stringify({
+    token: res.data.id,
+    userId: res.data.userId,
+  });
+
   history.push('/orgB/user-control');
 
   return 0;
