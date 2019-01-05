@@ -7,5 +7,5 @@ export default async () => {
     type: types.userOrgB.LOGOUT,
   });
 
-  history.push('/orgB/user-control');
+  localStorage.removeItem('orgB');
 };

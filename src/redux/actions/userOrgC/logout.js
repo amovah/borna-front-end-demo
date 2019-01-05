@@ -6,4 +6,6 @@ export default async () => {
   store.dispatch({
     type: types.userOrgC.LOGOUT,
   });
+
+  localStorage.removeItem('orgC');
 };
