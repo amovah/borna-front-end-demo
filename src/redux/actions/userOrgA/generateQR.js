@@ -11,7 +11,7 @@ export default async () => {
   delete values.qrCode;
 
   const shit = Object.assign({}, values);
-  delete shit.orgname;
+  delete shit.issuerName;
 
   let all = true;
   for (const value of Object.values(shit)) {

@@ -25,7 +25,7 @@ const resetForm = () => {
   store.dispatch(reset('loginOrgA'));
   store.dispatch(change('loginOrgA', 'firstname', true));
   store.dispatch(change('loginOrgA', 'lastname', true));
-  store.dispatch(change('loginOrgA', 'orgname', 'سازمان ثالث'));
+  store.dispatch(change('loginOrgA', 'issuerName', 'سازمان ثالث'));
 
   generateQR();
   startPolling(() => {
@@ -49,7 +49,7 @@ class LogInForm extends PureComponent {
   };
 
   componentDidMount() {
-    store.dispatch(change('loginOrgA', 'orgname', 'سازمان ثالث'));
+    store.dispatch(change('loginOrgA', 'issuerName', 'سازمان ثالث'));
     generateQR();
     startPolling(() => {
       openModal({
@@ -196,7 +196,7 @@ class LogInForm extends PureComponent {
                                 </Col>
                                 <Col xs="8">
                                   <Field
-                                    name="orgname"
+                                    name="issuerName"
                                     component="input"
                                     type="text"
                                     className="fuckuthefield"
