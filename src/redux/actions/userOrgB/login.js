@@ -8,6 +8,13 @@ import loadClient from './loadClient';
 import loadDeposits from './loadDeposits';
 
 export default async (values) => {
+  if (!values.email && !values.password) {
+    return showNoti({
+      color: 'warning',
+      title: 'تمامی فیلد‌ها را پر کنید.',
+    }, 'right-top');
+  }
+
   const res = await fetch({
     url: `${config.server}orgB/orgB1/login`,
     options: {
@@ -18,7 +25,7 @@ export default async (values) => {
 
   if (res.res.status !== 200) {
     return showNoti({
-      color: 'warning',
+      color: 'danger',
       title: 'نام کاربری یا رمز عبور اشتباه است.',
     }, 'right-top');
   }
