@@ -238,4 +238,8 @@
   input {
     color: black !important;
   }
+
+  input[disabled] {
+    color: #999aa5 !important;
+  }
 }
