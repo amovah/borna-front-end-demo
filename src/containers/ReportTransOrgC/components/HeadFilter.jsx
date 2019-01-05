@@ -18,7 +18,8 @@ import loadTrans from 'Root/redux/actions/userOrgC/loadTrans';
 const regex = [/[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, '/',  /[۰-۱]|[0-1]/, /[۰-۹]|[0-9]/, '/', /[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/] // eslint-disable-line
 
 class Form extends PureComponent {
-  clearFields = () => {
+  clearFields = (e) => {
+    e.preventDefault();
     store.dispatch(reset('ReportTransForm'));
     loadTrans();
   }
