@@ -13,12 +13,14 @@ import { enToFa } from 'Root/mapper';
 import { connect } from 'react-redux';
 import RefreshIcon from 'mdi-react/RefreshIcon';
 import loadClient from 'Root/redux/actions/userOrgC/loadClient';
+import loadTrans from 'Root/redux/actions/userOrgC/loadTrans';
 
 const regex = [/[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, '/',  /[۰-۱]|[0-1]/, /[۰-۹]|[0-9]/, '/', /[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/] // eslint-disable-line
 
 class Form extends PureComponent {
   clearFields = () => {
     store.dispatch(reset('ReportTransForm'));
+    loadTrans();
   }
 
   render() {
@@ -192,10 +194,10 @@ class Form extends PureComponent {
                 </div>
                 <div className="liButtonGroup">
                   <button className="btn btn-primary">
-                    ثبت فیلتر
+                    جستوجو
                   </button>
                   <button className="btn btn-secondary" onClick={this.clearFields}>
-                    پاک کردن فیلتر ها
+                    پاک کردن فیلتر‌ها
                   </button>
                 </div>
               </Col>

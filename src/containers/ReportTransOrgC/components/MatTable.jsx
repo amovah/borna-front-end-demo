@@ -11,6 +11,32 @@ import MatTableToolbar from './MatTableToolbar';
 import { connect } from 'react-redux';
 import moment from 'Root/moment';
 import { enToFa } from 'Root/mapper';
+import openModal from 'Root/redux/actions/modal/open';
+import closeModal from 'Root/redux/actions/modal/close';
+import ModalMessage from './ModalMessage';
+import fetch from 'Root/fetch';
+import config from 'Root/config';
+
+const showUser = async (id) => {
+  const res = await fetch({
+    url: `${config.server}orgC/clientInfo/${id}`,
+    options: {
+      method: 'GET',
+    },
+  });
+
+  openModal({
+    color: 'success',
+    message: <ModalMessage user={res.data} />,
+    buttons: [
+      <Button onClick={closeModal}>بستن</Button>,
+    ],
+    close() {
+      closeModal();
+    },
+    large: true,
+  });
+};
 
 function getSorting(order, orderBy) {
   return (a, b) => {
@@ -218,10 +244,18 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabbuts"
                           >
-                            <Button color="primary" className="mattabbtn">
+                            <Button
+                              color="primary"
+                              className="mattabbtn"
+                              onClick={() => showUser(d.source.id)}
+                            >
                               کاربر مقصد
                             </Button>
-                            <Button color="primary" className="mattabbtn">
+                            <Button
+                              color="primary"
+                              className="mattabbtn"
+                              onClick={() => showUser(d.destination.id)}
+                            >
                               کاربر مبدا
                             </Button>
                           </TableCell>
