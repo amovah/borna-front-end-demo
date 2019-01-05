@@ -12,12 +12,14 @@ import DateMask from 'Root/shared/components/mine/DateMask';
 import { enToFa } from 'Root/mapper';
 import { connect } from 'react-redux';
 import RefreshIcon from 'mdi-react/RefreshIcon';
+import loadClient from 'Root/redux/actions/userOrgB/loadClient';
 
 const regex = [/[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/, '/', /[۰-۱]|[0-1]/, /[۰-۹]|[0-9]/, '/', /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/]; // eslint-disable-line
 
 class Form extends PureComponent {
   clearFields = () => {
     store.dispatch(reset('UserControlForm'));
+    loadClient();
   }
 
   render() {
