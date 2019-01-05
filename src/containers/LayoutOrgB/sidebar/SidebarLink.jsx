@@ -13,7 +13,7 @@ const SidebarLink = ({
   >
     <li className="sidebar__link">
       {icon ? <span className={`sidebar__link-icon lnr lnr-${icon}`} /> : ''}
-      <p className="sidebar__link-title">
+      <p className="sidebar__link-title bold-text">
         {title}
         {newLink ? <Badge className="sidebar__link-badge"><span>New</span></Badge> : ''}
       </p>
