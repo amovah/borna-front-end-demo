@@ -49,22 +49,24 @@
 }
 
 .topbar__logo {
-  width: 150px;
-  height: 32px;
-  margin: auto 0;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: left;
-  background-size: contain;
-  display: none;
+  padding-top: 10px;
 
-  @include themify($themes) {
-    background-image: themed('logoImg');
+  img {
+    margin: auto 0;
   }
+  // background-repeat: no-repeat;
+  // background-position-y: center;
+  // background-position-x: left;
+  // background-size: contain;
+  // display: none;
 
-  @media screen and (min-width: 768px) {
-    display: block;
-  }
+  // @include themify($themes) {
+  //   background-image: themed('logoImg');
+  // }
+
+  // @media screen and (min-width: 768px) {
+  //   display: block;
+  // }
 }
 
 .topbar__right {

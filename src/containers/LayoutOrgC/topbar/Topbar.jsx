@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TopbarSidebarButton from './TopbarSidebarButton';
 import TopbarProfile from './TopbarProfile';
+import titleLogo from 'Root/shared/img/1-1.png';
 
 class Topbar extends PureComponent {
   static propTypes = {
@@ -24,7 +25,9 @@ class Topbar extends PureComponent {
               changeMobileSidebarVisibility={changeMobileSidebarVisibility}
               changeSidebarVisibility={changeSidebarVisibility}
             />
-            <Link className="topbar__logo" to="/orgA" />
+            <span className="topbar__logo">
+              <img src={titleLogo} alt="salam" />
+            </span>
           </div>
         </div>
       </div>
