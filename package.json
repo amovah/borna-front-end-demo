@@ -2,7 +2,7 @@
   "name": "Easydev-seed",
   "version": "1.4.0",
   "private": true,
-  "homepage": "http://previews.aspirity.com/easydev",
+  "homepage": "http://previews.aspirity.com/",
   "dependencies": {
     "@material-ui/core": "^3.7.1",
     "bfj": "6.1.1",
