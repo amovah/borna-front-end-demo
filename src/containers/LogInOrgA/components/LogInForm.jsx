@@ -10,7 +10,7 @@ import ImageField from 'Root/shared/components/mine/ImageField';
 import Panel from 'Root/shared/components/Panel';
 import { Row, Col, Card, CardBody, Button } from 'reactstrap';
 import renderCheckBoxField from 'Root/shared/components/form/CheckBox';
-import QRImage from 'Root/shared/img/qr.jpeg';
+import QRImage from 'Root/shared/img/qr.png';
 import fetch from 'Root/fetch';
 import config from 'Root/config';
 import generateQR from 'Root/redux/actions/userOrgA/generateQR';

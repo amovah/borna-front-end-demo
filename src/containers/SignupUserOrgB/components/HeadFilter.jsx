@@ -14,7 +14,7 @@ import ImageField from 'Root/shared/components/mine/ImageField';
 import { enToFa } from 'Root/mapper';
 import RefreshIcon from 'mdi-react/RefreshIcon';
 import { connect } from 'react-redux';
-import QRImage from 'Root/shared/img/qr.jpeg';
+import QRImage from 'Root/shared/img/qr.png';
 import DefaultUser from 'Root/shared/img/defaultUser.png';
 import openModal from 'Root/redux/actions/modal/open';
 import closeModal from 'Root/redux/actions/modal/close';
