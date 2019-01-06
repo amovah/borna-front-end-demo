@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import MainWrapper from './MainWrapper';
 // orgA
 import LoginOrgA from '../LogInOrgA';
@@ -61,6 +62,11 @@ const OrgA = () => (
 const OrgC = () => (
   <ProtectedOrgC>
     <div>
+      <Helmet>
+        <title>
+          سازمان مرکزی
+        </title>
+      </Helmet>
       <LayoutOrgC />
       <div className="container__wrap">
         <Switch>
@@ -76,6 +82,11 @@ const OrgC = () => (
 
 const OrgB = () => (
   <ProtectedOrgB>
+    <Helmet>
+      <title>
+        سازمان یک
+      </title>
+    </Helmet>
     <div>
       <LayoutOrgB />
       <div className="container__wrap">
@@ -94,9 +105,36 @@ const Router = () => (
   <MainWrapper>
     <main>
       <Switch>
-        <Route exact path="/login/orgA" component={LoginOrgA} />
-        <Route exact path="/login/orgB" component={LoginOrgB} />
-        <Route exact path="/login/orgC" component={LoginOrgC} />
+        <Route exact path="/login/orgA">
+          <Fragment>
+            <Helmet>
+              <title>
+                سازمان ثالث
+              </title>
+            </Helmet>
+            <LoginOrgA />
+          </Fragment>
+        </Route>
+        <Route exact path="/login/orgB">
+          <Fragment>
+            <Helmet>
+              <title>
+                سازمان یک
+              </title>
+            </Helmet>
+            <LoginOrgB />
+          </Fragment>
+        </Route>
+        <Route exact path="/login/orgC">
+          <Fragment>
+            <Helmet>
+              <title>
+                سازمان مرکزی
+              </title>
+            </Helmet>
+            <LoginOrgC />
+          </Fragment>
+        </Route>
         <Route exact path="/login/orgD" component={LoginOrgD} />
         <Route path="/orgA" component={OrgA} />
         <Route path="/orgC" component={OrgC} />
