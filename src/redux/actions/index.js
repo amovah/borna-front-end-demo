@@ -42,8 +42,10 @@ export default {
   },
   depositsOrgB: {
     LOAD: 'depositsOrgB/LOAD',
+    CLEAR: 'depositsOrgB/CLEAR',
   },
   userControlOrgB: {
     LOAD: 'userControlOrgB/LOAD',
+    CLEAR: 'userControlOrgB/CLEAR',
   },
 };
