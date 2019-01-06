@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import MainWrapper from './MainWrapper';
 // orgA
 import LoginOrgA from '../LogInOrgA';
@@ -63,7 +63,12 @@ const OrgC = () => (
     <div>
       <LayoutOrgC />
       <div className="container__wrap">
-        <Route path="/orgC" component={PagesOrgC} />
+        <Switch>
+          <Route path="/orgC" exact>
+            <Redirect to="/orgC/generate-token" />
+          </Route>
+          <Route path="/orgC" component={PagesOrgC} />
+        </Switch>
       </div>
     </div>
   </ProtectedOrgC>
@@ -74,7 +79,12 @@ const OrgB = () => (
     <div>
       <LayoutOrgB />
       <div className="container__wrap">
-        <Route path="/orgB" component={PagesOrgB} />
+        <Switch>
+          <Route path="/orgB" exact>
+            <Redirect to="/orgB/user-control" />
+          </Route>
+          <Route path="/orgB" component={PagesOrgB} />
+        </Switch>
       </div>
     </div>
   </ProtectedOrgB>
