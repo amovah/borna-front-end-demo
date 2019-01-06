@@ -4,6 +4,9 @@ import SidebarLink from './SidebarLink';
 import loadTokens from 'Root/redux/actions/userOrgC/loadTokens';
 import loadTrans from 'Root/redux/actions/userOrgC/loadTrans';
 import loadSuggestion from 'Root/redux/actions/userOrgC/loadSuggestion';
+import clearTokens from 'Root/redux/actions/userOrgC/clearTokens';
+import clearTrans from 'Root/redux/actions/userOrgC/clearTrans';
+import clearSuggestion from 'Root/redux/actions/userOrgC/clearSuggestion';
 // import SidebarCategory from './SidebarCategory';
 
 class SidebarContent extends Component {
@@ -23,17 +26,17 @@ class SidebarContent extends Component {
           <SidebarLink
             title="گزارش تولید توکن"
             route="/orgC/report-token-generation"
-            onClick={() => loadTokens(true)}
+            onClick={() => { clearTokens(); loadTokens(); }}
           />
           <SidebarLink
             title="تراکنش‌های کابران"
             route="/orgC/report-transactions"
-            onClick={() => loadTrans(true)}
+            onClick={() => { clearTrans(); loadTrans(); }}
           />
           <SidebarLink
             title="کنترل نظرات"
             route="/orgC/suggestion"
-            onClick={() => loadSuggestion(true)}
+            onClick={() => { clearSuggestion(); loadSuggestion(); }}
           />
           {/* <SidebarCategory title="صفحه ها" icon="diamond">
             <SidebarLink title="صفح" route="/pages/one" onClick={this.hideSidebar} />

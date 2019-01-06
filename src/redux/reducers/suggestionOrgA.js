@@ -8,6 +8,10 @@ export default function (state = initialState, action) {
       return action.data;
     }
 
+    case types.suggestionOrgA.CLEAR: {
+      return [];
+    }
+
     default: {
       return state;
     }

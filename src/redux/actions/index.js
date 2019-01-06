@@ -9,6 +9,7 @@ export default {
   },
   suggestionOrgA: {
     LOAD: 'suggestionOrgA/LOAD',
+    CLEAR: 'suggestionOrgA/CLEAR',
   },
   usersOrgC: {
     LOAD: 'usersOrgC/LOAD',
@@ -32,9 +33,11 @@ export default {
   },
   tokensOrgC: {
     LOAD: 'tokensOrgC/LOAD',
+    CLEAR: 'tokensOrgC/CLEAR',
   },
   transactionsOrgC: {
     LOAD: 'transactionsOrgC/LOAD',
+    CLEAR: 'transactionsOrgC/CLEAR',
   },
   modal: {
     OPEN: 'modal/OPEN',

@@ -8,6 +8,10 @@ export default function (state = initialState, action) {
       return action.data;
     }
 
+    case types.tokensOrgC.CLEAR: {
+      return [];
+    }
+
     default: {
       return state;
     }
