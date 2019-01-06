@@ -5,7 +5,7 @@ import KeyVariantIcon from 'mdi-react/KeyVariantIcon';
 import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import titleLogo from 'Root/shared/img/logo/logo.png';
+import titleLogo from 'Root/shared/img/1-0.png';
 
 class LogInForm extends PureComponent {
   static propTypes = {
@@ -37,7 +37,7 @@ class LogInForm extends PureComponent {
             alt="khafes"
           />
           <h1>
-            سومیش
+            سازمان مرکزی
           </h1>
         </div>
         <div className="form__form-group">
