@@ -11,8 +11,7 @@ import ModalMessage from './components/ModalMessage';
 import { Button } from 'reactstrap';
 
 const onSubmit = () => {
-  generateQR();
-  startPolling(() => {
+  generateQR(() => startPolling(() => {
     openModal({
       color: 'success',
       message: <ModalMessage />,
@@ -24,29 +23,7 @@ const onSubmit = () => {
       },
       large: true,
     });
-  });
-};
-
-const resetForm = () => {
-  store.dispatch(reset('loginOrgA'));
-  store.dispatch(change('loginOrgA', 'firstname', true));
-  store.dispatch(change('loginOrgA', 'lastname', true));
-  store.dispatch(change('loginOrgA', 'bankname', 'بانک تست'));
-
-  generateQR();
-  startPolling(() => {
-    openModal({
-      color: 'success',
-      message: <ModalMessage />,
-      buttons: [
-        <Button onClick={closeModal}>بستن</Button>,
-      ],
-      close() {
-        closeModal();
-      },
-      large: true,
-    });
-  });
+  }));
 };
 
 const LogIn = () => (

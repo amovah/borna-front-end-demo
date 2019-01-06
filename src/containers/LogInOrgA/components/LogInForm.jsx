@@ -20,12 +20,13 @@ import openModal from 'Root/redux/actions/modal/open';
 import closeModal from 'Root/redux/actions/modal/close';
 import ModalMessage from './ModalMessage';
 import RefreshIcon from 'mdi-react/RefreshIcon';
+import renderMultiSelectField from 'Root/shared/components/form/Select';
 
 const resetForm = () => {
   store.dispatch(reset('loginOrgA'));
   store.dispatch(change('loginOrgA', 'firstname', true));
   store.dispatch(change('loginOrgA', 'lastname', true));
-  store.dispatch(change('loginOrgA', 'issuerName', 'سازمان ثالث'));
+  store.dispatch(change('loginOrgA', 'issuer', { label: 'سازمان اول', value: 'orgB1' }));
 
   generateQR();
   startPolling(() => {
@@ -49,9 +50,8 @@ class LogInForm extends PureComponent {
   };
 
   componentDidMount() {
-    store.dispatch(change('loginOrgA', 'issuerName', 'سازمان ثالث'));
-    generateQR();
-    startPolling(() => {
+    store.dispatch(change('loginOrgA', 'issuer', { label: 'سازمان اول', value: 'orgB1' }));
+    generateQR(() => startPolling(() => {
       openModal({
         color: 'success',
         message: <ModalMessage />,
@@ -63,7 +63,7 @@ class LogInForm extends PureComponent {
         },
         large: true,
       });
-    });
+    }));
   }
 
   componentWillUnmount() {
@@ -187,23 +187,23 @@ class LogInForm extends PureComponent {
                         </Col>
                         <Col xs="7">
                           <div className="form__form-group">
-                            <div className="form__form-group-field">
-                              <Row>
-                                <Col xs="4">
-                                  <span className="form__form-group-label headFilterBreak">
-                                    نام سازمان:
-                                  </span>
-                                </Col>
-                                <Col xs="8">
-                                  <Field
-                                    name="issuerName"
-                                    component="input"
-                                    type="text"
-                                    className="fuckuthefield"
-                                  />
-                                </Col>
-                              </Row>
-                            </div>
+                            <Row>
+                              <Col xs="4">
+                                <span className="form__form-group-label headFilterBreak">
+                                  نام سازمان:
+                                </span>
+                              </Col>
+                              <Col xs="8">
+                                <Field
+                                  name="issuer"
+                                  component={renderMultiSelectField}
+                                  options={[
+                                    { label: 'سازمان اول', value: 'orgB1' },
+                                    { label: 'سازمان دوم', value: 'orgB2' },
+                                  ]}
+                                />
+                              </Col>
+                            </Row>
                           </div>
                         </Col>
                       </Row>
