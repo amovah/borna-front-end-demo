@@ -11,10 +11,10 @@ import ModalMessage from './components/ModalMessage';
 import { Button } from 'reactstrap';
 
 const onSubmit = () => {
-  generateQR(() => startPolling(() => {
+  generateQR(() => startPolling((data) => {
     openModal({
       color: 'success',
-      message: <ModalMessage />,
+      message: <ModalMessage data={data} />,
       buttons: [
         <Button onClick={closeModal}>بستن</Button>,
       ],

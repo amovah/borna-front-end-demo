@@ -29,10 +29,10 @@ const resetForm = () => {
   store.dispatch(change('loginOrgA', 'lastname', true));
   store.dispatch(change('loginOrgA', 'issuer', { label: 'سازمان اول', value: 'orgB1' }));
 
-  generateQR(() => startPolling(() => {
+  generateQR(() => startPolling((data) => {
     openModal({
       color: 'success',
-      message: <ModalMessage />,
+      message: <ModalMessage data={data} />,
       buttons: [
         <Button onClick={closeModal}>بستن</Button>,
       ],
@@ -51,10 +51,10 @@ class LogInForm extends PureComponent {
 
   componentDidMount() {
     store.dispatch(change('loginOrgA', 'issuer', { label: 'سازمان اول', value: 'orgB1' }));
-    generateQR(() => startPolling(() => {
+    generateQR(() => startPolling((data) => {
       openModal({
         color: 'success',
-        message: <ModalMessage />,
+        message: <ModalMessage data={data} />,
         buttons: [
           <Button onClick={closeModal}>بستن</Button>,
         ],
