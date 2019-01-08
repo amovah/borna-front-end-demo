@@ -29,8 +29,7 @@ const resetForm = () => {
   store.dispatch(change('loginOrgA', 'lastname', true));
   store.dispatch(change('loginOrgA', 'issuer', { label: 'سازمان اول', value: 'orgB1' }));
 
-  generateQR();
-  startPolling(() => {
+  generateQR(() => startPolling(() => {
     openModal({
       color: 'success',
       message: <ModalMessage />,
@@ -42,7 +41,7 @@ const resetForm = () => {
       },
       large: true,
     });
-  });
+  }));
 }
 
 class LogInForm extends PureComponent {
