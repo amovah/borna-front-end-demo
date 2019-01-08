@@ -171,7 +171,7 @@ class LogInForm extends PureComponent {
                           <div className="form__form-group">
                             <div className="form__form-group-field">
                               <Field
-                                name="imageURL"
+                                name="imageBase64"
                                 component={renderCheckBoxField}
                                 label="عکس"
                               />
