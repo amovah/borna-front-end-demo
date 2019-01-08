@@ -13,7 +13,7 @@ export default props => (
       <Col xs="2">
         <div className="user-modal-image">
           <img
-            src={props.data.imageBase64}
+            src={`data:image/png;base64,${props.data.imageBase64}`}
             alt="عکس کاربر"
           />
         </div>
