@@ -7,7 +7,7 @@ import nonce from './nonce';
 
 export default async () => {
   const res = await fetch({
-    url: `${config.server}orgB/orgB1/newRegisterQR`,
+    url: `${config.server}orgB/org1/newRegisterQR`,
     options: {
       method: 'GET',
     },

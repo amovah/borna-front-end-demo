@@ -27,7 +27,7 @@ const resetForm = () => {
   store.dispatch(reset('loginOrgA'));
   store.dispatch(change('loginOrgA', 'firstname', true));
   store.dispatch(change('loginOrgA', 'lastname', true));
-  store.dispatch(change('loginOrgA', 'issuer', { label: 'سازمان اول', value: 'orgB1' }));
+  store.dispatch(change('loginOrgA', 'issuer', { label: 'سازمان اول', value: 'org1' }));
 
   generateQR(() => startPolling((data) => {
     openModal({
@@ -50,7 +50,7 @@ class LogInForm extends PureComponent {
   };
 
   componentDidMount() {
-    store.dispatch(change('loginOrgA', 'issuer', { label: 'سازمان اول', value: 'orgB1' }));
+    store.dispatch(change('loginOrgA', 'issuer', { label: 'سازمان اول', value: 'org1' }));
     generateQR(() => startPolling((data) => {
       openModal({
         color: 'success',
@@ -198,8 +198,8 @@ class LogInForm extends PureComponent {
                                   name="issuer"
                                   component={renderMultiSelectField}
                                   options={[
-                                    { label: 'سازمان اول', value: 'orgB1' },
-                                    { label: 'سازمان دوم', value: 'orgB2' },
+                                    { label: 'سازمان اول', value: 'org1' },
+                                    { label: 'سازمان دوم', value: 'org2' },
                                   ]}
                                 />
                               </Col>

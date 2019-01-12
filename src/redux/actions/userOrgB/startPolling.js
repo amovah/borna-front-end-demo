@@ -9,7 +9,7 @@ const polling = async () => {
 
   if (isPolling) {
     const res = await fetch({
-      url: `${config.server}orgB/orgB1/registerQR/${nonce}`,
+      url: `${config.server}orgB/org1/registerQR/${nonce}`,
       options: {
         method: 'GET',
       },

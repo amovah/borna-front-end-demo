@@ -16,7 +16,7 @@ export default async (values) => {
   }
 
   const res = await fetch({
-    url: `${config.server}orgB/orgB1/login`,
+    url: `${config.server}orgB/org1/login`,
     options: {
       method: 'POST',
       body: JSON.stringify(values),

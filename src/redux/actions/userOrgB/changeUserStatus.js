@@ -6,7 +6,7 @@ import showNoti from 'Root/redux/actions/noti/show';
 
 export default (clientId, operation) => async () => {
   const res = await fetch({
-    url: `${config.server}orgB/orgB1/clientControl/${clientId}`,
+    url: `${config.server}orgB/org1/clientControl/${clientId}`,
     options: {
       method: 'PUT',
     },

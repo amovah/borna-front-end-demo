@@ -6,7 +6,7 @@ import showNoti from 'Root/redux/actions/noti/show';
 
 export default async (showNoot) => {
   const res = await fetch({
-    url: `${config.server}orgB/orgB1/depositList`,
+    url: `${config.server}orgB/org1/depositList`,
     options: {
       method: 'GET',
     },
