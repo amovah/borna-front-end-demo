@@ -21,6 +21,37 @@ import closeModal from 'Root/redux/actions/modal/close';
 import generateQR from 'Root/redux/actions/userOrgB/generateQR';
 import startPolling from 'Root/redux/actions/userOrgB/startPolling';
 import stopPolling from 'Root/redux/actions/userOrgB/stopPolling';
+import moment from 'Root/moment';
+import config from 'Root/config';
+import fetch from 'Root/fetch';
+
+const refresh = () => {
+  const shit = store.getState().form.SingupUserForm;
+  const confirm = () => {
+    store.dispatch(reset('SingupUserForm'));
+    generateQR();
+    closeModal();
+  };
+
+  delete shit.values.QRCode;
+
+  if (Object.keys(shit.values).length) {
+    openModal({
+      color: 'warning',
+      title: 'اخطار',
+      message: 'آیا مطمین هستید که میخواهید فرم را تازه کنید؟',
+      buttons: [
+        <Button onClick={closeModal}>خیر</Button>,
+        <Button color="warning" onClick={confirm}>بله</Button>,
+      ],
+      close() {
+        closeModal();
+      },
+    });
+  } else {
+    confirm();
+  }
+};
 
 const regex = [/[۰-۳]|[0-3]/, /[۰-۹]|[0-9]/, '/', /[۰-۱]|[0-1]/, /[۰-۹]|[0-9]/, '/', /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/, /[۰-۹]|[0-9]/]; // eslint-disable-line
 
@@ -30,8 +61,22 @@ class Form extends Component {
   }
 
   componentDidMount() {
-    generateQR();
-    startPolling();
+    const { setState } = this;
+    global.fuckState = setState;
+    generateQR(() => startPolling((data) => {
+      setState({
+        disabled: false,
+      });
+
+      store.dispatch(change('SingupUserForm', 'avatar', data.imageBase64));
+      store.dispatch(change('SingupUserForm', 'firstname', data.firstname));
+      store.dispatch(change('SingupUserForm', 'lastname', data.lastname));
+      store.dispatch(change('SingupUserForm', 'nationalId', enToFa(data.nationalId)));
+      store.dispatch(change('SingupUserForm', 'mobileNumber', enToFa(data.mobileNumber)));
+      store.dispatch(change('SingupUserForm', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/D HH:mm')))); // eslint-disable-line
+
+      global.fuckData = data;
+    }));
   }
 
   componentWillUnmount() {
@@ -42,36 +87,32 @@ class Form extends Component {
     store.dispatch(reset('SingupUserForm'));
   }
 
-  refresh = () => {
-    const shit = store.getState().form.SingupUserForm;
-    const confirm = () => {
-      store.dispatch(reset('SingupUserForm'));
-      generateQR();
-      closeModal();
-    };
-
-    delete shit.values.QRCode;
-
-    if (Object.keys(shit.values).length) {
-      openModal({
-        color: 'warning',
-        title: 'اخطار',
-        message: 'آیا مطمین هستید که میخواهید فرم را تازه کنید؟',
-        buttons: [
-          <Button onClick={closeModal}>خیر</Button>,
-          <Button color="warning" onClick={confirm}>بله</Button>,
-        ],
-        close() {
-          closeModal();
-        },
-      });
-    } else {
-      confirm();
-    }
-  }
-
-  fuckloo = () => {
+  fuckloo = (e) => {
+    e.preventDefault();
     store.dispatch(reset('SingupUserForm'));
+
+    fetch({
+      url: `${config.server}/orgB/${global.fuckData.issuerId}/${global.fuckData.clientId}/rejected`,
+      options: {
+        method: 'PUT',
+      },
+    });
+
+    const { setState } = this;
+    generateQR(() => startPolling((data) => {
+      setState({
+        disabled: false,
+      });
+
+      store.dispatch(change('SingupUserForm', 'avatar', data.imageBase64));
+      store.dispatch(change('SingupUserForm', 'firstname', data.firstname));
+      store.dispatch(change('SingupUserForm', 'lastname', data.lastname));
+      store.dispatch(change('SingupUserForm', 'nationalId', enToFa(data.nationalId)));
+      store.dispatch(change('SingupUserForm', 'mobileNumber', enToFa(data.mobileNumber)));
+      store.dispatch(change('SingupUserForm', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/D HH:mm')))); // eslint-disable-line
+
+      global.fuckData = data;
+    }));
   }
 
   render() {
@@ -86,7 +127,7 @@ class Form extends Component {
                 </h3>
               </Col>
               <Col xs="1">
-                <RefreshIcon className="genrefreshbut" onClick={this.refresh} />
+                <RefreshIcon className="genrefreshbut" onClick={refresh} />
               </Col>
             </Row>
           </div>
@@ -191,10 +232,9 @@ class Form extends Component {
                           </Col>
                           <Col xs="9">
                             <Field
-                              name="birthdayDate"
-                              component={DateMask}
+                              name="birthDate"
+                              component="input"
                               type="text"
-                              mask={regex}
                               disabled
                             />
                           </Col>
@@ -212,9 +252,8 @@ class Form extends Component {
                           <Col xs="9">
                             <Field
                               name="birthdayDate"
-                              component={DateMask}
+                              component="input"
                               type="text"
-                              mask={regex}
                               disabled
                             />
                           </Col>
