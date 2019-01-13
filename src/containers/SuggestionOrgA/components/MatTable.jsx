@@ -221,14 +221,14 @@ class MatTable extends PureComponent {
                                 <Button
                                   color="danger"
                                   className="mattabbtn"
-                                  onClick={changeSuggestionStatus(d.id, 'reported')}
+                                  onClick={changeSuggestionStatus(d.id, 'گزارش شده')}
                                 >
                                   گزارش
                                 </Button> :
                                 <Button
                                   color="success"
                                   className="mattabbtn"
-                                  onClick={changeSuggestionStatus(d.id, 'available')}
+                                  onClick={changeSuggestionStatus(d.id, 'در حال نمایش')}
                                 >
                                   نمایش
                                 </Button>

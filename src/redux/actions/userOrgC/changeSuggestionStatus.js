@@ -3,6 +3,7 @@ import types from 'Root/redux/actions';
 import fetch from 'Root/fetch';
 import config from 'Root/config';
 import showNoti from 'Root/redux/actions/noti/show';
+import loadSuggestion from './loadSuggestion';
 
 export default (clientId, operation) => async () => {
   const res = await fetch({
@@ -21,6 +22,8 @@ export default (clientId, operation) => async () => {
       title: res.data.error.message,
     }, 'right-top');
   }
+
+  loadSuggestion();
 
   return 0;
 };
