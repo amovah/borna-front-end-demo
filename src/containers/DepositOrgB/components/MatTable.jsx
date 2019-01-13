@@ -205,22 +205,22 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${enToFa(d.deposit)}`}
+                            {`${enToFa(d.deposit.toString())}`}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${enToFa(d.profit)}`}
+                            {`${enToFa(d.profit.toString())}`}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${enToFa(d.interval)}`}
+                            کوتاه مدت
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${enToFa(d.profitPercentage)}`}
+                            {`${enToFa(d.profitPercentage.toString())}`}
                           </TableCell>
                         </TableRow>
                       );
