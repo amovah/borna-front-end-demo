@@ -28,7 +28,7 @@ export default props => (
             </Col>
             <Col xs="8">
               <p>
-                {props.user.firstname}
+                {props.user.firstname.slice(0, 10)}
               </p>
             </Col>
           </Row>
@@ -42,7 +42,7 @@ export default props => (
             </Col>
             <Col xs="8">
               <p>
-                {enToFa(props.user.nationalId)}
+                {props.user.nationalId.slice(0, 10)}
               </p>
             </Col>
           </Row>
@@ -56,7 +56,7 @@ export default props => (
             </Col>
             <Col xs="8">
               <p>
-                {enToFa(props.user.mobileNumber)}
+                {props.user.mobileNumber.slice(0, 10)}
               </p>
             </Col>
           </Row>
@@ -72,7 +72,7 @@ export default props => (
             </Col>
             <Col xs="8">
               <p>
-                {props.user.lastname}
+                {props.user.lastname.slice(0, 10)}
               </p>
             </Col>
           </Row>
@@ -86,7 +86,7 @@ export default props => (
             </Col>
             <Col xs="8">
               <p>
-                {enToFa(moment(parseInt(props.user.birthDate, 10)).format('jYYYY/jM/D HH:mm'))}
+                {props.user.birthDate.slice(0, 10)}
               </p>
             </Col>
           </Row>

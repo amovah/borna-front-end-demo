@@ -237,7 +237,7 @@ class MatTable extends PureComponent {
                             <Button
                               color="primary"
                               className="mattabbtn"
-                              onClick={() => { showUser(d.id); }}
+                              onClick={() => { showUser(d.destination.id); }}
                             >
                               کاربر
                             </Button>
