@@ -18,9 +18,12 @@ const showres = (values) => {
   });
 
   fetch({
-    url: `${config.server}/orgB/${global.fuckData.issuerId}/${global.fuckData.clientId}/approved`,
+    url: `${config.server}/orgB/${global.fuckData.issuerId}/clientControl/${global.fuckData.id}`,
     options: {
       method: 'PUT',
+    },
+    query: {
+      operation: 'approved',
     },
   });
 

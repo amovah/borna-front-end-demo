@@ -29,13 +29,24 @@ const refresh = () => {
   const shit = store.getState().form.SingupUserForm;
   const confirm = () => {
     store.dispatch(reset('SingupUserForm'));
-    generateQR();
+    generateQR(() => startPolling((data) => {
+      global.fuckState({
+        disabled: false,
+      });
+
+      store.dispatch(change('SingupUserForm', 'avatar', data.imageBase64));
+      store.dispatch(change('SingupUserForm', 'firstname', data.firstname));
+      store.dispatch(change('SingupUserForm', 'lastname', data.lastname));
+      store.dispatch(change('SingupUserForm', 'nationalId', enToFa(data.nationalId)));
+      store.dispatch(change('SingupUserForm', 'mobileNumber', enToFa(data.mobileNumber)));
+      store.dispatch(change('SingupUserForm', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/D HH:mm')))); // eslint-disable-line
+
+      global.fuckData = data;
+    }));
     closeModal();
   };
 
-  delete shit.values.QRCode;
-
-  if (Object.keys(shit.values).length) {
+  if (Object.keys(shit.values).length > 1) {
     openModal({
       color: 'warning',
       title: 'اخطار',
@@ -62,9 +73,9 @@ class Form extends Component {
 
   componentDidMount() {
     const { setState } = this;
-    global.fuckState = setState;
+    global.fuckState = setState.bind(this);
     generateQR(() => startPolling((data) => {
-      setState({
+      global.fuckState({
         disabled: false,
       });
 
@@ -92,9 +103,12 @@ class Form extends Component {
     store.dispatch(reset('SingupUserForm'));
 
     fetch({
-      url: `${config.server}/orgB/${global.fuckData.issuerId}/${global.fuckData.clientId}/rejected`,
+      url: `${config.server}/orgB/${global.fuckData.issuerId}/clientControl/${global.fuckData.id}`,
       options: {
         method: 'PUT',
+      },
+      query: {
+        operation: 'rejected',
       },
     });
 
