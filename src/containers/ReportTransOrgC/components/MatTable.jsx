@@ -210,17 +210,25 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${d.source.firstname} ${d.source.lastname}`}
+                            {
+                              d.source.id === 0 ?
+                              'سازمان مرکزی' :
+                              `${d.source.firstname} ${d.source.lastname}`
+                            }
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {`${d.destination.firstname} ${d.destination.lastname}`}
+                            {
+                              d.destination.id === 0 ?
+                              'سازمان مرکزی' :
+                              `${d.destination.firstname} ${d.destination.lastname}`
+                            }
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabltr"
                           >
-                            {enToFa(moment(d.date).format('jYYYY/jM/D HH:mm'))}
+                            {enToFa(moment(parseInt(d.date, 10)).format('jYYYY/jM/D HH:mm'))}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
@@ -244,20 +252,43 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabbuts"
                           >
-                            <Button
-                              color="primary"
-                              className="mattabbtn"
-                              onClick={() => showUser(d.source.id)}
-                            >
-                              کاربر مقصد
-                            </Button>
-                            <Button
-                              color="primary"
-                              className="mattabbtn"
-                              onClick={() => showUser(d.destination.id)}
-                            >
-                              کاربر مبدا
-                            </Button>
+                            {
+                              d.destination.id === 0 ?
+                                <Button
+                                  color="primary"
+                                  className="mattabbtn"
+                                  onClick={() => showUser(d.destination.id)}
+                                  disabled
+                                >
+                                  کاربر مقصد
+                                </Button> :
+                                <Button
+                                  color="primary"
+                                  className="mattabbtn"
+                                  onClick={() => showUser(d.destination.id)}
+                                >
+                                  کاربر مقصد
+                                </Button>
+                            }
+
+                            {
+                              d.source.id === 0 ?
+                                <Button
+                                  color="primary"
+                                  className="mattabbtn"
+                                  onClick={() => showUser(d.source.id)}
+                                  disabled
+                                >
+                                  کاربر مبدا
+                                </Button> :
+                                <Button
+                                  color="primary"
+                                  className="mattabbtn"
+                                  onClick={() => showUser(d.source.id)}
+                                >
+                                  کاربر مبدا
+                                </Button>
+                            }
                           </TableCell>
                         </TableRow>
                       );
