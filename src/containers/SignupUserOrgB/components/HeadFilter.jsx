@@ -39,7 +39,7 @@ const refresh = () => {
       store.dispatch(change('SingupUserForm', 'lastname', data.lastname));
       store.dispatch(change('SingupUserForm', 'nationalId', enToFa(data.nationalId)));
       store.dispatch(change('SingupUserForm', 'mobileNumber', enToFa(data.mobileNumber)));
-      store.dispatch(change('SingupUserForm', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/D HH:mm')))); // eslint-disable-line
+      store.dispatch(change('SingupUserForm', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/jD HH:mm')))); // eslint-disable-line
 
       global.fuckData = data;
     }));
@@ -84,7 +84,7 @@ class Form extends Component {
       store.dispatch(change('SingupUserForm', 'lastname', data.lastname));
       store.dispatch(change('SingupUserForm', 'nationalId', enToFa(data.nationalId)));
       store.dispatch(change('SingupUserForm', 'mobileNumber', enToFa(data.mobileNumber)));
-      store.dispatch(change('SingupUserForm', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/D HH:mm')))); // eslint-disable-line
+      store.dispatch(change('SingupUserForm', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/jD HH:mm')))); // eslint-disable-line
 
       global.fuckData = data;
     }));
@@ -123,7 +123,7 @@ class Form extends Component {
       store.dispatch(change('SingupUserForm', 'lastname', data.lastname));
       store.dispatch(change('SingupUserForm', 'nationalId', enToFa(data.nationalId)));
       store.dispatch(change('SingupUserForm', 'mobileNumber', enToFa(data.mobileNumber)));
-      store.dispatch(change('SingupUserForm', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/D HH:mm')))); // eslint-disable-line
+      store.dispatch(change('SingupUserForm', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/jD HH:mm')))); // eslint-disable-line
 
       global.fuckData = data;
     }));

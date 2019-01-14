@@ -87,7 +87,7 @@ export default props => (
             <Col xs="8">
               <p>
                 {(props.data.birthDate &&
-                  enToFa(moment(parseInt(props.data.birthDate, 10)).format('jYYYY/jM/D HH:mm'))
+                  enToFa(moment(parseInt(props.data.birthDate, 10)).format('jYYYY/jM/jD HH:mm'))
                 ) || 'نامشخص'}
               </p>
             </Col>

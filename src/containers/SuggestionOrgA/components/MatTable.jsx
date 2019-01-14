@@ -206,7 +206,7 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabltr"
                           >
-                            {enToFa(moment(parseInt(d.createDate, 10)).format('jYYYY/jM/D HH:mm'))}
+                            {enToFa(moment(parseInt(d.createDate, 10)).format('jYYYY/jM/jD HH:mm'))}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
