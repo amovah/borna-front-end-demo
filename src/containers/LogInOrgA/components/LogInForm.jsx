@@ -60,6 +60,7 @@ class LogInForm extends PureComponent {
       if (data.status === 'نامعتبر') {
         red = true;
       }
+
       openModal({
         color: 'success',
         message: <ModalMessage data={data} red={red} />,

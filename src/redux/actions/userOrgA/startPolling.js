@@ -30,6 +30,17 @@ const polling = async () => {
       type: types.userOrgA.STOP_RUNNING,
     });
   }
+
+  //   afterDone({
+  //     firstname: 'a',
+  //     status: 'نا معتبر',
+  //   });
+  //
+  //   stopPolling();
+  //   store.dispatch({
+  //     type: types.userOrgA.STOP_RUNNING,
+  //   });
+  // }
 };
 
 export default (afterDone = () => {}) => {

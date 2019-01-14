@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import {
   Row,
@@ -27,7 +28,7 @@ export default props => (
               </p>
             </Col>
             <Col xs="8">
-              <p className={this.props.red && 'rednamotabar'}>
+              <p className={props.red && 'rednamotabar'}>
                 {props.data.firstname || 'نامشخص'}
               </p>
             </Col>
