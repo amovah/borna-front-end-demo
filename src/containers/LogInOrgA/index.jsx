@@ -12,9 +12,13 @@ import { Button } from 'reactstrap';
 
 const onSubmit = () => {
   generateQR(() => startPolling((data) => {
+    let red = false;
+    if (data.status === 'نامعتبر') {
+      red = true;
+    }
     openModal({
       color: 'success',
-      message: <ModalMessage data={data} />,
+      message: <ModalMessage data={data} red={red} />,
       buttons: [
         <Button onClick={closeModal}>بستن</Button>,
       ],

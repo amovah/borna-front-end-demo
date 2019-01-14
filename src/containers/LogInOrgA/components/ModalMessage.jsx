@@ -27,7 +27,7 @@ export default props => (
               </p>
             </Col>
             <Col xs="8">
-              <p>
+              <p className={this.props.red && 'rednamotabar'}>
                 {props.data.firstname || 'نامشخص'}
               </p>
             </Col>
