@@ -26,20 +26,20 @@ import config from 'Root/config';
 import fetch from 'Root/fetch';
 
 const refresh = () => {
-  const shit = store.getState().form.SingupUserForm;
+  const shit = store.getState().form.SingupUserFormB;
   const confirm = () => {
-    store.dispatch(reset('SingupUserForm'));
+    store.dispatch(reset('SingupUserFormB'));
     generateQR(() => startPolling((data) => {
       global.fuckState({
         disabled: false,
       });
 
-      store.dispatch(change('SingupUserForm', 'avatar', data.imageBase64));
-      store.dispatch(change('SingupUserForm', 'firstname', data.firstname));
-      store.dispatch(change('SingupUserForm', 'lastname', data.lastname));
-      store.dispatch(change('SingupUserForm', 'nationalId', enToFa(data.nationalId)));
-      store.dispatch(change('SingupUserForm', 'mobileNumber', enToFa(data.mobileNumber)));
-      store.dispatch(change('SingupUserForm', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/jD HH:mm')))); // eslint-disable-line
+      store.dispatch(change('SingupUserFormB', 'avatar', data.imageBase64));
+      store.dispatch(change('SingupUserFormB', 'firstname', data.firstname));
+      store.dispatch(change('SingupUserFormB', 'lastname', data.lastname));
+      store.dispatch(change('SingupUserFormB', 'nationalId', enToFa(data.nationalId)));
+      store.dispatch(change('SingupUserFormB', 'mobileNumber', enToFa(data.mobileNumber)));
+      store.dispatch(change('SingupUserFormB', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/jD HH:mm')))); // eslint-disable-line
 
       global.fuckData = data;
     }));
