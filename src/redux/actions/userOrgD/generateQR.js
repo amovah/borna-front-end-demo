@@ -13,7 +13,7 @@ export default async (cb = () => {}) => {
     },
   });
 
-  store.dispatch(change('SingupUserForm', 'QRCode', `${config.server}/${res.data.qrURL}`));
+  store.dispatch(change('SingupUserFormB', 'QRCode', `${config.server}/${res.data.qrURL}`));
   nonce(res.data.nonce);
 
   cb();
