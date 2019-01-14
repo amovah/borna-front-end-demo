@@ -4,7 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import FilterListIcon from 'mdi-react/FilterListIcon';
-import loadDeposits from 'Root/redux/actions/userOrgB/loadDeposits';
+import loadDeposits from 'Root/redux/actions/userOrgD/loadDeposits';
 
 class MatTableFilterButton extends React.Component {
   static propTypes = {

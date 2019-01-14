@@ -11,7 +11,7 @@ import MatTableToolbar from './MatTableToolbar';
 import { connect } from 'react-redux';
 import moment from 'Root/moment';
 import { enToFa } from 'Root/mapper';
-import changeUserStatus from 'Root/redux/actions/userOrgB/changeUserStatus';
+import changeUserStatus from 'Root/redux/actions/userOrgD/changeUserStatus';
 
 function getSorting(order, orderBy) {
   return (a, b) => {
@@ -275,5 +275,5 @@ class MatTable extends PureComponent {
 }
 
 export default connect(state => ({
-  transactions: state.userControlOrgB,
+  transactions: state.userControlOrgD,
 }))(MatTable);

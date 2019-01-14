@@ -255,5 +255,5 @@ class MatTable extends PureComponent {
 }
 
 export default connect(state => ({
-  deposits: state.depositsOrgB,
+  deposits: state.depositsOrgD,
 }))(MatTable);
