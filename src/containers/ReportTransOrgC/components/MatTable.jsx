@@ -233,7 +233,7 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
-                            {d.amount.toLocaleString('fa')}
+                            {enToFa(d.amount.toString())}
                           </TableCell>
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi"
