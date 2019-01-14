@@ -11,6 +11,9 @@ import userOrgB from './userOrgB';
 import modal from './modal';
 import depositsOrgB from './depositsOrgB';
 import userControlOrgB from './userControlOrgB';
+import userOrgD from './userOrgD';
+import depositsOrgD from './depositsOrgD';
+import userControlOrgD from './userControlOrgD';
 
 export {
   themeReducer,
@@ -26,4 +29,7 @@ export {
   modal,
   depositsOrgB,
   userControlOrgB,
+  userOrgD,
+  depositsOrgD,
+  userControlOrgD,
 };

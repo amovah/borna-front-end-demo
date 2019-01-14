@@ -14,6 +14,9 @@ import {
   modal,
   depositsOrgB,
   userControlOrgB,
+  userOrgD,
+  depositsOrgD,
+  userControlOrgD,
 } from 'Root/redux/reducers/index';
 
 const reducer = combineReducers({
@@ -31,6 +34,9 @@ const reducer = combineReducers({
   modal,
   depositsOrgB,
   userControlOrgB,
+  userOrgD,
+  depositsOrgD,
+  userControlOrgD,
 });
 
 const store = createStore(reducer);

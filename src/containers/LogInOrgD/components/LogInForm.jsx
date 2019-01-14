@@ -6,6 +6,7 @@ import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // import titleLogo from 'shared/img/logo.png';
+import titleLogo from 'Root/shared/img/3-0.png';
 
 class LogInForm extends PureComponent {
   static propTypes = {
@@ -32,12 +33,12 @@ class LogInForm extends PureComponent {
     return (
       <form className="form" onSubmit={handleSubmit}>
         <div className="login-page-title">
-          {/* <img
+          <img
             src={titleLogo}
             alt="khafes"
-          /> */}
+          />
           <h1>
-            چهارمیش
+            سازمان یک
           </h1>
         </div>
         <div className="form__form-group">
@@ -49,7 +50,7 @@ class LogInForm extends PureComponent {
               <AccountOutlineIcon />
             </div>
             <Field
-              name="name"
+              name="email"
               component="input"
               type="text"
               placeholder="نام کاربری"
@@ -77,7 +78,7 @@ class LogInForm extends PureComponent {
             </button>
           </div>
         </div>
-        <Link className="btn btn-primary account__btn account__btn--small" to="/pages/one">ورود</Link>
+        <button className="btn btn-primary account__btn account__btn--small">ورود</button>
       </form>
     );
   }

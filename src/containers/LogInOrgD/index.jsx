@@ -1,11 +1,16 @@
 import React from 'react';
 import LogInForm from './components/LogInForm';
+import loginAction from 'Root/redux/actions/userOrgD/login';
+
+const onSubmit = (values) => {
+  loginAction(values);
+};
 
 const LogIn = () => (
   <div className="account">
     <div className="account__wrapper">
       <div className="account__card">
-        <LogInForm onSubmit />
+        <LogInForm onSubmit={onSubmit} />
       </div>
     </div>
 

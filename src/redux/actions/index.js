@@ -51,4 +51,21 @@ export default {
     LOAD: 'userControlOrgB/LOAD',
     CLEAR: 'userControlOrgB/CLEAR',
   },
+  depositsOrgD: {
+    LOAD: 'depositsOrgD/LOAD',
+    CLEAR: 'depositsOrgD/CLEAR',
+  },
+  userControlOrgD: {
+    LOAD: 'userControlOrgD/LOAD',
+    CLEAR: 'userControlOrgD/CLEAR',
+  },
+  userOrgD: {
+    LOGIN: 'userOrgD/LOGIN',
+    LOGOUT: 'userOrgD/LOGOUT',
+    NONCE: 'userOrgD/NONCE',
+    START_POLLING: 'userOrgD/START_POLLING',
+    STOP_POLLING: 'userOrgD/STOP_POLLING',
+    START_RUNNING: 'userOrgD/START_RUNNING',
+    STOP_RUNNING: 'userOrgD/STOP_RUNNING',
+  },
 };

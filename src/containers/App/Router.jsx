@@ -23,6 +23,11 @@ import ReportGenTok from '../ReportGenTok';
 import ReportTransOrgC from '../ReportTransOrgC';
 // orgD
 import LoginOrgD from '../LogInOrgD';
+import LayoutOrgD from '../LayoutOrgD/index';
+import ProtectedOrgD from 'Root/shared/components/ProtectedOrgD';
+import UserControlOrgD from '../UserControlOrgD';
+import SignupUserOrgD from '../SignupUserOrgD';
+import DepositOrgD from '../DepositOrgD';
 
 const PagesOrgA = () => (
   <Switch>
@@ -44,6 +49,14 @@ const PagesOrgB = () => (
     <Route path="/orgB/user-control" component={UserControlOrgB} />
     <Route path="/orgB/signup-user" component={SignupUserOrgB} />
     <Route path="/orgB/deposit" component={DepositOrgB} />
+  </Switch>
+);
+
+const PagesOrgD = () => (
+  <Switch>
+    <Route path="/orgD/user-control" component={UserControlOrgD} />
+    <Route path="/orgD/signup-user" component={SignupUserOrgD} />
+    <Route path="/orgD/deposit" component={DepositOrgD} />
   </Switch>
 );
 
@@ -101,6 +114,27 @@ const OrgB = () => (
   </ProtectedOrgB>
 );
 
+const OrgD = () => (
+  <ProtectedOrgD>
+    <Helmet>
+      <title>
+        سازمان دو
+      </title>
+    </Helmet>
+    <div>
+      <LayoutOrgB />
+      <div className="container__wrap">
+        <Switch>
+          <Route path="/orgD" exact>
+            <Redirect to="/orgD/user-control" />
+          </Route>
+          <Route path="/orgD" component={PagesOrgD} />
+        </Switch>
+      </div>
+    </div>
+  </ProtectedOrgD>
+);
+
 const Router = () => (
   <MainWrapper>
     <main>
@@ -135,10 +169,20 @@ const Router = () => (
             <LoginOrgC />
           </Fragment>
         </Route>
-        <Route exact path="/login/orgD" component={LoginOrgD} />
+        <Route exact path="/login/orgD">
+          <Fragment>
+            <Helmet>
+              <title>
+                سازمان دو
+              </title>
+            </Helmet>
+            <LoginOrgD />
+          </Fragment>
+        </Route>
         <Route path="/orgA" component={OrgA} />
         <Route path="/orgC" component={OrgC} />
         <Route path="/orgB" component={OrgB} />
+        <Route path="/orgD" component={OrgD} />
       </Switch>
     </main>
   </MainWrapper>

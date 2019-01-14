@@ -9,6 +9,8 @@ import loadTokens from 'Root/redux/actions/userOrgC/loadTokens';
 import loadTrans from 'Root/redux/actions/userOrgC/loadTrans';
 import loadClientA from 'Root/redux/actions/userOrgC/loadClient';
 import loadSuggestion from 'Root/redux/actions/userOrgC/loadSuggestion';
+import loadClientD from 'Root/redux/actions/userOrgD/loadClient';
+import loadDepositsD from 'Root/redux/actions/userOrgD/loadDeposits';
 
 if (localStorage.orgB) {
   store.dispatch({
@@ -30,6 +32,16 @@ if (localStorage.orgC) {
   loadTokens();
   loadTrans();
   loadSuggestion();
+}
+
+if (localStorage.orgD) {
+  store.dispatch({
+    type: types.userOrgD.LOGIN,
+    ...JSON.parse(localStorage.orgB),
+  });
+
+  loadDepositsD();
+  loadClientD();
 }
 
 render(
