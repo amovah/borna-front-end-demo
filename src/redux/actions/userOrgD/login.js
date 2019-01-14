@@ -44,7 +44,7 @@ export default async (values) => {
     userId: res.data.userId,
   });
 
-  history.push('/orgB/user-control');
+  history.push('/orgD/user-control');
 
   return 0;
 };

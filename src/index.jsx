@@ -37,7 +37,7 @@ if (localStorage.orgC) {
 if (localStorage.orgD) {
   store.dispatch({
     type: types.userOrgD.LOGIN,
-    ...JSON.parse(localStorage.orgB),
+    ...JSON.parse(localStorage.orgD),
   });
 
   loadDepositsD();

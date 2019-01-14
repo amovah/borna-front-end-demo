@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import DownIcon from 'mdi-react/ChevronDownIcon';
 import { Collapse } from 'reactstrap';
 import TopbarMenuLink from './TopbarMenuLink';
-import logoutAction from 'Root/redux/actions/userOrgB/logout';
+import logoutAction from 'Root/redux/actions/userOrgD/logout';
 
 const Ava = `${process.env.PUBLIC_URL}/img/ava.png`;
 
