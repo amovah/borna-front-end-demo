@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SidebarLink from './SidebarLink';
-import loadClient from 'Root/redux/actions/userOrgB/loadClient';
-import loadDeposits from 'Root/redux/actions/userOrgB/loadDeposits';
-import clearClient from 'Root/redux/actions/userOrgB/clearUserControl';
-import clearDeposits from 'Root/redux/actions/userOrgB/clearDeposits';
+import loadClient from 'Root/redux/actions/userOrgD/loadClient';
+import loadDeposits from 'Root/redux/actions/userOrgD/loadDeposits';
+import clearClient from 'Root/redux/actions/userOrgD/clearUserControl';
+import clearDeposits from 'Root/redux/actions/userOrgD/clearDeposits';
 // import SidebarCategory from './SidebarCategory';
 
 class SidebarContent extends Component {
@@ -22,13 +22,13 @@ class SidebarContent extends Component {
         <ul className="sidebar__block">
           <SidebarLink
             title="کنترل کاربران"
-            route="/orgB/user-control"
+            route="/orgD/user-control"
             onClick={() => { clearClient(); loadClient(); }}
           />
-          <SidebarLink title="ثبت‌نام کاربر" route="/orgB/signup-user" />
+          <SidebarLink title="ثبت‌نام کاربر" route="/orgD/signup-user" />
           <SidebarLink
             title="سپرده‌گذاری"
-            route="/orgB/deposit"
+            route="/orgD/deposit"
             onClick={() => { clearDeposits(); loadDeposits(); }}
           />
           {/* <SidebarCategory title="صفحه ها" icon="diamond">

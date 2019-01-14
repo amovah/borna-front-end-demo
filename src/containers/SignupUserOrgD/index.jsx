@@ -12,13 +12,13 @@ import { enToFa } from 'Root/mapper';
 import moment from 'Root/moment';
 
 const showres = (values) => {
-  store.dispatch(reset('SingupUserForm'));
-  global.fuckState({
+  store.dispatch(reset('SingupUserFormB'));
+  global.fuckStateB({
     disabled: true,
   });
 
   fetch({
-    url: `${config.server}/orgB/${global.fuckData.issuerId}/clientControl/${global.fuckData.id}`,
+    url: `${config.server}/orgB/${global.fuckDataB.issuerId}/clientControl/${global.fuckDataB.id}`,
     options: {
       method: 'PUT',
     },
@@ -28,18 +28,18 @@ const showres = (values) => {
   });
 
   generateQR(() => startPolling((data) => {
-    global.fuckState({
+    global.fuckStateB({
       disabled: false,
     });
 
-    store.dispatch(change('SingupUserForm', 'avatar', data.imageBase64));
-    store.dispatch(change('SingupUserForm', 'firstname', data.firstname));
-    store.dispatch(change('SingupUserForm', 'lastname', data.lastname));
-    store.dispatch(change('SingupUserForm', 'nationalId', enToFa(data.nationalId)));
-    store.dispatch(change('SingupUserForm', 'mobileNumber', enToFa(data.mobileNumber)));
-    store.dispatch(change('SingupUserForm', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/jD HH:mm')))); // eslint-disable-line
+    store.dispatch(change('SingupUserFormB', 'avatar', data.imageBase64));
+    store.dispatch(change('SingupUserFormB', 'firstname', data.firstname));
+    store.dispatch(change('SingupUserFormB', 'lastname', data.lastname));
+    store.dispatch(change('SingupUserFormB', 'nationalId', enToFa(data.nationalId)));
+    store.dispatch(change('SingupUserFormB', 'mobileNumber', enToFa(data.mobileNumber)));
+    store.dispatch(change('SingupUserFormB', 'birthDate', enToFa(moment(parseInt(data.birthDate, 10)).format('jYYYY/jM/jD HH:mm')))); // eslint-disable-line
 
-    global.fuckData = data;
+    global.fuckDataB = data;
   }));
 };
 

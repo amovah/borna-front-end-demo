@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TopbarSidebarButton from './TopbarSidebarButton';
 import TopbarProfile from './TopbarProfile';
-import titleLogo from 'Root/shared/img/3-1.png';
+import titleLogo from 'Root/shared/img/4-1.png';
 
 class Topbar extends PureComponent {
   static propTypes = {

@@ -6,7 +6,7 @@ import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // import titleLogo from 'shared/img/logo.png';
-import titleLogo from 'Root/shared/img/3-0.png';
+import titleLogo from 'Root/shared/img/4-0.png';
 
 class LogInForm extends PureComponent {
   static propTypes = {

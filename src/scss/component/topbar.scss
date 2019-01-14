@@ -50,9 +50,12 @@
 
 .topbar__logo {
   padding-top: 10px;
+  text-align: right;
 
   img {
     margin: auto 0;
+    height: 100%;
+    width: auto;
   }
   // background-repeat: no-repeat;
   // background-position-y: center;

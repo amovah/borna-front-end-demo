@@ -122,7 +122,7 @@ const OrgD = () => (
       </title>
     </Helmet>
     <div>
-      <LayoutOrgB />
+      <LayoutOrgD />
       <div className="container__wrap">
         <Switch>
           <Route path="/orgD" exact>
