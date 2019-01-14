@@ -77,7 +77,7 @@ const OrgC = () => (
     <div>
       <Helmet>
         <title>
-          سازمان مرکزی
+          بانک مرکزی جمهوری اسلامی ایران
         </title>
       </Helmet>
       <LayoutOrgC />
@@ -97,7 +97,7 @@ const OrgB = () => (
   <ProtectedOrgB>
     <Helmet>
       <title>
-        سازمان یک
+        بانک ملی ایران
       </title>
     </Helmet>
     <div>
@@ -118,7 +118,7 @@ const OrgD = () => (
   <ProtectedOrgD>
     <Helmet>
       <title>
-        سازمان دو
+        بانک صادرات ایران
       </title>
     </Helmet>
     <div>
@@ -153,7 +153,7 @@ const Router = () => (
           <Fragment>
             <Helmet>
               <title>
-                سازمان یک
+                بانک ملی ایران
               </title>
             </Helmet>
             <LoginOrgB />
@@ -163,7 +163,7 @@ const Router = () => (
           <Fragment>
             <Helmet>
               <title>
-                سازمان مرکزی
+                بانک مرکزی جمهوری اسلامی ایران
               </title>
             </Helmet>
             <LoginOrgC />
@@ -173,7 +173,7 @@ const Router = () => (
           <Fragment>
             <Helmet>
               <title>
-                سازمان دو
+                بانک صادرات ایران
               </title>
             </Helmet>
             <LoginOrgD />

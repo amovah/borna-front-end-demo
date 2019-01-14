@@ -212,7 +212,7 @@ class MatTable extends PureComponent {
                           >
                             {
                               d.source.id === 0 ?
-                              'سازمان مرکزی' :
+                              'بانک مرکزی جمهوری اسلامی ایران' :
                               `${d.source.firstname} ${d.source.lastname}`
                             }
                           </TableCell>
@@ -221,7 +221,7 @@ class MatTable extends PureComponent {
                           >
                             {
                               d.destination.id === 0 ?
-                              'سازمان مرکزی' :
+                              'بانک مرکزی جمهوری اسلامی ایران' :
                               `${d.destination.firstname} ${d.destination.lastname}`
                             }
                           </TableCell>

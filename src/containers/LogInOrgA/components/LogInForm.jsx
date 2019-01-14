@@ -27,7 +27,7 @@ const resetForm = () => {
   store.dispatch(reset('loginOrgA'));
   store.dispatch(change('loginOrgA', 'firstname', true));
   store.dispatch(change('loginOrgA', 'lastname', true));
-  store.dispatch(change('loginOrgA', 'issuer', { label: 'سازمان اول', value: 'org1' }));
+  store.dispatch(change('loginOrgA', 'issuer', { label: 'بانک ملی ایران', value: 'org1' }));
 
   generateQR(() => startPolling((data) => {
     let red = false;
@@ -54,7 +54,7 @@ class LogInForm extends PureComponent {
   };
 
   componentDidMount() {
-    store.dispatch(change('loginOrgA', 'issuer', { label: 'سازمان اول', value: 'org1' }));
+    store.dispatch(change('loginOrgA', 'issuer', { label: 'بانک ملی ایران', value: 'org1' }));
     generateQR(() => startPolling((data) => {
       let red = false;
       if (data.status === 'نامعتبر') {
@@ -206,8 +206,8 @@ class LogInForm extends PureComponent {
                                   name="issuer"
                                   component={renderMultiSelectField}
                                   options={[
-                                    { label: 'سازمان اول', value: 'org1' },
-                                    { label: 'سازمان دوم', value: 'org2' },
+                                    { label: 'بانک ملی ایران', value: 'org1' },
+                                    { label: 'بانک صادرات ایران', value: 'org2' },
                                   ]}
                                 />
                               </Col>
