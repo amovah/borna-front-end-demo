@@ -38,7 +38,7 @@ class LogInForm extends PureComponent {
             alt="khafes"
           />
           <h1>
-            بانک ملی ایران
+            بانک صادرات ایران
           </h1>
         </div>
         <div className="form__form-group">
