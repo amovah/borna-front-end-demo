@@ -96,5 +96,20 @@ export default props => (
         </div>
       </Col>
     </Row>
+    <Row>
+      <Col xs="1" />
+      <Col xs="10">
+        {
+          props.red
+            ? <p className="redBalaButton">
+              اطلاعات ارائه شده توسط شما صحیح نبوده و احراز هویت شما با شکست رو به رو شد.
+            </p>
+            : <p className="BalaButton">
+              اطلاعات ارائه شده توسط شما صحیح بوده و احراز هویت شما موقفیت‌آمیز انجام شد.
+            </p>
+        }
+      </Col>
+      <Col xs="1" />
+      </Row>
   </div>
 );
