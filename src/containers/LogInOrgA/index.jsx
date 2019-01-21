@@ -35,13 +35,13 @@ const LogIn = () => (
     <LogInForm onSubmit={onSubmit} />
     <div className="version-indicator-in-login-page">
       <p>
-        ورژن ۰.۹.۰
+        ورژن ۱.۰.۰
       </p>
     </div>
 
     <div className="heythere-indicator-in-login-page">
       <p>
-        پروژه آریاتک
+        برنا، بستر نوین اعتماد
       </p>
     </div>
   </div>
