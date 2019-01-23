@@ -17,8 +17,8 @@ const showres = async (values) => {
     disabled: true,
   });
 
-  const token = store.getState().userOrgC.token;
-  fetch({
+  const token = store.getState().userOrgD.token;
+  await fetch({
     url: `${config.server}/orgB/${global.fuckDataB.issuerId}/clientControl/${global.fuckDataB.id}`,
     options: {
       method: 'PUT',

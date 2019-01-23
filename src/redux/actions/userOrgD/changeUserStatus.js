@@ -6,7 +6,7 @@ import showNoti from 'Root/redux/actions/noti/show';
 import loadClient from './loadClient';
 
 export default (clientId, operation) => async () => {
-  const token = store.getState().userOrgC.token;
+  const token = store.getState().userOrgD.token;
   const res = await fetch({
     url: `${config.server}orgB/org2/clientControl/${clientId}`,
     options: {

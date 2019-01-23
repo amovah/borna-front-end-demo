@@ -31,7 +31,7 @@ const polling = async () => {
 //     store.dispatch({
 //       type: types.userOrgB.STOP_RUNNING,
 //     });
-    const token = store.getState().userOrgC.token;
+    const token = store.getState().userOrgB.token;
     const res = await fetch({
       url: `${config.server}orgB/org1/registerQR/${nonce}`,
       options: {

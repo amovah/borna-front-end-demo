@@ -102,7 +102,7 @@ class Form extends Component {
     e.preventDefault();
     store.dispatch(reset('SingupUserForm'));
 
-    const token = store.getState().userOrgC.token;
+    const token = store.getState().userOrgB.token;
     await fetch({
       url: `${config.server}/orgB/${global.fuckData.issuerId}/clientControl/${global.fuckData.id}`,
       options: {

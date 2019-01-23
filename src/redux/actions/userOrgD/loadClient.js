@@ -5,7 +5,7 @@ import fetch from 'Root/fetch';
 import showNoti from 'Root/redux/actions/noti/show';
 
 export default async (showNoot) => {
-  const token = store.getState().userOrgC.token;
+  const token = store.getState().userOrgD.token;
   const res = await fetch({
     url: `${config.server}orgB/org2/clientList`,
     options: {

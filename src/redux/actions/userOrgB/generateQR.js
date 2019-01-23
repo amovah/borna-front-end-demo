@@ -6,7 +6,7 @@ import { change } from 'redux-form';
 import nonce from './nonce';
 
 export default async (cb = () => {}) => {
-  const token = store.getState().userOrgC.token;
+  const token = store.getState().userOrgB.token;
   const res = await fetch({
     url: `${config.server}orgB/org1/newRegisterQR`,
     options: {
