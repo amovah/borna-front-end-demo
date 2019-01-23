@@ -6,11 +6,13 @@ import { change } from 'redux-form';
 import nonce from './nonce';
 
 export default async (cb = () => {}) => {
+  const token = store.getState().userOrgC.token;
   const res = await fetch({
     url: `${config.server}orgB/org1/newRegisterQR`,
     options: {
       method: 'GET',
     },
+    token,
   });
 
   store.dispatch(change('SingupUserForm', 'QRCode', `${config.server}/${res.data.qrURL}`));

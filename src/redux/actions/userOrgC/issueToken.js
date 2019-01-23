@@ -1,6 +1,7 @@
 import fetch from 'Root/fetch';
 import showNoti from 'Root/redux/actions/noti/show';
 import config from 'Root/config';
+import store from 'Root/store';
 import { enToFa, faToEn } from 'Root/mapper';
 
 export default async (values) => {
@@ -17,12 +18,14 @@ export default async (values) => {
     toAddress: values.toAddress.value,
   };
 
+  const token = store.getState().userOrgC.token;
   const res = await fetch({
     url: `${config.server}orgC/tokenIssue`,
     options: {
       method: 'POST',
       body: JSON.stringify(validValues),
     },
+    token,
   });
 
   if (!res.res.ok || res.data.status === 'ناموفق') {

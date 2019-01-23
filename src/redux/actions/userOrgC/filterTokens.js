@@ -57,6 +57,7 @@ export default async (values) => {
     validValues.destination = values.destination.value;
   }
 
+  const token = store.getState().userOrgC.token;
   const res = await fetch({
     url: `${config.server}orgC/tokenIssueList`,
     options: {
@@ -65,6 +66,7 @@ export default async (values) => {
         where: validValues,
       },
     },
+    token,
   });
 
   if (!res.res.ok) {

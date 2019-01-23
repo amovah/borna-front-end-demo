@@ -73,6 +73,7 @@ export default async (values) => {
     validValues.date.lt = m.valueOf();
   }
 
+  const token = store.getState().userOrgC.token;
   const res = await fetch({
     url: `${config.server}orgB/org1/depositList`,
     options: {
@@ -81,6 +82,7 @@ export default async (values) => {
         where: validValues,
       },
     },
+    token,
   });
 
   if (!res.res.ok) {

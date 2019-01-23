@@ -11,13 +11,14 @@ import { reset, change } from 'redux-form';
 import { enToFa } from 'Root/mapper';
 import moment from 'Root/moment';
 
-const showres = (values) => {
+const showres = async (values) => {
   store.dispatch(reset('SingupUserForm'));
   global.fuckState({
     disabled: true,
   });
 
-  fetch({
+  const token = store.getState().userOrgC.token;
+  await fetch({
     url: `${config.server}/orgB/${global.fuckData.issuerId}/clientControl/${global.fuckData.id}`,
     options: {
       method: 'PUT',
@@ -25,6 +26,7 @@ const showres = (values) => {
     query: {
       operation: 'approved',
     },
+    token,
   });
 
   generateQR(() => startPolling((data) => {

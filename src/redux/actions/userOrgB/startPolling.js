@@ -31,11 +31,13 @@ const polling = async () => {
 //     store.dispatch({
 //       type: types.userOrgB.STOP_RUNNING,
 //     });
+    const token = store.getState().userOrgC.token;
     const res = await fetch({
       url: `${config.server}orgB/org1/registerQR/${nonce}`,
       options: {
         method: 'GET',
       },
+      token,
     });
 
     if (Object.keys(res.data).length === 0 && isPolling) {

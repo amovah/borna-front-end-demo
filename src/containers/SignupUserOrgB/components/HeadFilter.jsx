@@ -98,11 +98,12 @@ class Form extends Component {
     store.dispatch(reset('SingupUserForm'));
   }
 
-  fuckloo = (e) => {
+  fuckloo = async (e) => {
     e.preventDefault();
     store.dispatch(reset('SingupUserForm'));
 
-    fetch({
+    const token = store.getState().userOrgC.token;
+    await fetch({
       url: `${config.server}/orgB/${global.fuckData.issuerId}/clientControl/${global.fuckData.id}`,
       options: {
         method: 'PUT',
@@ -110,6 +111,7 @@ class Form extends Component {
       query: {
         operation: 'rejected',
       },
+      token,
     });
 
     const { setState } = this;

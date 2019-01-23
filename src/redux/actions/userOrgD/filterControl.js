@@ -57,6 +57,7 @@ export default async (values) => {
     validValues.mobileNumber = values.mobileNumber;
   }
 
+  const token = store.getState().userOrgC.token;
   const res = await fetch({
     url: `${config.server}orgB/org2/clientList`,
     options: {
@@ -65,6 +66,7 @@ export default async (values) => {
         where: validValues,
       },
     },
+    token,
   });
 
   if (!res.res.ok) {

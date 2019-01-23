@@ -53,6 +53,7 @@ export default async (values) => {
     validValues.status = values.status.value;
   }
 
+  const token = store.getState().userOrgC.token;
   const res = await fetch({
     url: `${config.server}orgC/suggestionList`,
     options: {
@@ -61,6 +62,7 @@ export default async (values) => {
         where: validValues,
       },
     },
+    token,
   });
 
   if (!res.res.ok) {

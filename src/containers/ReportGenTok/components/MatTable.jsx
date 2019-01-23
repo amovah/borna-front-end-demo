@@ -16,13 +16,16 @@ import closeModal from 'Root/redux/actions/modal/close';
 import ModalMessage from './ModalMessage';
 import fetch from 'Root/fetch';
 import config from 'Root/config';
+import store from 'Root/store';
 
 const showUser = async (id) => {
+  const token = store.getState().userOrgC.token;
   const res = await fetch({
     url: `${config.server}orgC/clientInfo/${id}`,
     options: {
       method: 'GET',
     },
+    token,
   });
 
   openModal({
