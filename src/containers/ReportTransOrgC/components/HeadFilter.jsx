@@ -56,8 +56,8 @@ class Form extends PureComponent {
                           name="source"
                           component={renderMultiSelectField}
                           options={this.props.users.map(i => ({
-                            value: i.clientId,
-                            label: enToFa(i.clientId),
+                            value: i.guid,
+                            label: enToFa(i.guid),
                           }))}
                         />
                       </Col>
@@ -77,8 +77,8 @@ class Form extends PureComponent {
                           name="destination"
                           component={renderMultiSelectField}
                           options={this.props.users.map(i => ({
-                            value: i.clientId,
-                            label: enToFa(i.clientId),
+                            value: i.guid,
+                            label: enToFa(i.guid),
                           }))}
                         />
                       </Col>

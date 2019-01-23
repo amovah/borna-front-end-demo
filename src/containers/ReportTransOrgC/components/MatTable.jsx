@@ -38,6 +38,14 @@ const showUser = async (id) => {
   });
 };
 
+const vald = (id) => {
+  if (id === '0' || id.includes('orgB')) {
+    return true;
+  }
+
+  return false;
+};
+
 function getSorting(order, orderBy) {
   return (a, b) => {
     let first = b;
@@ -211,7 +219,7 @@ class MatTable extends PureComponent {
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
                             {
-                              d.source.id === 0 ?
+                              d.source.id === '0' ?
                               'بانک مرکزی جمهوری اسلامی ایران' :
                               `${d.source.firstname} ${d.source.lastname}`
                             }
@@ -220,7 +228,7 @@ class MatTable extends PureComponent {
                             className="material-table__cell material-table__cell mattabfarsi"
                           >
                             {
-                              d.destination.id === 0 ?
+                              d.destination.id === '0' ?
                               'بانک مرکزی جمهوری اسلامی ایران' :
                               `${d.destination.firstname} ${d.destination.lastname}`
                             }
@@ -252,43 +260,22 @@ class MatTable extends PureComponent {
                           <TableCell
                             className="material-table__cell material-table__cell mattabfarsi mattabbuts"
                           >
-                            {
-                              d.destination.id === 0 ?
-                                <Button
-                                  color="primary"
-                                  className="mattabbtn"
-                                  onClick={() => showUser(d.destination.id)}
-                                  disabled
-                                >
-                                  کاربر مقصد
-                                </Button> :
-                                <Button
-                                  color="primary"
-                                  className="mattabbtn"
-                                  onClick={() => showUser(d.destination.id)}
-                                >
-                                  کاربر مقصد
-                                </Button>
-                            }
-
-                            {
-                              d.source.id === 0 ?
-                                <Button
-                                  color="primary"
-                                  className="mattabbtn"
-                                  onClick={() => showUser(d.source.id)}
-                                  disabled
-                                >
-                                  کاربر مبدا
-                                </Button> :
-                                <Button
-                                  color="primary"
-                                  className="mattabbtn"
-                                  onClick={() => showUser(d.source.id)}
-                                >
-                                  کاربر مبدا
-                                </Button>
-                            }
+                            <Button
+                              color="primary"
+                              className="mattabbtn"
+                              onClick={() => showUser(d.destination.id)}
+                              disabled={vald(d.destination.id)}
+                            >
+                              کاربر مقصد
+                            </Button>
+                            <Button
+                              color="primary"
+                              className="mattabbtn"
+                              onClick={() => showUser(d.source.id)}
+                              disabled={vald(d.source.id)}
+                            >
+                              کاربر مبدا
+                            </Button>
                           </TableCell>
                         </TableRow>
                       );
